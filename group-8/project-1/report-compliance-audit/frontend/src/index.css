@@ -1,0 +1,133 @@
+/* ═══════════════════════════════════════════════════
+   Apple-inspired Design System
+   研报合规审核系统 · Report Compliance Audit
+   ═══════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* ── Typography ── */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text',
+               'Inter', 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+
+  /* ── Apple Color Palette ── */
+  --color-bg:           #f5f5f7;
+  --color-surface:      #ffffff;
+  --color-surface-alt:  rgba(255, 255, 255, 0.72);
+  --color-glass:        rgba(255, 255, 255, 0.68);
+  --color-glass-border: rgba(255, 255, 255, 0.45);
+
+  --color-text-primary:   #1d1d1f;
+  --color-text-secondary: #86868b;
+  --color-text-tertiary:  #aeaeb2;
+
+  --color-blue:       #0071e3;
+  --color-blue-hover: #0077ed;
+  --color-blue-light: rgba(0, 113, 227, 0.08);
+
+  --color-green:      #34c759;
+  --color-green-bg:   rgba(52, 199, 89, 0.08);
+  --color-orange:     #ff9f0a;
+  --color-orange-bg:  rgba(255, 159, 10, 0.08);
+  --color-red:        #ff3b30;
+  --color-red-bg:     rgba(255, 59, 48, 0.06);
+
+  --color-border:     rgba(0, 0, 0, 0.06);
+  --color-border-hover: rgba(0, 0, 0, 0.1);
+  --color-separator:  rgba(60, 60, 67, 0.08);
+
+  /* ── Elevation ── */
+  --shadow-sm:   0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md:   0 2px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-lg:   0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-xl:   0 20px 60px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(0, 0, 0, 0.06);
+
+  /* ── Radius ── */
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --radius-xl:  20px;
+  --radius-pill: 100px;
+
+  /* ── Motion ── */
+  --ease-out:   cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 0.15s;
+  --duration-normal: 0.3s;
+  --duration-slow: 0.5s;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  line-height: 1.47;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ── Animations ── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ── Scrollbar (macOS style) ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(0, 113, 227, 0.2);
+  color: var(--color-text-primary);
+}

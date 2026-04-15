@@ -1,0 +1,526 @@
+/* GoldAdd - 录入页样式 */
+
+/* ===== 页面容器 ===== */
+.gold-add-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-gradient);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.gold-add-container {
+  max-width: 430px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ===== 顶部栏 ===== */
+.gold-add-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: rgba(15, 15, 26, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+  flex-shrink: 0;
+}
+
+.header-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.header-btn:hover {
+  background: rgba(212, 168, 67, 0.1);
+  border-color: var(--gold-primary);
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.header-placeholder {
+  width: 40px;
+}
+
+/* ===== 滚动内容区 ===== */
+.gold-add-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  padding-bottom: calc(70px + 80px + env(safe-area-inset-bottom, 0px));
+}
+
+.gold-add-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.gold-add-content::-webkit-scrollbar-thumb {
+  background: var(--gold-primary);
+  border-radius: 2px;
+}
+
+/* ===== 重量输入区域 ===== */
+.weight-section {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 32px 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.weight-input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.weight-input {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--gold-light);
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: right;
+  width: 200px;
+  font-family: 'SF Mono', Monaco, monospace;
+  text-shadow: 0 0 20px rgba(212, 168, 67, 0.3);
+}
+
+.weight-input::placeholder {
+  color: rgba(240, 215, 140, 0.3);
+}
+
+.weight-input:focus {
+  text-shadow: 0 0 30px rgba(212, 168, 67, 0.5);
+}
+
+.unit-toggle-btn {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+  border: none;
+  border-radius: 12px;
+  color: #0f0f1a;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 168, 67, 0.3);
+}
+
+.unit-toggle-btn:hover {
+  box-shadow: 0 6px 20px rgba(212, 168, 67, 0.5);
+  transform: translateY(-2px);
+}
+
+.unit-toggle-btn:active {
+  transform: translateY(0);
+}
+
+/* 趣味提示 */
+.fun-message {
+  font-size: 14px;
+  color: var(--gold-light);
+  margin: 8px 0 16px;
+  font-weight: 500;
+  text-shadow: 0 0 10px rgba(212, 168, 67, 0.3);
+}
+
+/* AI识图按钮 */
+.ocr-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(212, 168, 67, 0.1);
+  border: 1px solid var(--gold-primary);
+  border-radius: 24px;
+  color: var(--gold-light);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ocr-btn:hover:not(:disabled) {
+  background: rgba(212, 168, 67, 0.2);
+  box-shadow: 0 0 20px rgba(212, 168, 67, 0.2);
+}
+
+.ocr-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ocr-icon {
+  font-size: 16px;
+}
+
+.ocr-icon.spinning {
+  animation: spin 1s linear infinite;
+}
+
+.ocr-confidence {
+  font-size: 12px;
+  color: var(--gold-primary);
+  margin-left: 4px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== 模式切换 ===== */
+.mode-section {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.mode-tabs {
+  position: relative;
+  display: flex;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 20px;
+}
+
+.mode-slider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.mode-tab {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.mode-tab.active {
+  color: #0f0f1a;
+  font-weight: 600;
+}
+
+/* 价格输入区域 */
+.price-input-area {
+  min-height: 100px;
+}
+
+.price-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.price-field label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.calculated-hint {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 4px 0 0;
+}
+
+/* ===== 表单区域 ===== */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* 错误提示 */
+.error-text {
+  color: #ff4d4f;
+  font-size: 13px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+/* ===== Ant Design 暗色主题覆盖 ===== */
+.dark-input,
+.dark-autocomplete,
+.dark-datepicker,
+.dark-textarea {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 12px !important;
+}
+
+.dark-input input,
+.dark-autocomplete input,
+.dark-datepicker input,
+.dark-textarea textarea {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+}
+
+.dark-input input::placeholder,
+.dark-autocomplete input::placeholder,
+.dark-textarea textarea::placeholder {
+  color: var(--text-muted) !important;
+}
+
+.dark-input:hover,
+.dark-autocomplete:hover,
+.dark-datepicker:hover,
+.dark-textarea:hover {
+  border-color: var(--gold-primary) !important;
+}
+
+.dark-input:focus,
+.dark-autocomplete:focus,
+.dark-datepicker:focus,
+.dark-textarea:focus {
+  border-color: var(--gold-primary) !important;
+  box-shadow: 0 0 0 2px rgba(212, 168, 67, 0.2) !important;
+}
+
+/* AutoComplete 下拉菜单 */
+.dark-autocomplete .ant-select-dropdown {
+  background: var(--bg-dark-secondary) !important;
+  border: 1px solid var(--glass-border) !important;
+}
+
+.dark-autocomplete .ant-select-item {
+  color: var(--text-primary) !important;
+}
+
+.dark-autocomplete .ant-select-item-option-active {
+  background: rgba(212, 168, 67, 0.1) !important;
+}
+
+.dark-autocomplete .ant-select-item-option-selected {
+  background: rgba(212, 168, 67, 0.2) !important;
+}
+
+/* DatePicker */
+.dark-datepicker .ant-picker-suffix {
+  color: var(--gold-primary) !important;
+}
+
+.dark-datepicker .ant-picker-clear {
+  background: transparent !important;
+  color: var(--text-muted) !important;
+}
+
+/* TextArea 字数统计 */
+.dark-textarea .ant-input-data-count {
+  color: var(--text-muted) !important;
+}
+
+/* ===== 照片上传 ===== */
+.dark-upload .ant-upload {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: 1px dashed var(--glass-border) !important;
+  border-radius: 12px !important;
+}
+
+.dark-upload .ant-upload:hover {
+  border-color: var(--gold-primary) !important;
+}
+
+.upload-button {
+  color: var(--text-muted);
+}
+
+.upload-item {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+}
+
+.upload-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.upload-actions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.upload-item:hover .upload-actions {
+  opacity: 1;
+}
+
+.upload-actions button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-actions button:hover {
+  background: var(--gold-primary);
+}
+
+/* ===== 保存按钮 ===== */
+.save-button-wrapper {
+  position: fixed;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  padding: 16px 20px calc(16px + env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(to top, var(--bg-dark) 0%, transparent 100%);
+  z-index: 10;
+}
+
+.gold-add-container .save-button-wrapper {
+  position: absolute;
+  max-width: 430px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.save-button {
+  position: relative;
+  width: 100%;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #D4A843 0%, #F0D78C 50%, #B8860B 100%);
+  border: none;
+  border-radius: 16px;
+  color: #0f0f1a;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(212, 168, 67, 0.4);
+  transition: all 0.3s ease;
+}
+
+.save-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(212, 168, 67, 0.5);
+}
+
+.save-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.save-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* 底部留白 */
+.bottom-spacer {
+  height: 120px;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 430px) {
+  .gold-add-container {
+    max-width: 100%;
+  }
+
+  .weight-input {
+    font-size: 42px;
+    width: 160px;
+  }
+
+  .weight-section {
+    padding: 24px 16px;
+  }
+}
+
+/* ===== 吨模式特效 ===== */
+@keyframes tonShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(2px);
+  }
+}
+
+.weight-section:has(.unit-toggle-btn:contains("吨")) {
+  animation: tonShake 0.5s ease;
+}

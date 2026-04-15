@@ -1,0 +1,26 @@
+.animated-number {
+  display: inline-flex;
+  align-items: baseline;
+  font-variant-numeric: tabular-nums;
+}
+
+.animated-number-prefix,
+.animated-number-suffix {
+  font-size: 0.6em;
+  opacity: 0.8;
+}
+
+.animated-number-value {
+  background: linear-gradient(135deg, #D4A843 0%, #F0D78C 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.animated-number-value.hidden {
+  background: none;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
+}

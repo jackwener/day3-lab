@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI编程助手与模型选型对比</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .controls {
+            padding: 30px 40px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .filter-group label {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        select, input {
+            padding: 10px 15px;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        select:focus, input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #343a40;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .comparison-table thead {
+            background: #f8f9fa;
+        }
+
+        .comparison-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #495057;
+            border-bottom: 2px solid #dee2e6;
+            white-space: nowrap;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin: 2px;
+        }
+
+        .badge-success {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .badge-warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .badge-info {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .badge-primary {
+            background: #cce5ff;
+            color: #004085;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-name {
+            font-weight: 600;
+            color: #343a40;
+        }
+
+        .feature-desc {
+            color: #6c757d;
+            margin-top: 4px;
+            font-size: 0.9em;
+        }
+
+        .star-rating {
+            color: #ffc107;
+            font-size: 1.2em;
+        }
+
+        .card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .card h3 {
+            color: #343a40;
+            margin-bottom: 15px;
+        }
+
+        .recommendation {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border: 2px solid #667eea;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        .recommendation h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .comparison-table {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI编程助手与模型选型对比</h1>
+            <p>主流AI编程助手与模型功能能力对比，助力快速选型决策</p>
+        </div>
+
+        <div class="controls">
+            <div class="filter-group">
+                <label>助手类型:</label>
+                <select id="assistantFilter">
+                    <option value="all">全部</option>
+                    <option value="ide">IDE集成</option>
+                    <option value="standalone">独立应用</option>
+                    <option value="cloud">云端服务</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>价格区间:</label>
+                <select id="priceFilter">
+                    <option value="all">全部</option>
+                    <option value="free">免费</option>
+                    <option value="paid">付费</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>搜索:</label>
+                <input type="text" id="searchInput" placeholder="输入关键词搜索...">
+            </div>
+        </div>
+
+        <div class="content">
+            <h2 class="section-title">主流AI编程助手对比</h2>
+            <table class="comparison-table" id="assistantTable">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>核心功能</th>
+                        <th>支持语言</th>
+                        <th>价格</th>
+                        <th>评分</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>GitHub Copilot</strong></td>
+                        <td><span class="badge badge-primary">IDE集成</span></td>
+                        <td>代码补全、解释、重构、测试生成</td>
+                        <td>所有主流语言</td>
+                        <td>$10/月</td>
+                        <td><span class="star-rating">★★★★★</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Claude Code</strong></td>
+                        <td><span class="badge badge-primary">IDE集成</span></td>
+                        <td>代码生成、调试、文档生成、架构设计</td>
+                        <td>Python、JS、TS、Java等</td>
+                        <td>免费/$20/月</td>
+                        <td><span class="star-rating">★★★★★</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cursor</strong></td>
+                        <td><span class="badge badge-primary">IDE集成</span></td>
+                        <td>代码编辑、AI对话、代码库理解、多文件编辑</td>
+                        <td>所有主流语言</td>
+                        <td>免费/$20/月</td>
+                        <td><span class="star-rating">★★★★☆</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Qoder</strong></td>
+                        <td><span class="badge badge-primary">IDE集成</span></td>
+                        <td>智能编码、Agent协作、代码审查、技能扩展</td>
+                        <td>所有主流语言</td>
+                        <td>免费</td>
+                        <td><span class="star-rating">★★★★★</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Amazon CodeWhisperer</strong></td>
+                        <td><span class="badge badge-primary">IDE集成</span></td>
+                        <td>代码建议、安全扫描、引用追踪</td>
+                        <td>15+语言</td>
+                        <td>免费/$19/月</td>
+                        <td><span class="star-rating">★★★★☆</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tabnine</strong></td>
+                        <td><span class="badge badge-primary">IDE集成</span></td>
+                        <td>AI代码补全、私有化部署、团队学习</td>
+                        <td>23+语言</td>
+                        <td>免费/$12/月</td>
+                        <td><span class="star-rating">★★★★☆</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Codeium</strong></td>
+                        <td><span class="badge badge-primary">IDE集成</span></td>
+                        <td>代码补全、AI聊天、搜索、企业部署</td>
+                        <td>40+语言</td>
+                        <td>免费</td>
+                        <td><span class="star-rating">★★★★☆</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Continue</strong></td>
+                        <td><span class="badge badge-primary">IDE集成</span></td>
+                        <td>开源AI编码、自定义模型、代码库索引</td>
+                        <td>所有主流语言</td>
+                        <td>免费</td>
+                        <td><span class="star-rating">★★★★☆</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="section-title">主流AI模型能力对比</h2>
+            <table class="comparison-table" id="modelTable">
+                <thead>
+                    <tr>
+                        <th>模型名称</th>
+                        <th>提供商</th>
+                        <th>上下文窗口</th>
+                        <th>代码能力</th>
+                        <th>多模态</th>
+                        <th>价格(每百万Token)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>GPT-4o</strong></td>
+                        <td>OpenAI</td>
+                        <td>128K</td>
+                        <td><span class="badge badge-success">优秀</span></td>
+                        <td><span class="badge badge-success">支持</span></td>
+                        <td>输入$2.5/输出$10</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Claude 3.5 Sonnet</strong></td>
+                        <td>Anthropic</td>
+                        <td>200K</td>
+                        <td><span class="badge badge-success">优秀</span></td>
+                        <td><span class="badge badge-success">支持</span></td>
+                        <td>输入$3/输出$15</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Claude 3 Opus</strong></td>
+                        <td>Anthropic</td>
+                        <td>200K</td>
+                        <td><span class="badge badge-success">优秀</span></td>
+                        <td><span class="badge badge-success">支持</span></td>
+                        <td>输入$15/输出$75</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gemini 1.5 Pro</strong></td>
+                        <td>Google</td>
+                        <td>2M</td>
+                        <td><span class="badge badge-success">优秀</span></td>
+                        <td><span class="badge badge-success">支持</span></td>
+                        <td>输入$1.25/输出$5</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CodeLlama 70B</strong></td>
+                        <td>Meta</td>
+                        <td>16K</td>
+                        <td><span class="badge badge-warning">良好</span></td>
+                        <td><span class="badge badge-warning">不支持</span></td>
+                        <td>开源免费</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DeepSeek Coder V2</strong></td>
+                        <td>DeepSeek</td>
+                        <td>128K</td>
+                        <td><span class="badge badge-success">优秀</span></td>
+                        <td><span class="badge badge-warning">不支持</span></td>
+                        <td>输入$0.14/输出$0.28</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Qwen 2.5 Coder</strong></td>
+                        <td>阿里云</td>
+                        <td>128K</td>
+                        <td><span class="badge badge-success">优秀</span></td>
+                        <td><span class="badge badge-warning">不支持</span></td>
+                        <td>输入$0.07/输出$0.14</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mixtral 8x22B</strong></td>
+                        <td>Mistral</td>
+                        <td>64K</td>
+                        <td><span class="badge badge-warning">良好</span></td>
+                        <td><span class="badge badge-warning">不支持</span></td>
+                        <td>输入$2/输出$6</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="section-title">核心功能详细对比</h2>
+            <div class="card">
+                <h3>代码生成与补全</h3>
+                <ul class="feature-list">
+                    <li>
+                        <span class="feature-name">单行补全:</span>
+                        <span class="feature-desc">GitHub Copilot、Cursor、Qoder 均支持实时单行补全，响应速度快</span>
+                    </li>
+                    <li>
+                        <span class="feature-name">多行补全:</span>
+                        <span class="feature-desc">Claude Code、GPT-4o 支持完整函数级别的代码生成</span>
+                    </li>
+                    <li>
+                        <span class="feature-name">代码库理解:</span>
+                        <span class="feature-desc">Cursor、Qoder、Claude Code 支持整个代码库的索引和理解</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>代码质量与审查</h3>
+                <ul class="feature-list">
+                    <li>
+                        <span class="feature-name">代码审查:</span>
+                        <span class="feature-desc">GitHub Copilot、Qoder 支持PR级别的代码审查建议</span>
+                    </li>
+                    <li>
+                        <span class="feature-name">Bug检测:</span>
+                        <span class="feature-desc">Claude Code、GPT-4o 能准确识别潜在Bug并提供修复建议</span>
+                    </li>
+                    <li>
+                        <span class="feature-name">安全扫描:</span>
+                        <span class="feature-desc">Amazon CodeWhisperer、GitHub Copilot 内置安全漏洞检测</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>开发工作流集成</h3>
+                <ul class="feature-list">
+                    <li>
+                        <span class="feature-name">IDE支持:</span>
+                        <span class="feature-desc">VS Code、JetBrains、Vim、Neovim 等主流IDE均有插件支持</span>
+                    </li>
+                    <li>
+                        <span class="feature-name">Git集成:</span>
+                        <span class="feature-desc">GitHub Copilot、Qoder 深度集成Git工作流</span>
+                    </li>
+                    <li>
+                        <span class="feature-name">CI/CD集成:</span>
+                        <span class="feature-desc">GitHub Copilot 支持GitHub Actions，Qoder 支持自定义工作流</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="recommendation">
+                <h3>💡 选型建议</h3>
+                <ul class="feature-list">
+                    <li>
+                        <span class="feature-name">🎯 初学者入门:</span>
+                        <span class="feature-desc">推荐 GitHub Copilot 或 Codeium，简单易用，免费选项充足</span>
+                    </li>
+                    <li>
+                        <span class="feature-name">🚀 专业开发者:</span>
+                        <span class="feature-desc">推荐 Claude Code 或 Cursor，强大的代码库理解和多文件编辑能力</span>
+                    </li>
+                    <li>
+                        <span class="feature-name">🏢 企业团队:</span>
+                        <span class="feature-desc">推荐 Qoder 或 Tabnine，支持私有化部署和团队协作</span>
+                    </li>
+                    <li>
+                        <span class="feature-name">💰 成本敏感:</span>
+                        <span class="feature-desc">推荐 DeepSeek Coder 或 Qwen 2.5 Coder，开源且性价比极高</span>
+                    </li>
+                    <li>
+                        <span class="feature-name">🔒 数据安全:</span>
+                        <span class="feature-desc">推荐本地部署方案，如 Continue + 本地模型，或 Qoder 私有化版本</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 筛选功能
+        document.getElementById('assistantFilter').addEventListener('change', filterTable);
+        document.getElementById('priceFilter').addEventListener('change', filterTable);
+        document.getElementById('searchInput').addEventListener('input', filterTable);
+
+        function filterTable() {
+            const typeFilter = document.getElementById('assistantFilter').value;
+            const priceFilter = document.getElementById('priceFilter').value;
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+            const rows = document.querySelectorAll('#assistantTable tbody tr');
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                const type = row.cells[1].textContent;
+                const price = row.cells[4].textContent;
+
+                let show = true;
+
+                if (typeFilter !== 'all') {
+                    if (typeFilter === 'ide' && !type.includes('IDE')) show = false;
+                    if (typeFilter === 'standalone' && !type.includes('独立')) show = false;
+                    if (typeFilter === 'cloud' && !type.includes('云端')) show = false;
+                }
+
+                if (priceFilter !== 'all') {
+                    if (priceFilter === 'free' && !price.includes('免费')) show = false;
+                    if (priceFilter === 'paid' && price.includes('免费') && !price.includes('$')) show = false;
+                }
+
+                if (searchTerm && !text.includes(searchTerm)) show = false;
+
+                row.style.display = show ? '' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

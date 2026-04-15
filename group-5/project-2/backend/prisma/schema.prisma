@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String?  @unique
+  phone     String?  @unique
+  password  String
+  nickname  String
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  destinyProfile    DestinyProfile?
+  divinationRecords DivinationRecord[]
+  dailyCalendars    DailyCalendar[]
+  destinyHistories  DestinyHistory[]
+
+  @@map("users")
+}
+
+model DestinyProfile {
+  id           Int      @id @default(autoincrement())
+  userId       Int      @unique @map("user_id")
+  nickname     String?
+  gender       String?
+  birthDate    String   @map("birth_date")
+  birthTime    String?  @map("birth_time")
+  noBirthTime  Boolean  @default(false) @map("no_birth_time")
+  bazi         String?  // JSON string for SQLite
+  wuxing       String?  // JSON string for SQLite
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("destiny_profiles")
+}
+
+model DivinationRecord {
+  id        Int      @id @default(autoincrement())
+  userId    Int      @map("user_id")
+  type      String   // 'qimen' | 'liuren'
+  question  String
+  result    String   // JSON string for SQLite
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("divination_records")
+}
+
+model DailyCalendar {
+  id        Int      @id @default(autoincrement())
+  userId    Int      @map("user_id")
+  date      String
+  content   String   // JSON string for SQLite
+  cached    Boolean  @default(false)
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@unique([userId, date])
+  @@map("daily_calendars")
+}
+
+model DestinyHistory {
+  id        Int      @id @default(autoincrement())
+  userId    Int      @map("user_id")
+  name      String
+  gender    String
+  birthDate String   @map("birth_date")
+  birthTime String?  @map("birth_time")
+  keywords  String   // JSON string for SQLite
+  result    String   // JSON string for SQLite
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("destiny_histories")
+}

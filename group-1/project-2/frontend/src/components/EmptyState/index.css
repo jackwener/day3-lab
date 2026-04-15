@@ -1,0 +1,42 @@
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.empty-state-icon-wrapper {
+  margin-bottom: 24px;
+}
+
+.empty-state-icon {
+  width: 120px;
+  height: 100px;
+  filter: drop-shadow(0 10px 30px rgba(212, 168, 67, 0.3));
+}
+
+.empty-state-text {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.empty-state-btn {
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #D4A843 0%, #F0D78C 50%, #B8860B 100%);
+  border: none;
+  border-radius: 28px;
+  color: #0f0f1a;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(212, 168, 67, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.empty-state-btn:hover {
+  box-shadow: 0 6px 25px rgba(212, 168, 67, 0.5);
+}

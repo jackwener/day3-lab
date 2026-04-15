@@ -1,0 +1,354 @@
+/* GiftSell 赠卖记录页样式 */
+
+.giftsell-page {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 16px;
+  padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px) + 16px);
+  background: linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 100%);
+}
+
+/* 顶部栏 */
+.giftsell-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-top: 8px;
+}
+
+.giftsell-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.giftsell-add-btn {
+  background: linear-gradient(135deg, #D4A843 0%, #F0D78C 50%, #B8860B 100%) !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(212, 168, 67, 0.4) !important;
+  transition: all 0.3s ease !important;
+}
+
+.giftsell-add-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(212, 168, 67, 0.6) !important;
+}
+
+.giftsell-add-btn:active {
+  transform: scale(0.95);
+}
+
+/* 空状态 */
+.giftsell-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.giftsell-empty-icon {
+  font-size: 64px;
+  color: rgba(212, 168, 67, 0.3);
+  margin-bottom: 16px;
+}
+
+.giftsell-empty p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
+}
+
+.giftsell-empty span {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* 记录列表 */
+.giftsell-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 记录卡片 */
+.giftsell-card {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 168, 67, 0.15);
+  border-radius: 16px;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.giftsell-card:hover {
+  border-color: rgba(212, 168, 67, 0.3);
+  box-shadow: 0 4px 20px rgba(212, 168, 67, 0.1);
+}
+
+.giftsell-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.giftsell-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* 类型标签 */
+.giftsell-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.giftsell-tag-gift {
+  background: rgba(114, 46, 209, 0.2);
+  color: #b37feb;
+  border: 1px solid rgba(114, 46, 209, 0.3);
+}
+
+.giftsell-tag-sell {
+  background: rgba(82, 196, 26, 0.2);
+  color: #95de64;
+  border: 1px solid rgba(82, 196, 26, 0.3);
+}
+
+.giftsell-date {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* 卡片主体 */
+.giftsell-card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.giftsell-weight {
+  font-size: 20px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #D4A843 0%, #F0D78C 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.giftsell-amount {
+  font-size: 18px;
+  font-weight: 600;
+  color: #52c41a;
+}
+
+.giftsell-amount-gift {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.giftsell-note {
+  margin-top: 8px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 删除按钮 */
+.giftsell-delete-btn {
+  margin-left: 12px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.giftsell-delete-btn:hover {
+  opacity: 1;
+}
+
+/* 弹窗样式 */
+.giftsell-modal .ant-modal-content {
+  background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%) !important;
+  border: 1px solid rgba(212, 168, 67, 0.2);
+  border-radius: 20px !important;
+}
+
+.giftsell-modal .ant-modal-header {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(212, 168, 67, 0.1);
+}
+
+.giftsell-modal .ant-modal-title {
+  color: #ffffff !important;
+  font-size: 18px;
+}
+
+.giftsell-modal .ant-modal-close {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.giftsell-modal .ant-modal-close:hover {
+  color: #D4A843 !important;
+}
+
+.giftsell-modal-content {
+  padding: 8px 0;
+}
+
+/* 类型选择器 */
+.giftsell-type-selector {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.giftsell-type-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid transparent;
+  border-radius: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.giftsell-type-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.giftsell-type-btn.active {
+  border-color: #D4A843;
+  background: rgba(212, 168, 67, 0.1);
+  color: #D4A843;
+}
+
+.giftsell-type-btn .anticon {
+  font-size: 28px;
+}
+
+/* 表单项 */
+.giftsell-form-item {
+  margin-bottom: 16px;
+}
+
+.giftsell-form-item label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.giftsell-input,
+.giftsell-textarea {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(212, 168, 67, 0.2) !important;
+  border-radius: 12px !important;
+  color: #ffffff !important;
+}
+
+.giftsell-input:hover,
+.giftsell-input:focus,
+.giftsell-textarea:hover,
+.giftsell-textarea:focus {
+  border-color: rgba(212, 168, 67, 0.5) !important;
+  box-shadow: 0 0 0 2px rgba(212, 168, 67, 0.1) !important;
+}
+
+.giftsell-input::placeholder,
+.giftsell-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* 日期选择器 */
+.giftsell-datepicker {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(212, 168, 67, 0.2) !important;
+  border-radius: 12px !important;
+}
+
+.giftsell-datepicker .ant-picker-input > input {
+  color: #ffffff !important;
+}
+
+.giftsell-datepicker .ant-picker-suffix {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* 提交按钮 */
+.giftsell-submit-btn {
+  margin-top: 8px;
+  height: 48px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  background: linear-gradient(135deg, #D4A843 0%, #F0D78C 50%, #B8860B 100%) !important;
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 15px rgba(212, 168, 67, 0.4) !important;
+  transition: all 0.3s ease !important;
+}
+
+.giftsell-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 168, 67, 0.6) !important;
+}
+
+.giftsell-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* 日期选择器下拉面板样式 */
+.giftsell-modal .ant-picker-panel {
+  background: #1a1a2e !important;
+}
+
+.giftsell-modal .ant-picker-cell {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.giftsell-modal .ant-picker-cell-in-view {
+  color: #ffffff !important;
+}
+
+.giftsell-modal .ant-picker-cell-selected .ant-picker-cell-inner {
+  background: #D4A843 !important;
+}
+
+.giftsell-modal .ant-picker-cell-today .ant-picker-cell-inner::before {
+  border-color: #D4A843 !important;
+}
+
+.giftsell-modal .ant-picker-header {
+  color: #ffffff !important;
+  border-bottom: 1px solid rgba(212, 168, 67, 0.2) !important;
+}
+
+.giftsell-modal .ant-picker-header button {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.giftsell-modal .ant-picker-header button:hover {
+  color: #D4A843 !important;
+}
+
+.giftsell-modal .ant-picker-content th {
+  color: rgba(255, 255, 255, 0.5) !important;
+}

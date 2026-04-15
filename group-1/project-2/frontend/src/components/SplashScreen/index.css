@@ -1,0 +1,90 @@
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.splash-title {
+  display: flex;
+  font-size: 48px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #D4A843 0%, #F5D76E 50%, #D4A843 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 8px;
+  position: relative;
+}
+
+.splash-title.glow {
+  text-shadow: 0 0 30px rgba(212, 168, 67, 0.5),
+               0 0 60px rgba(212, 168, 67, 0.3),
+               0 0 90px rgba(212, 168, 67, 0.2);
+  animation: textGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  from {
+    filter: drop-shadow(0 0 20px rgba(212, 168, 67, 0.4));
+  }
+  to {
+    filter: drop-shadow(0 0 40px rgba(212, 168, 67, 0.7));
+  }
+}
+
+.splash-char {
+  display: inline-block;
+}
+
+.splash-slogan {
+  font-size: 16px;
+  color: rgba(212, 168, 67, 0.8);
+  letter-spacing: 4px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.glow-ring {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(212, 168, 67, 0.4) 0%,
+    rgba(212, 168, 67, 0.2) 30%,
+    rgba(212, 168, 67, 0) 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 响应式适配 */
+@media (max-width: 480px) {
+  .splash-title {
+    font-size: 40px;
+    letter-spacing: 6px;
+  }
+
+  .splash-slogan {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+}

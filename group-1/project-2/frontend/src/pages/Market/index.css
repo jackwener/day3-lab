@@ -1,0 +1,345 @@
+/* Market Page - 实时金价页样式 */
+
+.market-page {
+  min-height: 100vh;
+  padding: 16px;
+  padding-bottom: calc(var(--nav-height) + var(--safe-bottom) + 24px);
+}
+
+.market-container {
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+/* ===== 顶部金价展示区域 ===== */
+.price-section {
+  background: linear-gradient(
+    135deg,
+    rgba(212, 168, 67, 0.1) 0%,
+    rgba(26, 26, 46, 0.5) 50%,
+    rgba(212, 168, 67, 0.05) 100%
+  );
+  border: 1px solid rgba(212, 168, 67, 0.2);
+  border-radius: 20px;
+  padding: 24px 20px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.price-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(212, 168, 67, 0.1) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+.price-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.price-label {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.stale-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+  font-size: 11px;
+  color: #ff9800;
+  background: rgba(255, 152, 0, 0.15);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.refresh-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 168, 67, 0.3);
+  background: rgba(212, 168, 67, 0.1);
+  color: var(--gold-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.refresh-btn:hover {
+  background: rgba(212, 168, 67, 0.2);
+  border-color: rgba(212, 168, 67, 0.5);
+  transform: rotate(30deg);
+}
+
+.refresh-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.refresh-btn .spinning {
+  animation: spin 1s linear infinite;
+}
+
+.price-display {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin: 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.price-value-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.price-value {
+  font-size: 48px;
+  font-weight: 700;
+  background: linear-gradient(
+    135deg,
+    #D4A843 0%,
+    #F0D78C 30%,
+    #D4A843 50%,
+    #F0D78C 70%,
+    #D4A843 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 20px rgba(212, 168, 67, 0.3);
+  letter-spacing: -1px;
+  animation: goldShimmer 3s ease-in-out infinite;
+}
+
+@keyframes goldShimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.price-unit {
+  font-size: 16px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.price-skeleton {
+  width: 200px !important;
+  height: 60px !important;
+}
+
+.price-skeleton .ant-skeleton-input {
+  background: linear-gradient(
+    90deg,
+    rgba(212, 168, 67, 0.1) 25%,
+    rgba(212, 168, 67, 0.2) 50%,
+    rgba(212, 168, 67, 0.1) 75%
+  ) !important;
+  background-size: 200% 100% !important;
+}
+
+.price-footer {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.update-time {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ===== 错误提示条 ===== */
+.error-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 77, 79, 0.1);
+  border: 1px solid rgba(255, 77, 79, 0.3);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  color: #ff4d4f;
+  font-size: 13px;
+}
+
+.error-banner .ant-btn {
+  color: #ff4d4f;
+  padding: 0 4px;
+}
+
+/* ===== Tab 切换区域 ===== */
+.tab-section {
+  margin-bottom: 16px;
+}
+
+.tab-container {
+  display: flex;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn {
+  flex: 1;
+  position: relative;
+  padding: 10px 20px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: color 0.3s ease;
+  overflow: hidden;
+}
+
+.tab-btn.active {
+  color: #fff;
+}
+
+.tab-btn:not(.active):hover {
+  color: var(--text-secondary);
+}
+
+.tab-indicator {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #D4A843 0%, #B8860B 100%);
+  border-radius: 20px;
+  z-index: 0;
+}
+
+.tab-label {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== 图表区域 ===== */
+.chart-section {
+  margin-bottom: 20px;
+}
+
+.chart-container {
+  padding: 16px;
+  min-height: 332px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-wrapper {
+  flex: 1;
+}
+
+.chart-skeleton {
+  padding: 20px 0;
+}
+
+.chart-skeleton .ant-skeleton-paragraph > li {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 25%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.03) 75%
+  ) !important;
+  background-size: 200% 100% !important;
+}
+
+.chart-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  gap: 16px;
+  color: var(--text-muted);
+}
+
+.chart-empty p {
+  font-size: 14px;
+}
+
+/* ===== 统计卡片区域 ===== */
+.stats-section {
+  margin-bottom: 20px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 8px;
+  gap: 6px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.stat-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gold-primary);
+}
+
+/* ===== 响应式适配 ===== */
+@media (max-width: 375px) {
+  .price-value {
+    font-size: 40px;
+  }
+
+  .stats-grid {
+    gap: 8px;
+  }
+
+  .stat-card {
+    padding: 12px 6px;
+  }
+
+  .stat-value {
+    font-size: 14px;
+  }
+}
+
+/* ===== 暗色主题优化 ===== */
+@media (prefers-color-scheme: dark) {
+  .price-value {
+    text-shadow: 0 2px 30px rgba(212, 168, 67, 0.4);
+  }
+}

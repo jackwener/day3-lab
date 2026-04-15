@@ -1,0 +1,26 @@
+[
+  {
+    "session_id": "875b800e-8359-407b-b1cd-739de77b25f7",
+    "title": "1+1等于几？",
+    "created_at": "2026-04-15T03:03:34.401Z",
+    "updated_at": "2026-04-15T05:10:40.960Z",
+    "query_count": 9,
+    "last_query": "你是谁"
+  },
+  {
+    "session_id": "37243788-8453-4241-8feb-a9ffbd367551",
+    "title": "华芯科技的最新评级和目标价是多少？",
+    "created_at": "2026-04-15T03:19:41.544Z",
+    "updated_at": "2026-04-15T03:26:32.750Z",
+    "query_count": 5,
+    "last_query": "公司面临哪些主要风险？"
+  },
+  {
+    "session_id": "a0bd4a3f-9346-48d6-ad59-8994733fc9d9",
+    "title": "你好",
+    "created_at": "2026-04-15T05:10:50.263Z",
+    "updated_at": "2026-04-15T06:13:38.938Z",
+    "query_count": 2,
+    "last_query": "你好"
+  }
+]

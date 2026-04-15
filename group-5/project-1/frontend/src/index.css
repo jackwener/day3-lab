@@ -1,0 +1,176 @@
+/* M5-RA 研报智能分析助手 — 全局深色科技风基础样式 */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* 主色调 */
+  --bg-primary: #0a0e1a;
+  --bg-secondary: #111827;
+  --bg-tertiary: #1a2035;
+  --bg-elevated: #1e2a42;
+  --bg-glass: rgba(17, 24, 39, 0.75);
+  --bg-glass-hover: rgba(30, 42, 66, 0.85);
+  
+  /* 强调色 */
+  --accent-cyan: #00e5ff;
+  --accent-blue: #2979ff;
+  --accent-purple: #7c4dff;
+  --accent-glow: rgba(0, 229, 255, 0.15);
+  --accent-glow-strong: rgba(0, 229, 255, 0.35);
+  
+  /* 文字色 */
+  --text-primary: #e8eaf6;
+  --text-secondary: #90a4ae;
+  --text-muted: #546e7a;
+  --text-bright: #ffffff;
+  
+  /* 边框 */
+  --border-dim: rgba(255, 255, 255, 0.06);
+  --border-subtle: rgba(0, 229, 255, 0.12);
+  --border-accent: rgba(0, 229, 255, 0.3);
+  
+  /* 渐变 */
+  --gradient-accent: linear-gradient(135deg, #00e5ff 0%, #2979ff 50%, #7c4dff 100%);
+  --gradient-surface: linear-gradient(180deg, #111827 0%, #0a0e1a 100%);
+  --gradient-header: linear-gradient(135deg, #0d1b2a 0%, #1b2838 50%, #0d1b2a 100%);
+  
+  /* 阴影 */
+  --shadow-glow: 0 0 20px rgba(0, 229, 255, 0.1), 0 0 60px rgba(0, 229, 255, 0.05);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  margin: 0; padding: 0; height: 100%;
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+#root { width: 100%; height: 100%; }
+
+/* 自定义滚动条 */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 229, 255, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(0, 229, 255, 0.4); }
+
+/* 全局选择高亮 */
+::selection {
+  background: rgba(0, 229, 255, 0.3);
+  color: #fff;
+}
+
+/* Ant Design 深色覆盖 */
+.ant-btn-primary {
+  background: var(--gradient-accent) !important;
+  border: none !important;
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.2) !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+}
+.ant-btn-primary:hover {
+  box-shadow: 0 0 24px rgba(0, 229, 255, 0.4) !important;
+  transform: translateY(-1px);
+  filter: brightness(1.1);
+}
+
+.ant-btn-default {
+  background: var(--bg-elevated) !important;
+  border-color: var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+}
+.ant-btn-default:hover {
+  border-color: var(--accent-cyan) !important;
+  color: var(--accent-cyan) !important;
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.15) !important;
+}
+
+.ant-select-selector {
+  background: var(--bg-elevated) !important;
+  border-color: var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+}
+
+.ant-tag {
+  border-color: var(--border-subtle) !important;
+}
+
+.ant-modal-content {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-subtle) !important;
+  box-shadow: var(--shadow-elevated), var(--shadow-glow) !important;
+}
+.ant-modal-header { background: transparent !important; border-bottom: 1px solid var(--border-dim) !important; }
+.ant-modal-title { color: var(--text-bright) !important; }
+.ant-modal-close { color: var(--text-secondary) !important; }
+
+.ant-empty-description { color: var(--text-secondary) !important; }
+
+.ant-input, .ant-input-textarea textarea {
+  background: var(--bg-tertiary) !important;
+  border-color: var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+  caret-color: var(--accent-cyan);
+}
+.ant-input:focus, .ant-input-textarea textarea:focus,
+.ant-input-focused, .ant-input-textarea-focused textarea {
+  border-color: var(--accent-cyan) !important;
+  box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.1) !important;
+}
+.ant-input::placeholder, .ant-input-textarea textarea::placeholder {
+  color: var(--text-muted) !important;
+}
+.ant-input-data-count { color: var(--text-muted) !important; }
+
+.ant-progress-bg { background: var(--gradient-accent) !important; }
+.ant-progress-inner { background: var(--bg-elevated) !important; }
+
+.ant-card {
+  background: var(--bg-elevated) !important;
+  border-color: var(--border-subtle) !important;
+}
+
+.ant-spin-dot-item { background: var(--accent-cyan) !important; }
+
+.ant-select-dropdown {
+  background: var(--bg-secondary) !important;
+  border: 1px solid var(--border-subtle) !important;
+}
+.ant-select-item { color: var(--text-primary) !important; }
+.ant-select-item-option-active { background: var(--bg-elevated) !important; }
+.ant-select-item-option-selected { background: rgba(0, 229, 255, 0.1) !important; }
+
+/* 动画定义 */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(0, 229, 255, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(0, 229, 255, 0.4); }
+}
+
+@keyframes border-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}

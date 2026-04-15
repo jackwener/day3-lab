@@ -1,0 +1,42 @@
+[
+  {
+    "key": "frontend",
+    "label": "前端开发"
+  },
+  {
+    "key": "backend",
+    "label": "后端开发"
+  },
+  {
+    "key": "devops",
+    "label": "DevOps"
+  },
+  {
+    "key": "ai-ml",
+    "label": "AI / ML"
+  },
+  {
+    "key": "database",
+    "label": "数据库"
+  },
+  {
+    "key": "testing",
+    "label": "测试"
+  },
+  {
+    "key": "security",
+    "label": "安全"
+  },
+  {
+    "key": "mobile",
+    "label": "移动开发"
+  },
+  {
+    "key": "tools",
+    "label": "效率工具"
+  },
+  {
+    "key": "cloud",
+    "label": "云原生"
+  }
+]

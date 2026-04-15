@@ -1,0 +1,13 @@
+{
+  "current_price": {
+    "data": {
+      "price": 1057.9,
+      "currency": "CNY",
+      "updated_at": "2026年04月15日 13:56:55",
+      "source": "SGE"
+    },
+    "cached_at": "2026-04-15T13:58:53.899467",
+    "ttl": 300
+  },
+  "timestamp": "2026-04-15T12:20:41.977103"
+}

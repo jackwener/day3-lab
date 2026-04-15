@@ -1,0 +1,24 @@
+/* Mobile responsive overrides */
+
+@media (max-width: 768px) {
+  .ant-layout-content {
+    padding: 12px !important;
+    margin: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-window-mobile {
+    width: 100vw !important;
+    height: 100vh !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    border-radius: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .ant-table-wrapper {
+    overflow-x: auto;
+  }
+}

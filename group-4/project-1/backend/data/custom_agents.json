@@ -1,0 +1,11 @@
+[
+  {
+    "agent_id": "0fc1832c0586480a8cbfa2ae5d9f1140",
+    "name": "英文翻译",
+    "description": "翻译",
+    "icon": "🤖",
+    "system_prompt": "把中文翻译为英文",
+    "created_at": "2026-04-15T03:03:34Z",
+    "updated_at": "2026-04-15T03:03:34Z"
+  }
+]

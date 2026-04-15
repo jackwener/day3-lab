@@ -1,0 +1,234 @@
+[
+  {
+    "id": "rec_1776224154681_6628",
+    "session_id": "173b8c0ad4224f3cb4dc64f5dc473997",
+    "record_type": "market-data",
+    "query": "上证指数行情",
+    "answer": "行情查询完成",
+    "llm_used": false,
+    "model": null,
+    "response_time_ms": 0,
+    "answer_source": "market",
+    "cited_passages": null,
+    "created_at": "2026-04-15T03:35:54Z",
+    "stocks": [
+      {
+        "code": "sh000001",
+        "name": "上证指数",
+        "current": "4041.4529",
+        "change": 14.83,
+        "change_pct": 0.37,
+        "open": "4039.4711",
+        "high": "4050.6208",
+        "low": "4031.2733",
+        "prev_close": "4026.6256",
+        "volume": "365046039",
+        "amount": "672269693494",
+        "date": "2026-04-15",
+        "time": "11:35:48"
+      }
+    ],
+    "demo": false
+  },
+  {
+    "id": "rec_1776224169373_6982",
+    "session_id": "173b8c0ad4224f3cb4dc64f5dc473997",
+    "record_type": "market-data",
+    "query": "寒武纪行情",
+    "answer": "行情查询完成",
+    "llm_used": false,
+    "model": null,
+    "response_time_ms": 0,
+    "answer_source": "market",
+    "cited_passages": null,
+    "created_at": "2026-04-15T03:36:09Z",
+    "stocks": [
+      {
+        "code": "sh000001",
+        "name": "上证指数",
+        "current": "4041.4529",
+        "change": 14.83,
+        "change_pct": 0.37,
+        "open": "4039.4711",
+        "high": "4050.6208",
+        "low": "4031.2733",
+        "prev_close": "4026.6256",
+        "volume": "365046039",
+        "amount": "672269693494",
+        "date": "2026-04-15",
+        "time": "11:35:57"
+      }
+    ],
+    "demo": false
+  },
+  {
+    "id": "rec_1776224184790_4385",
+    "session_id": "53692faef2db4c129706a1cebcc309e6",
+    "record_type": "qa",
+    "query": "翻译南方基金",
+    "answer": "Southern Fund",
+    "llm_used": true,
+    "model": "qwen-turbo",
+    "response_time_ms": 651,
+    "answer_source": "bailian",
+    "cited_passages": null,
+    "created_at": "2026-04-15T03:36:24Z"
+  },
+  {
+    "id": "rec_1776224235227_8790",
+    "session_id": "53692faef2db4c129706a1cebcc309e6",
+    "record_type": "parse-result",
+    "query": "解析研报: 安琪酵母(600298)2025年年报点评：成本红利延续 中期看好酵母蛋白业务发力.pdf",
+    "answer": "研报解析完成",
+    "llm_used": true,
+    "model": null,
+    "response_time_ms": 0,
+    "answer_source": "parser",
+    "cited_passages": null,
+    "created_at": "2026-04-15T03:37:15Z",
+    "filename": "安琪酵母(600298)2025年年报点评：成本红利延续 中期看好酵母蛋白业务发力.pdf",
+    "parsed": {
+      "title": "研报解析演示（安琪酵母(600298)2025年年报点评：成本红利延续 中期看好酵母蛋白业务发力.pdf）",
+      "institution": "某证券研究院",
+      "publish_date": "2024-03-15",
+      "target_company": "示例科技股份有限公司",
+      "stock_code": "000001.SZ",
+      "rating": "买入",
+      "target_price": "25.50",
+      "current_price": "20.00",
+      "summary": "（离线演示）公司基本面稳健，营收保持两位数增长，AI 业务快速放量，维持买入评级，目标价25.50元，对应上行空间约27.5%。核心逻辑：①AI产品矩阵持续丰富；②海外市场布局加速；③盈利能力持续改善。",
+      "financial_forecasts": {
+        "revenue_growth_2024": "18%",
+        "revenue_growth_2025": "15%",
+        "net_profit_2024": "52亿元",
+        "net_profit_2025": "61亿元",
+        "pe_2024": "20x",
+        "pe_2025": "17x",
+        "pb": "2.8x"
+      },
+      "risks": [
+        "宏观经济下行风险",
+        "市场竞争持续加剧",
+        "政策监管趋严",
+        "汇率波动风险"
+      ]
+    },
+    "text_preview": "%% research.95579.com %%\n本报告仅供南方基金内部使用，已记录日志请勿传阅\n丨证券研究报告丨\n[公Ta司bl研e_究sc丨od点eM评s报g1告] 丨安琪酵母（\n600298.SH\n）\n[安Ta琪b酵le_母Ti2tl0e2]\n5\n年年报点评：成本红利延续，中\n期看好酵母蛋白业务发力\n报告要点\n[安Ta琪bl酵e_母Su公m布ma2r0y2]5年年报。公司2025年实现营业总收入167.29亿元（同比+10.08%）；归母\n净利润15.44亿元（同比+16.6%），扣非净利润13.59亿元（同比+16.19%）。公司2025Q4实\n现营业总收入49.42亿元（同比+15.35%）；归母净利润4.28亿元（同比+15.23%），扣非净利\n润3.94亿元（同比+19.16%）。\n分析师及联系人\n[Table_Author]\n董思远 陈硕旸\nSAC：S0490517070016 SAC：S0490524020002\nSFC：BQK487\n请阅读最后评级说明和重要声明\n%% 1 %%\n%% research.95579.com %%\n本报告仅供南方基金内部使用，已记录日志"
+  },
+  {
+    "id": "rec_1776224335784_1756",
+    "session_id": "9863285a14cb4131ae133b6983a46d85",
+    "record_type": "market-data",
+    "query": "查询贵州茅台今日实时行情",
+    "answer": "行情查询完成",
+    "llm_used": false,
+    "model": null,
+    "response_time_ms": 0,
+    "answer_source": "market",
+    "cited_passages": null,
+    "created_at": "2026-04-15T03:38:55Z",
+    "stocks": [
+      {
+        "code": "sh600519",
+        "name": "贵州茅台",
+        "current": "1780.50",
+        "change": 12.3,
+        "change_pct": 0.7,
+        "open": "1770.00",
+        "high": "1795.00",
+        "low": "1768.00",
+        "prev_close": "1768.20",
+        "volume": "3521600",
+        "amount": "6261000000",
+        "date": "2024-03-15",
+        "time": "15:00:00"
+      }
+    ],
+    "demo": true
+  },
+  {
+    "id": "rec_1776224696853_7388",
+    "session_id": "7819e655b4e44888ba8335ce2f7642e6",
+    "record_type": "market-data",
+    "query": "查询贵州茅台今日实时行情",
+    "answer": "行情查询完成",
+    "llm_used": false,
+    "model": null,
+    "response_time_ms": 0,
+    "answer_source": "market",
+    "cited_passages": null,
+    "created_at": "2026-04-15T03:44:56Z",
+    "stocks": [
+      {
+        "code": "sh600519",
+        "name": "贵州茅台",
+        "current": "1459.810",
+        "change": 12.91,
+        "change_pct": 0.89,
+        "open": "1444.980",
+        "high": "1467.880",
+        "low": "1442.000",
+        "prev_close": "1446.900",
+        "volume": "1780247",
+        "amount": "2593824831.000",
+        "date": "2026-04-15",
+        "time": "11:30:00"
+      }
+    ],
+    "demo": false
+  },
+  {
+    "id": "rec_1776224857443_9466",
+    "session_id": "d4bd3e74facf49818bb4836bb74bb83d",
+    "record_type": "parse-result",
+    "query": "解析研报: 安琪酵母(600298)2025年年报点评：成本红利延续 中期看好酵母蛋白业务发力.pdf",
+    "answer": "研报解析完成",
+    "llm_used": true,
+    "model": null,
+    "response_time_ms": 0,
+    "answer_source": "parser",
+    "cited_passages": null,
+    "created_at": "2026-04-15T03:47:37Z",
+    "filename": "安琪酵母(600298)2025年年报点评：成本红利延续 中期看好酵母蛋白业务发力.pdf",
+    "parsed": {
+      "title": "研报解析演示（安琪酵母(600298)2025年年报点评：成本红利延续 中期看好酵母蛋白业务发力.pdf）",
+      "institution": "某证券研究院",
+      "publish_date": "2024-03-15",
+      "target_company": "示例科技股份有限公司",
+      "stock_code": "000001.SZ",
+      "rating": "买入",
+      "target_price": "25.50",
+      "current_price": "20.00",
+      "summary": "（离线演示）公司基本面稳健，营收保持两位数增长，AI 业务快速放量，维持买入评级，目标价25.50元，对应上行空间约27.5%。核心逻辑：①AI产品矩阵持续丰富；②海外市场布局加速；③盈利能力持续改善。",
+      "financial_forecasts": {
+        "revenue_growth_2024": "18%",
+        "revenue_growth_2025": "15%",
+        "net_profit_2024": "52亿元",
+        "net_profit_2025": "61亿元",
+        "pe_2024": "20x",
+        "pe_2025": "17x",
+        "pb": "2.8x"
+      },
+      "risks": [
+        "宏观经济下行风险",
+        "市场竞争持续加剧",
+        "政策监管趋严",
+        "汇率波动风险"
+      ]
+    },
+    "text_preview": "%% research.95579.com %%\n本报告仅供南方基金内部使用，已记录日志请勿传阅\n丨证券研究报告丨\n[公Ta司bl研e_究sc丨od点eM评s报g1告] 丨安琪酵母（\n600298.SH\n）\n[安Ta琪b酵le_母Ti2tl0e2]\n5\n年年报点评：成本红利延续，中\n期看好酵母蛋白业务发力\n报告要点\n[安Ta琪bl酵e_母Su公m布ma2r0y2]5年年报。公司2025年实现营业总收入167.29亿元（同比+10.08%）；归母\n净利润15.44亿元（同比+16.6%），扣非净利润13.59亿元（同比+16.19%）。公司2025Q4实\n现营业总收入49.42亿元（同比+15.35%）；归母净利润4.28亿元（同比+15.23%），扣非净利\n润3.94亿元（同比+19.16%）。\n分析师及联系人\n[Table_Author]\n董思远 陈硕旸\nSAC：S0490517070016 SAC：S0490524020002\nSFC：BQK487\n请阅读最后评级说明和重要声明\n%% 1 %%\n%% research.95579.com %%\n本报告仅供南方基金内部使用，已记录日志"
+  },
+  {
+    "id": "rec_1776224907077_5168",
+    "session_id": "4b6daf274d9a4f9e82d3837ac6cfda60",
+    "record_type": "qa",
+    "query": "翻译南方基金",
+    "answer": "Southern Fund",
+    "llm_used": true,
+    "model": "qwen-turbo",
+    "response_time_ms": 612,
+    "answer_source": "bailian",
+    "cited_passages": null,
+    "created_at": "2026-04-15T03:48:27Z"
+  }
+]

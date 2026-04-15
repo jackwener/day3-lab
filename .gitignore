@@ -57,6 +57,7 @@ target/
 .env
 .env.*
 !.env.example
+!group-7/day3/project-2/backend/.env
 *.pem
 *.key
 

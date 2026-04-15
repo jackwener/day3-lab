@@ -1,0 +1,30 @@
+[
+  {
+    "session_id": "0e203f3d-6e4c-43e5-bfce-dfadbe4bb373",
+    "title": "请给出华泰证券今天的市场研报",
+    "created_at": "2026-04-14T08:32:52.192Z",
+    "updated_at": "2026-04-14T08:33:20.508Z",
+    "query_count": 1
+  },
+  {
+    "session_id": "a414b855-75f9-4108-b534-190e76b62c3d",
+    "title": "贵州茅台最新评级",
+    "created_at": "2026-04-14T08:35:50.865Z",
+    "updated_at": "2026-04-14T08:39:10.365Z",
+    "query_count": 2
+  },
+  {
+    "session_id": "8d5193ab-9837-4556-8f00-e2b736e628a4",
+    "title": "请给出中信证券关于贵州茅台的最新研报",
+    "created_at": "2026-04-14T08:47:20.019Z",
+    "updated_at": "2026-04-14T08:47:56.705Z",
+    "query_count": 1
+  },
+  {
+    "session_id": "11740691-8acd-4df9-a936-227b3e4aef71",
+    "title": "给出中信证券和华泰证券关于贵州茅台的研报...",
+    "created_at": "2026-04-15T02:11:07.947Z",
+    "updated_at": "2026-04-15T02:12:22.751Z",
+    "query_count": 1
+  }
+]

@@ -1,0 +1,212 @@
+[
+  {
+    "report_id": "bda34420-6cae-4e8d-8b4e-53bedfb7dd38",
+    "title": "20260414-华源证券-中国平安-601318.SH-银保实现跨越式增长，权益投资敞口显著提升",
+    "filename": "20260414-华源证券-中国平安-601318.SH-银保实现跨越式增长，权益投资敞口显著提升.pdf",
+    "file_path": "./data/uploads/bda34420-6cae-4e8d-8b4e-53bedfb7dd38.pdf",
+    "file_type": "pdf",
+    "status": "analyzed",
+    "company": "贵州茅台",
+    "industry": "金融",
+    "institution": "招商证券",
+    "uploaded_at": "2026-04-15T05:09:20Z",
+    "analyzed_at": "2026-04-15T05:09:21Z",
+    "analysis_result": {
+      "extracted_entities": {
+        "company": "贵州茅台",
+        "industry": "金融",
+        "institution": "招商证券"
+      },
+      "summary": "该研报为贵州茅台的金融行业分析报告，由招商证券发布。"
+    }
+  },
+  {
+    "report_id": "38982ab4-488f-49dc-b465-e852fb5fb7b2",
+    "title": "20260408-联合资信评估-2026年光伏行业分析",
+    "filename": "20260408-联合资信评估-2026年光伏行业分析.pdf",
+    "file_path": "./data/uploads/38982ab4-488f-49dc-b465-e852fb5fb7b2.pdf",
+    "file_type": "pdf",
+    "status": "pending",
+    "company": null,
+    "industry": null,
+    "institution": null,
+    "uploaded_at": "2026-04-15T05:09:30Z",
+    "analyzed_at": null,
+    "analysis_result": null
+  },
+  {
+    "report_id": "d6276a93-6601-493f-80c2-160fe574333f",
+    "title": "20260415-东吴证券-长安汽车-000625.SZ-2025年年报点评：业绩符合预期，三大计划稳步推进",
+    "filename": "20260415-东吴证券-长安汽车-000625.SZ-2025年年报点评：业绩符合预期，三大计划稳步推进.pdf",
+    "file_path": "./data/uploads/d6276a93-6601-493f-80c2-160fe574333f.pdf",
+    "file_type": "pdf",
+    "status": "pending",
+    "company": null,
+    "industry": null,
+    "institution": null,
+    "uploaded_at": "2026-04-15T05:09:35Z",
+    "analyzed_at": null,
+    "analysis_result": null
+  },
+  {
+    "report_id": "b1b246e4-b346-4cca-8f79-d735d2e8cc06",
+    "title": "20260415-东吴证券-长安汽车-000625.SZ-2025年年报点评：业绩符合预期，三大计划稳步推进(1)",
+    "filename": "20260415-东吴证券-长安汽车-000625.SZ-2025年年报点评：业绩符合预期，三大计划稳步推进(1).pdf",
+    "file_path": "./data/uploads/b1b246e4-b346-4cca-8f79-d735d2e8cc06.pdf",
+    "file_type": "pdf",
+    "status": "pending",
+    "company": null,
+    "industry": null,
+    "institution": null,
+    "uploaded_at": "2026-04-15T05:09:38Z",
+    "analyzed_at": null,
+    "analysis_result": null
+  },
+  {
+    "report_id": "5134c84c-a008-4183-9b26-0abc934b04b5",
+    "title": "20260414-华源证券-中国平安-601318.SH-银保实现跨越式增长，权益投资敞口显著提升",
+    "filename": "20260414-华源证券-中国平安-601318.SH-银保实现跨越式增长，权益投资敞口显著提升.pdf",
+    "file_path": "./data/uploads/5134c84c-a008-4183-9b26-0abc934b04b5.pdf",
+    "file_type": "pdf",
+    "status": "analyzed",
+    "company": "腾讯控股",
+    "industry": "半导体",
+    "institution": "华泰证券",
+    "uploaded_at": "2026-04-15T05:09:42Z",
+    "analyzed_at": "2026-04-15T05:10:19Z",
+    "analysis_result": {
+      "extracted_entities": {
+        "company": "腾讯控股",
+        "industry": "半导体",
+        "institution": "华泰证券"
+      },
+      "summary": "该研报为腾讯控股的半导体行业分析报告，由华泰证券发布。"
+    }
+  },
+  {
+    "report_id": "13495ed9-cb98-4cbe-9aa1-0f3ae81e3a42",
+    "title": "20260413-东吴证券-电力设备行业跟踪周报：油价高企锂电和户储景气加速、北美缺电订单向好",
+    "filename": "20260413-东吴证券-电力设备行业跟踪周报：油价高企锂电和户储景气加速、北美缺电订单向好.pdf",
+    "file_path": "./data/uploads/13495ed9-cb98-4cbe-9aa1-0f3ae81e3a42.pdf",
+    "file_type": "pdf",
+    "status": "analyzed",
+    "company": "招商银行",
+    "industry": "消费品",
+    "institution": "国泰君安",
+    "uploaded_at": "2026-04-15T05:09:48Z",
+    "analyzed_at": "2026-04-15T05:10:14Z",
+    "analysis_result": {
+      "extracted_entities": {
+        "company": "招商银行",
+        "industry": "消费品",
+        "institution": "国泰君安"
+      },
+      "summary": "该研报为招商银行的消费品行业分析报告，由国泰君安发布。"
+    }
+  },
+  {
+    "report_id": "f037ddac-2a6a-46ca-9e2b-2b504b5da2e3",
+    "title": "20260413-东吴证券-电力设备行业跟踪周报：油价高企锂电和户储景气加速、北美缺电订单向好",
+    "filename": "20260413-东吴证券-电力设备行业跟踪周报：油价高企锂电和户储景气加速、北美缺电订单向好.pdf",
+    "file_path": "./data/uploads/f037ddac-2a6a-46ca-9e2b-2b504b5da2e3.pdf",
+    "file_type": "pdf",
+    "status": "analyzed",
+    "company": "阿里巴巴",
+    "industry": "金融",
+    "institution": "中信证券",
+    "uploaded_at": "2026-04-15T05:09:51Z",
+    "analyzed_at": "2026-04-15T05:10:10Z",
+    "analysis_result": {
+      "extracted_entities": {
+        "company": "阿里巴巴",
+        "industry": "金融",
+        "institution": "中信证券"
+      },
+      "summary": "该研报为阿里巴巴的金融行业分析报告，由中信证券发布。"
+    }
+  },
+  {
+    "report_id": "90659a38-113f-4823-8271-ebe419b1f3b9",
+    "title": "20260408-联合资信评估-2026年光伏行业分析",
+    "filename": "20260408-联合资信评估-2026年光伏行业分析.pdf",
+    "file_path": "./data/uploads/90659a38-113f-4823-8271-ebe419b1f3b9.pdf",
+    "file_type": "pdf",
+    "status": "analyzed",
+    "company": "招商银行",
+    "industry": "半导体",
+    "institution": "中金公司",
+    "uploaded_at": "2026-04-15T05:09:54Z",
+    "analyzed_at": "2026-04-15T05:10:08Z",
+    "analysis_result": {
+      "extracted_entities": {
+        "company": "招商银行",
+        "industry": "半导体",
+        "institution": "中金公司"
+      },
+      "summary": "该研报为招商银行的半导体行业分析报告，由中金公司发布。"
+    }
+  },
+  {
+    "report_id": "5a76cbdd-99f9-4b8f-8a60-fe4a52af61f2",
+    "title": "20260408-联合资信评估-2026年光伏行业分析",
+    "filename": "20260408-联合资信评估-2026年光伏行业分析.pdf",
+    "file_path": "./data/uploads/5a76cbdd-99f9-4b8f-8a60-fe4a52af61f2.pdf",
+    "file_type": "pdf",
+    "status": "analyzed",
+    "company": "招商银行",
+    "industry": "医疗健康",
+    "institution": "招商证券",
+    "uploaded_at": "2026-04-15T05:09:58Z",
+    "analyzed_at": "2026-04-15T05:10:07Z",
+    "analysis_result": {
+      "extracted_entities": {
+        "company": "招商银行",
+        "industry": "医疗健康",
+        "institution": "招商证券"
+      },
+      "summary": "该研报为招商银行的医疗健康行业分析报告，由招商证券发布。"
+    }
+  },
+  {
+    "report_id": "1423a40e-34cc-4b6d-ad97-46c238da92c7",
+    "title": "20260408-东吴证券-电力设备行业深度报告：电新行业：储能、锂电、海风高景气，长期配置价值凸显",
+    "filename": "20260408-东吴证券-电力设备行业深度报告：电新行业：储能、锂电、海风高景气，长期配置价值凸显.pdf",
+    "file_path": "./data/uploads/1423a40e-34cc-4b6d-ad97-46c238da92c7.pdf",
+    "file_type": "pdf",
+    "status": "analyzed",
+    "company": "比亚迪",
+    "industry": "医疗健康",
+    "institution": "中信证券",
+    "uploaded_at": "2026-04-15T05:10:01Z",
+    "analyzed_at": "2026-04-15T05:10:05Z",
+    "analysis_result": {
+      "extracted_entities": {
+        "company": "比亚迪",
+        "industry": "医疗健康",
+        "institution": "中信证券"
+      },
+      "summary": "该研报为比亚迪的医疗健康行业分析报告，由中信证券发布。"
+    }
+  },
+  {
+    "report_id": "844e6446-54ad-4eaa-8615-e524d44c1046",
+    "title": "20260409-北京绿色金融与可持续发展研究院-中国新型储能领域创投分析报告",
+    "filename": "20260409-北京绿色金融与可持续发展研究院-中国新型储能领域创投分析报告.pdf",
+    "file_path": "./data/uploads/844e6446-54ad-4eaa-8615-e524d44c1046.pdf",
+    "file_type": "pdf",
+    "status": "analyzed",
+    "company": "中国平安",
+    "industry": "互联网",
+    "institution": "招商证券",
+    "uploaded_at": "2026-04-15T05:10:04Z",
+    "analyzed_at": "2026-04-15T05:10:05Z",
+    "analysis_result": {
+      "extracted_entities": {
+        "company": "中国平安",
+        "industry": "互联网",
+        "institution": "招商证券"
+      },
+      "summary": "该研报为中国平安的互联网行业分析报告，由招商证券发布。"
+    }
+  }
+]

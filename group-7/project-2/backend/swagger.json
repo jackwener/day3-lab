@@ -1,0 +1,723 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "M1-QA 投研问答助手 API",
+    "description": "对齐 spec/09 API 接口规格 — 支持 SSE 流式问答、会话管理、历史搜索、相似性检测、股票信息查询、指标对比、舆情监控、AI拉取配置",
+    "version": "1.0.0"
+  },
+  "servers": [{ "url": "http://localhost:5000", "description": "本地开发" }],
+  "tags": [
+    { "name": "能力探测", "description": "系统能力状态" },
+    { "name": "问答", "description": "问答提交（SSE 流式 + 非流式）" },
+    { "name": "会话管理", "description": "会话 CRUD" },
+    { "name": "问答记录", "description": "记录查询" },
+    { "name": "搜索", "description": "历史搜索与相似性检测" },
+    { "name": "股票", "description": "股票信息查询" },
+    { "name": "研报管理", "description": "研报上传、导入、列表、删除" },
+    { "name": "指标对比", "description": "多研报指标对比与Excel导出" },
+    { "name": "舆情监控", "description": "股票舆情信息查询" },
+    { "name": "AI拉取配置", "description": "研报AI拉取配置管理" }
+  ],
+  "paths": {
+    "/api/v1/agent/capabilities": {
+      "get": {
+        "tags": ["能力探测"],
+        "summary": "能力探测",
+        "description": "返回当前系统的 LLM 配置状态（CoPaw / 百炼）",
+        "operationId": "getCapabilities",
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "traceId": { "type": "string", "example": "tr_abc123" },
+                    "copaw_configured": { "type": "boolean", "example": false },
+                    "bailian_configured": { "type": "boolean", "example": true }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/agent/ask": {
+      "post": {
+        "tags": ["问答"],
+        "summary": "问答提交（SSE 流式 + 非流式兼容）",
+        "description": "当 Accept 头包含 text/event-stream 时返回 SSE 流式响应，否则返回 JSON。三级降级：CoPaw → 百炼 → Demo",
+        "operationId": "ask",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["query", "session_id"],
+                "properties": {
+                  "query": { "type": "string", "minLength": 1, "maxLength": 500, "example": "贵州茅台最新评级是什么" },
+                  "session_id": { "type": "string", "format": "uuid", "example": "a414b855-75f9-4108-b534-190e76b62c3d" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "非流式 JSON 响应 / SSE 流式响应",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "traceId": { "type": "string" },
+                    "answer": { "type": "string", "example": "贵州茅台最新评级为买入..." },
+                    "llm_used": { "type": "boolean", "example": true },
+                    "model": { "type": "string", "example": "qwen-plus", "nullable": true },
+                    "response_time_ms": { "type": "integer", "example": 1200 },
+                    "answer_source": { "type": "string", "enum": ["copaw", "bailian", "demo"] },
+                    "stocks": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": { "type": "string", "example": "贵州茅台" },
+                          "code": { "type": "string", "example": "600519" }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "text/event-stream": {
+                "schema": { "type": "string", "description": "SSE 事件流：chunk（部分文本）→ done（完整结果）" }
+              }
+            }
+          },
+          "400": { "$ref": "#/components/responses/Error400" }
+        }
+      }
+    },
+    "/api/v1/agent/sessions": {
+      "get": {
+        "tags": ["会话管理"],
+        "summary": "会话列表",
+        "description": "返回全部会话，按创建时间倒序",
+        "operationId": "getSessions",
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "traceId": { "type": "string" },
+                    "sessions": {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/Session" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["会话管理"],
+        "summary": "新建会话",
+        "operationId": "createSession",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": { "type": "string", "default": "新会话", "example": "研报分析会话" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "创建成功",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Session" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/agent/sessions/{id}": {
+      "delete": {
+        "tags": ["会话管理"],
+        "summary": "删除会话",
+        "description": "删除会话并级联删除关联问答记录",
+        "operationId": "deleteSession",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" }, "description": "会话 ID" }
+        ],
+        "responses": {
+          "200": {
+            "description": "删除成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "traceId": { "type": "string" },
+                    "message": { "type": "string", "example": "删除成功" },
+                    "deleted_records": { "type": "integer", "example": 3 }
+                  }
+                }
+              }
+            }
+          },
+          "400": { "$ref": "#/components/responses/Error400" }
+        }
+      }
+    },
+    "/api/v1/agent/sessions/{id}/records": {
+      "get": {
+        "tags": ["问答记录"],
+        "summary": "问答记录列表",
+        "description": "返回指定会话的问答记录，按时间正序",
+        "operationId": "getRecords",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" }, "description": "会话 ID" }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "traceId": { "type": "string" },
+                    "records": { "type": "array", "items": { "$ref": "#/components/schemas/QARecord" } }
+                  }
+                }
+              }
+            }
+          },
+          "400": { "$ref": "#/components/responses/Error400" }
+        }
+      }
+    },
+    "/api/v1/agent/records/search": {
+      "get": {
+        "tags": ["搜索"],
+        "summary": "历史记录搜索",
+        "description": "按关键词搜索历史问答记录（匹配 query 和 answer）",
+        "operationId": "searchRecords",
+        "parameters": [
+          { "name": "keyword", "in": "query", "required": true, "schema": { "type": "string" }, "description": "搜索关键词", "example": "茅台" },
+          { "name": "limit", "in": "query", "schema": { "type": "integer", "default": 20 }, "description": "返回条数" }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "traceId": { "type": "string" },
+                    "records": { "type": "array", "items": { "$ref": "#/components/schemas/QARecord" } }
+                  }
+                }
+              }
+            }
+          },
+          "400": { "$ref": "#/components/responses/Error400" }
+        }
+      }
+    },
+    "/api/v1/agent/records/similar": {
+      "post": {
+        "tags": ["搜索"],
+        "summary": "相似提问检测",
+        "description": "检测是否存在历史相似提问（对齐 US-003 AC-003-02）",
+        "operationId": "findSimilar",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["query"],
+                "properties": {
+                  "query": { "type": "string", "example": "贵州茅台的评级是什么" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "traceId": { "type": "string" },
+                    "has_similar": { "type": "boolean" },
+                    "similar_records": { "type": "array", "items": { "$ref": "#/components/schemas/QARecord" } }
+                  }
+                }
+              }
+            }
+          },
+          "400": { "$ref": "#/components/responses/Error400" }
+        }
+      }
+    },
+    "/api/v1/agent/stock/{code}": {
+      "get": {
+        "tags": ["股票"],
+        "summary": "股票信息查询",
+        "description": "查询股票详情（对齐 US-004）",
+        "operationId": "getStockInfo",
+        "parameters": [
+          { "name": "code", "in": "path", "required": true, "schema": { "type": "string" }, "description": "股票代码（6位）", "example": "600519" }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "traceId": { "type": "string" },
+                    "code": { "type": "string", "example": "600519" },
+                    "name": { "type": "string", "example": "贵州茅台" },
+                    "summary": { "type": "string" },
+                    "latest_reports": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "title": { "type": "string" },
+                          "broker": { "type": "string" },
+                          "date": { "type": "string" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": { "$ref": "#/components/responses/Error400" }
+        }
+      }
+    },
+    "/api/v1/agent/reports/upload": {
+      "post": {
+        "tags": ["研报管理"],
+        "summary": "研报文件上传",
+        "description": "上传PDF/HTML研报文件，自动解析内容并识别股票代码",
+        "operationId": "uploadReport",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": ["file"],
+                "properties": {
+                  "file": { "type": "string", "format": "binary", "description": "PDF或HTML文件（最大50MB）" },
+                  "title": { "type": "string", "description": "研报标题（可选，默认使用文件名）" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "上传成功", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Report" } } } },
+          "400": { "$ref": "#/components/responses/Error400" }
+        }
+      }
+    },
+    "/api/v1/agent/reports/url": {
+      "post": {
+        "tags": ["研报管理"],
+        "summary": "URL链接导入研报",
+        "description": "通过URL抓取网页内容并导入为研报",
+        "operationId": "importReportByUrl",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["url"],
+                "properties": {
+                  "url": { "type": "string", "example": "https://example.com/report.html" },
+                  "title": { "type": "string", "description": "研报标题（可选）" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "导入成功", "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Report" } } } },
+          "400": { "$ref": "#/components/responses/Error400" }
+        }
+      }
+    },
+    "/api/v1/agent/reports": {
+      "get": {
+        "tags": ["研报管理"],
+        "summary": "研报列表（分页）",
+        "operationId": "getReports",
+        "parameters": [
+          { "name": "page", "in": "query", "schema": { "type": "integer", "default": 1 }, "description": "页码" },
+          { "name": "pageSize", "in": "query", "schema": { "type": "integer", "default": 20 }, "description": "每页条数" }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "traceId": { "type": "string" },
+                    "reports": { "type": "array", "items": { "$ref": "#/components/schemas/Report" } },
+                    "total": { "type": "integer" },
+                    "page": { "type": "integer" },
+                    "pageSize": { "type": "integer" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/agent/reports/{id}": {
+      "delete": {
+        "tags": ["研报管理"],
+        "summary": "删除研报",
+        "operationId": "deleteReport",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": { "type": "string" }, "description": "研报ID" }
+        ],
+        "responses": {
+          "200": { "description": "删除成功", "content": { "application/json": { "schema": { "type": "object", "properties": { "traceId": { "type": "string" }, "success": { "type": "boolean" } } } } } },
+          "404": { "$ref": "#/components/responses/Error400" }
+        }
+      }
+    },
+    "/api/v1/agent/compare": {
+      "post": {
+        "tags": ["指标对比"],
+        "summary": "指标对比",
+        "description": "对比指定股票在多份研报中的关键指标（评级、目标价、EPS、PE等），如无匹配研报则返回Demo数据",
+        "operationId": "compareIndicators",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CompareRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "对比成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "traceId": { "type": "string" },
+                    "stock_code": { "type": "string", "example": "600519" },
+                    "stock_name": { "type": "string", "example": "贵州茅台" },
+                    "indicators": {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/CompareIndicator" }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": { "$ref": "#/components/responses/Error400" }
+        }
+      }
+    },
+    "/api/v1/agent/compare/export": {
+      "post": {
+        "tags": ["指标对比"],
+        "summary": "Excel导出",
+        "description": "将指标对比结果导出为Excel文件（.xlsx），包含表头和数据行",
+        "operationId": "exportCompare",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/CompareRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Excel文件流",
+            "content": {
+              "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": {
+                "schema": { "type": "string", "format": "binary" }
+              }
+            }
+          },
+          "400": { "$ref": "#/components/responses/Error400" }
+        }
+      }
+    },
+    "/api/v1/agent/stock/{code}/sentiment": {
+      "get": {
+        "tags": ["舆情监控"],
+        "summary": "舆情查询",
+        "description": "查询指定股票的舆情信息，带24小时缓存，过期后自动刷新",
+        "operationId": "getStockSentiment",
+        "parameters": [
+          { "name": "code", "in": "path", "required": true, "schema": { "type": "string" }, "description": "股票代码（6位）", "example": "600519" }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "traceId": { "type": "string" },
+                    "stock_code": { "type": "string", "example": "600519" },
+                    "stock_name": { "type": "string", "example": "贵州茅台" },
+                    "sentiments": {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/SentimentItem" }
+                    },
+                    "updated_at": { "type": "string", "format": "date-time" },
+                    "is_expired": { "type": "boolean", "example": false }
+                  }
+                }
+              }
+            }
+          },
+          "400": { "$ref": "#/components/responses/Error400" }
+        }
+      }
+    },
+    "/api/v1/agent/reports/fetch-config": {
+      "get": {
+        "tags": ["AI拉取配置"],
+        "summary": "AI拉取配置查询",
+        "description": "返回全部AI研报拉取配置列表",
+        "operationId": "getFetchConfigs",
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "traceId": { "type": "string" },
+                    "configs": {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/FetchConfig" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["AI拉取配置"],
+        "summary": "更新AI拉取配置",
+        "description": "新增或更新AI研报拉取配置。传入config_id时为更新，否则为新增",
+        "operationId": "upsertFetchConfig",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/FetchConfigRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "更新成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "traceId": { "type": "string" },
+                    "config": { "$ref": "#/components/schemas/FetchConfig" }
+                  }
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "新增成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "traceId": { "type": "string" },
+                    "config": { "$ref": "#/components/schemas/FetchConfig" }
+                  }
+                }
+              }
+            }
+          },
+          "400": { "$ref": "#/components/responses/Error400" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Session": {
+        "type": "object",
+        "properties": {
+          "session_id": { "type": "string", "format": "uuid" },
+          "title": { "type": "string", "example": "新会话" },
+          "created_at": { "type": "string", "format": "date-time" },
+          "updated_at": { "type": "string", "format": "date-time" },
+          "query_count": { "type": "integer", "example": 0 }
+        }
+      },
+      "QARecord": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "rec_a1b2c3d4e5f6" },
+          "session_id": { "type": "string", "format": "uuid" },
+          "query": { "type": "string" },
+          "answer": { "type": "string" },
+          "llm_used": { "type": "boolean" },
+          "model": { "type": "string", "nullable": true },
+          "response_time_ms": { "type": "integer" },
+          "answer_source": { "type": "string", "enum": ["copaw", "bailian", "demo"] },
+          "stocks": { "type": "array", "items": { "type": "object" } },
+          "timestamp": { "type": "string", "format": "date-time" }
+        }
+      },
+      "Report": {
+        "type": "object",
+        "properties": {
+          "report_id": { "type": "string", "example": "rpt_a1b2c3d4e5f6" },
+          "title": { "type": "string" },
+          "source": { "type": "string", "enum": ["upload", "url"] },
+          "format": { "type": "string", "enum": ["pdf", "html", "htm"] },
+          "file_path": { "type": "string", "nullable": true },
+          "content_text": { "type": "string" },
+          "stock_codes": { "type": "array", "items": { "type": "string" } },
+          "status": { "type": "string", "enum": ["parsing", "done", "failed"] },
+          "created_at": { "type": "string", "format": "date-time" }
+        }
+      },
+      "CompareRequest": {
+        "type": "object",
+        "required": ["stock_code", "report_ids"],
+        "properties": {
+          "stock_code": { "type": "string", "description": "股票代码（6位）", "example": "600519" },
+          "report_ids": { "type": "array", "items": { "type": "string" }, "description": "研报ID列表", "example": ["rpt_abc", "rpt_def"] }
+        }
+      },
+      "CompareIndicator": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "description": "指标名称", "example": "评级" },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "report_id": { "type": "string", "example": "demo_1" },
+                "report_title": { "type": "string", "example": "华泰证券研报" },
+                "value": { "type": "string", "example": "买入" },
+                "source_text": { "type": "string", "example": "维持买入评级，看好公司长期发展前景" }
+              }
+            }
+          }
+        }
+      },
+      "SentimentItem": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "example": "sent_1" },
+          "title": { "type": "string", "example": "贵州茅台一季度营收超预期" },
+          "source": { "type": "string", "example": "财联社" },
+          "summary": { "type": "string", "example": "贵州茅台2026年一季度实现营业收入420亿元..." },
+          "published_at": { "type": "string", "format": "date-time" },
+          "sentiment": { "type": "string", "enum": ["positive", "neutral", "negative"], "example": "positive" }
+        }
+      },
+      "FetchConfig": {
+        "type": "object",
+        "properties": {
+          "config_id": { "type": "string", "example": "cfg_m1abc_12345678" },
+          "name": { "type": "string", "example": "东方财富研报" },
+          "url_pattern": { "type": "string", "example": "https://example.com/reports/*" },
+          "schedule": { "type": "string", "example": "daily" },
+          "enabled": { "type": "boolean", "example": true },
+          "last_fetch_at": { "type": "string", "format": "date-time", "nullable": true },
+          "created_at": { "type": "string", "format": "date-time" },
+          "updated_at": { "type": "string", "format": "date-time" }
+        }
+      },
+      "FetchConfigRequest": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "config_id": { "type": "string", "description": "配置ID（传入时为更新，不传为新增）" },
+          "name": { "type": "string", "description": "配置名称", "example": "东方财富研报" },
+          "url_pattern": { "type": "string", "description": "URL匹配模式", "example": "https://example.com/reports/*" },
+          "schedule": { "type": "string", "description": "拉取频率", "example": "daily" },
+          "enabled": { "type": "boolean", "description": "是否启用", "example": true }
+        }
+      }
+    },
+    "responses": {
+      "Error400": {
+        "description": "请求错误",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "code": { "type": "string", "example": "EMPTY_QUERY" },
+                    "message": { "type": "string", "example": "请输入问题" },
+                    "details": { "type": "object" },
+                    "traceId": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

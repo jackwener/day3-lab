@@ -1,0 +1,57 @@
+[
+  {
+    "report_id": "rpt_c2453f79b39a",
+    "title": "测试研报",
+    "source": "url",
+    "format": "html",
+    "file_path": null,
+    "content_text": "Example DomainThis domain is for use in documentation examples without needing permission. Avoid use in operations.Learn more",
+    "stock_codes": [],
+    "status": "done",
+    "created_at": "2026-04-15T03:29:01.759Z"
+  },
+  {
+    "report_id": "rpt_59896bbd35a9",
+    "title": "Test Report",
+    "source": "url",
+    "format": "html",
+    "file_path": null,
+    "content_text": "Example DomainThis domain is for use in documentation examples without needing permission. Avoid use in operations.Learn more",
+    "stock_codes": [],
+    "status": "done",
+    "created_at": "2026-04-15T04:04:21.210Z"
+  },
+  {
+    "report_id": "rpt_c3e7d39b9aa1",
+    "title": "Test Report",
+    "source": "url",
+    "format": "html",
+    "file_path": null,
+    "content_text": "Example DomainThis domain is for use in documentation examples without needing permission. Avoid use in operations.Learn more",
+    "stock_codes": [],
+    "status": "done",
+    "created_at": "2026-04-15T04:04:44.256Z"
+  },
+  {
+    "report_id": "rpt_b674fe4747d3",
+    "title": "Test Report",
+    "source": "url",
+    "format": "html",
+    "file_path": null,
+    "content_text": "Example DomainThis domain is for use in documentation examples without needing permission. Avoid use in operations.Learn more",
+    "stock_codes": [],
+    "status": "done",
+    "created_at": "2026-04-15T04:09:09.714Z"
+  },
+  {
+    "report_id": "rpt_c5a91792147a",
+    "title": "H3_AP202604071821047878_1",
+    "source": "upload",
+    "format": "pdf",
+    "file_path": "/Users/zhangjh/train/group-workshop/group-7/zhangjunhu/code/backend/data/uploads/rpt_c5a91792147a.pdf",
+    "content_text": "[PDF解析不可用] 文件已保存，内容提取需要配置pdf-parse环境",
+    "stock_codes": [],
+    "status": "done",
+    "created_at": "2026-04-15T06:12:16.167Z"
+  }
+]

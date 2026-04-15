@@ -32,6 +32,9 @@ function M5RAApp() {
   const { token } = theme.useToken();
   const { message: messageApi, modal } = AntApp.useApp();
   const chatEndRef = useRef(null);
+  const sessionIdRef = useRef(null);       // 追踪当前会话 ID，防止异步竞态
+  const fileTimerRef = useRef(null);       // 文件解析轮询定时器
+  const analyzeTimerRef = useRef(null);    // 深度分析轮询定时器
 
   // ==================== React State（对齐 Spec 06 §8） ====================
   const [sessions, setSessions] = useState([]);
@@ -89,8 +92,10 @@ function M5RAApp() {
     if (!sessionId) return;
     try {
       const data = await getSessionRecords(sessionId);
+      if (sessionIdRef.current !== sessionId) return; // 防竞态
       setRecords(data.records || []);
     } catch (err) {
+      if (sessionIdRef.current !== sessionId) return;
       messageApi.error('加载历史记录失败');
     }
   }, [messageApi]);
@@ -106,28 +111,40 @@ function M5RAApp() {
   };
 
   useEffect(() => {
+    // 清理旧轮询定时器
+    if (fileTimerRef.current) { clearInterval(fileTimerRef.current); fileTimerRef.current = null; }
+    if (analyzeTimerRef.current) { clearInterval(analyzeTimerRef.current); analyzeTimerRef.current = null; }
+
     if (currentSession) {
-      loadRecords(currentSession.session_id);
-      // 切换会话时从后端恢复文件和分析状态
-      loadSessionFiles(currentSession.session_id);
-      loadSessionAnalyze(currentSession.session_id);
+      const sid = currentSession.session_id;
+      sessionIdRef.current = sid;
+      loadRecords(sid);
+      loadSessionFiles(sid);
+      loadSessionAnalyze(sid);
       setShowReport(false);
+    } else {
+      sessionIdRef.current = null;
     }
+
+    return () => {
+      if (fileTimerRef.current) { clearInterval(fileTimerRef.current); fileTimerRef.current = null; }
+      if (analyzeTimerRef.current) { clearInterval(analyzeTimerRef.current); analyzeTimerRef.current = null; }
+    };
   }, [currentSession, loadRecords]);
 
   const loadSessionFiles = async (sessionId) => {
     try {
       const data = await getSessionFiles(sessionId);
+      if (sessionIdRef.current !== sessionId) return; // 防竞态：会话已切走
       const files = data.files || [];
       if (files.length > 0) {
-        const latest = files[0]; // 最新上传的文件
+        const latest = files[0];
         setUploadedFile({
           file_id: latest.file_id,
           file_name: latest.file_name,
           parse_status: latest.parse_status,
           parse_progress: latest.parse_progress,
         });
-        // 如果文件还在解析中，继续轮询
         if (latest.parse_status === 'parsing' || latest.parse_status === 'pending') {
           pollFileStatus(latest.file_id);
         }
@@ -135,6 +152,7 @@ function M5RAApp() {
         setUploadedFile(null);
       }
     } catch (err) {
+      if (sessionIdRef.current !== sessionId) return;
       console.error('加载会话文件失败:', err);
       setUploadedFile(null);
     }
@@ -143,9 +161,9 @@ function M5RAApp() {
   const loadSessionAnalyze = async (sessionId) => {
     try {
       const data = await getSessionAnalyze(sessionId);
+      if (sessionIdRef.current !== sessionId) return; // 防竞态
       if (data.analyze) {
         setAnalyzeResult(data.analyze);
-        // 如果分析还在进行中，继续轮询
         if (data.analyze.status === 'queued' || data.analyze.status === 'analyzing') {
           setAnalyzing(true);
           pollAnalyzeStatus(data.analyze.analyze_id);
@@ -157,6 +175,7 @@ function M5RAApp() {
         setAnalyzing(false);
       }
     } catch (err) {
+      if (sessionIdRef.current !== sessionId) return;
       console.error('加载会话分析状态失败:', err);
       setAnalyzeResult(null);
       setAnalyzing(false);
@@ -227,17 +246,21 @@ function M5RAApp() {
   };
 
   const pollFileStatus = (fileId) => {
+    if (fileTimerRef.current) clearInterval(fileTimerRef.current);
     const timer = setInterval(async () => {
+      if (sessionIdRef.current === null) { clearInterval(timer); fileTimerRef.current = null; return; }
       try {
         const data = await getFileStatus(fileId);
-        setUploadedFile(prev => prev ? { ...prev, parse_status: data.parse_status, parse_progress: data.parse_progress } : prev);
+        setUploadedFile(prev => prev && prev.file_id === fileId ? { ...prev, parse_status: data.parse_status, parse_progress: data.parse_progress } : prev);
         if (data.parse_status === 'done' || data.parse_status === 'failed') {
           clearInterval(timer);
+          fileTimerRef.current = null;
           if (data.parse_status === 'done') messageApi.success('文件解析完成');
           else messageApi.error('文件解析失败');
         }
-      } catch { clearInterval(timer); }
+      } catch { clearInterval(timer); fileTimerRef.current = null; }
     }, 1000);
+    fileTimerRef.current = timer;
   };
 
   // ==================== 深度分析处理（FE-5）====================
@@ -261,12 +284,15 @@ function M5RAApp() {
   };
 
   const pollAnalyzeStatus = (analyzeId) => {
+    if (analyzeTimerRef.current) clearInterval(analyzeTimerRef.current);
     const timer = setInterval(async () => {
+      if (sessionIdRef.current === null) { clearInterval(timer); analyzeTimerRef.current = null; setAnalyzing(false); return; }
       try {
         const data = await getAnalyzeStatus(analyzeId);
         setAnalyzeResult(data);
         if (data.status === 'completed' || data.status === 'failed') {
           clearInterval(timer);
+          analyzeTimerRef.current = null;
           setAnalyzing(false);
           if (data.status === 'completed') {
             messageApi.success('深度分析完成');
@@ -275,8 +301,9 @@ function M5RAApp() {
             messageApi.error('分析失败: ' + (data.error || ''));
           }
         }
-      } catch { clearInterval(timer); setAnalyzing(false); }
+      } catch { clearInterval(timer); analyzeTimerRef.current = null; setAnalyzing(false); }
     }, 1500);
+    analyzeTimerRef.current = timer;
   };
 
   const handleSend = async () => {
@@ -338,7 +365,7 @@ function M5RAApp() {
       {/* Header — 对齐 Spec 06 §2 */}
       <Header className="ira-header">
         <Space align="center">
-          <RobotOutlined style={{ fontSize: 22, color: token.colorPrimary }} />
+          <RobotOutlined style={{ fontSize: 22, color: '#00e5ff' }} />
           <Title level={4} style={{ margin: 0, color: '#fff' }}>M5-RA · 研报智能分析助手</Title>
         </Space>
         <Space>
@@ -376,7 +403,7 @@ function M5RAApp() {
                   onClick={() => setCurrentSession(session)}
                 >
                   <div className="session-item-content">
-                    <MessageOutlined style={{ color: token.colorPrimary, marginRight: 8, flexShrink: 0 }} />
+                    <MessageOutlined style={{ color: '#00e5ff', marginRight: 8, flexShrink: 0 }} />
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <Text ellipsis strong style={{ display: 'block', fontSize: 13 }}>{session.title}</Text>
                       <Text type="secondary" style={{ fontSize: 12 }}>{session.query_count} 条对话</Text>
@@ -398,7 +425,7 @@ function M5RAApp() {
             /* 空状态 */
             <div className="center-placeholder">
               <Empty
-                image={<RobotOutlined style={{ fontSize: 64, color: token.colorPrimary }} />}
+                image={<RobotOutlined style={{ fontSize: 64, color: '#00e5ff', filter: 'drop-shadow(0 0 16px rgba(0,229,255,0.4))' }} />}
                 description={
                   <Space direction="vertical" size={4}>
                     <Text type="secondary" style={{ fontSize: 16 }}>欢迎使用研报智能分析助手</Text>
@@ -413,7 +440,7 @@ function M5RAApp() {
             /* FAQ 常见问题 — 对齐 Spec 06 §4.3 */
             <div className="faq-container">
               <div className="faq-header">
-                <QuestionCircleOutlined style={{ fontSize: 20, color: token.colorPrimary }} />
+                <QuestionCircleOutlined style={{ fontSize: 20, color: '#00e5ff' }} />
                 <Title level={5} style={{ margin: 0 }}>试试问我这些问题</Title>
               </div>
               <div className="faq-grid">
@@ -507,7 +534,7 @@ function M5RAApp() {
                   disabled={uploading}
                 >
                   <Tooltip title="上传研报文件（PDF/Word）">
-                    <Button icon={<UploadOutlined />} loading={uploading} />
+                    <Button className="action-btn upload-btn" icon={<UploadOutlined />} loading={uploading}>上传</Button>
                   </Tooltip>
                 </Upload>
                 <TextArea
@@ -516,18 +543,18 @@ function M5RAApp() {
                   autoSize={{ minRows: 2, maxRows: 5 }} maxLength={500} showCount
                   disabled={loading} style={{ resize: 'none' }}
                 />
-                <Button type="primary" icon={<SendOutlined />} size="large" loading={loading}
-                  disabled={!query.trim()} onClick={handleSend} className="send-btn">
+                <Button className="action-btn send-btn" type="primary" icon={<SendOutlined />} loading={loading}
+                  disabled={!query.trim()} onClick={handleSend}>
                   发送
                 </Button>
                 {/* 深度分析按钮（FE-5） */}
                 <Tooltip title={!uploadedFile?.file_id ? '请先上传文件' : uploadedFile.parse_status !== 'done' ? '等待文件解析完成' : '基于研报生成深度分析报告'}>
                   <Button
+                    className={`action-btn analyze-btn ${uploadedFile?.parse_status === 'done' ? 'analyze-ready' : ''}`}
                     icon={<ThunderboltOutlined />}
                     loading={analyzing}
                     disabled={!uploadedFile?.file_id || uploadedFile.parse_status !== 'done' || analyzing}
                     onClick={handleTriggerAnalyze}
-                    style={{ color: uploadedFile?.parse_status === 'done' ? '#faad14' : undefined }}
                   >
                     深度分析
                   </Button>
@@ -555,7 +582,20 @@ function M5RAApp() {
 
 export default function App() {
   return (
-    <ConfigProvider locale={zhCN} theme={{ token: { colorPrimary: '#1677ff', borderRadius: 8 } }}>
+    <ConfigProvider locale={zhCN} theme={{
+      algorithm: theme.darkAlgorithm,
+      token: {
+        colorPrimary: '#00e5ff',
+        colorBgContainer: '#111827',
+        colorBgElevated: '#1e2a42',
+        colorBgLayout: '#0a0e1a',
+        colorBorder: 'rgba(0, 229, 255, 0.12)',
+        colorText: '#e8eaf6',
+        colorTextSecondary: '#90a4ae',
+        borderRadius: 10,
+        fontFamily: "'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif",
+      },
+    }}>
       <AntApp>
         <M5RAApp />
       </AntApp>

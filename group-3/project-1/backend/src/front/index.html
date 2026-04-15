@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美伊局势 · 基金表现 · 时间轴看板</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+    <!-- 顶部标题区 -->
+    <header class="header">
+        <h1 class="title">美伊局势 · 基金表现 · 时间轴看板</h1>
+        <p class="subtitle">数据区间：2026年3月3日 — 4月13日 &nbsp;|&nbsp; 停战概率参考 Polymarket「US-Iran Ceasefire by April 30」</p>
+    </header>
+
+    <!-- 图例栏 -->
+    <div class="legend-bar">
+        <span class="legend-item"><span class="dot dot-red"></span>停战概率 ≤ 20%（高度紧张）</span>
+        <span class="legend-item"><span class="dot dot-orange"></span>停战概率 20-50%</span>
+        <span class="legend-item"><span class="dot dot-green"></span>停战概率 &gt; 50%（趋于缓和）</span>
+        <span class="legend-divider"></span>
+        <span class="legend-item"><span class="dot dot-up"></span>涨</span>
+        <span class="legend-item"><span class="dot dot-down"></span>跌</span>
+    </div>
+
+    <!-- 时间轴容器 -->
+    <div class="timeline-container" id="timelineContainer">
+        <!-- JS 动态渲染 -->
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

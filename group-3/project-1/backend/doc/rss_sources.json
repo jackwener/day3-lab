@@ -1,0 +1,212 @@
+[
+  {
+    "name": "IT之家",
+    "url": "https://www.ithome.com/rss/",
+    "category": "tech",
+    "language": "zh"
+  },
+  {
+    "name": "36氪",
+    "url": "https://36kr.com/feed",
+    "category": "tech",
+    "language": "zh"
+  },
+  {
+    "name": "新浪财经-科技",
+    "url": "https://rss.sina.com.cn/tech/rollnews.xml",
+    "category": "tech",
+    "language": "zh"
+  },
+  {
+    "name": "爱范儿",
+    "url": "https://www.ifanr.com/feed",
+    "category": "tech",
+    "language": "zh"
+  },
+  {
+    "name": "少数派",
+    "url": "https://sspai.com/feed",
+    "category": "tech",
+    "language": "zh"
+  },
+  {
+    "name": "掘金",
+    "url": "https://juejin.cn/rss",
+    "category": "tech",
+    "language": "zh"
+  },
+  {
+    "name": "观察者网",
+    "url": "https://www.guancha.cn/rss.xml",
+    "category": "news",
+    "language": "zh"
+  },
+  {
+    "name": "财新网",
+    "url": "http://china.caixin.com/rss.xml",
+    "category": "finance",
+    "language": "zh"
+  },
+  {
+    "name": "Nasdaq Latest Articles",
+    "url": "https://www.nasdaq.com/feed/rssoutbound?category=Latest%20Articles",
+    "category": "stocks",
+    "language": "en"
+  },
+  {
+    "name": "Nasdaq Commodities",
+    "url": "https://www.nasdaq.com/feed/rssoutbound?category=Commodities",
+    "category": "commodities",
+    "language": "en"
+  },
+  {
+    "name": "Nasdaq Cryptocurrencies",
+    "url": "https://www.nasdaq.com/feed/rssoutbound?category=Cryptocurrencies",
+    "category": "crypto",
+    "language": "en"
+  },
+  {
+    "name": "Nasdaq Dividends",
+    "url": "https://www.nasdaq.com/feed/rssoutbound?category=Dividends",
+    "category": "stocks",
+    "language": "en"
+  },
+  {
+    "name": "Nasdaq Earnings",
+    "url": "https://www.nasdaq.com/feed/rssoutbound?category=Earnings",
+    "category": "stocks",
+    "language": "en"
+  },
+  {
+    "name": "Nasdaq ETFs",
+    "url": "https://www.nasdaq.com/feed/rssoutbound?category=ETFs",
+    "category": "funds",
+    "language": "en"
+  },
+  {
+    "name": "Nasdaq IPOs",
+    "url": "https://www.nasdaq.com/feed/rssoutbound?category=IPOs",
+    "category": "stocks",
+    "language": "en"
+  },
+  {
+    "name": "Nasdaq Markets",
+    "url": "https://www.nasdaq.com/feed/rssoutbound?category=Markets",
+    "category": "global",
+    "language": "en"
+  },
+  {
+    "name": "Nasdaq Options",
+    "url": "https://www.nasdaq.com/feed/rssoutbound?category=Options",
+    "category": "stocks",
+    "language": "en"
+  },
+  {
+    "name": "Nasdaq Stocks",
+    "url": "https://www.nasdaq.com/feed/rssoutbound?category=Stocks",
+    "category": "stocks",
+    "language": "en"
+  },
+  {
+    "name": "TheStreet",
+    "url": "https://www.thestreet.com/.rss",
+    "category": "finance",
+    "language": "en"
+  },
+  {
+    "name": "Economic Times India",
+    "url": "https://economictimes.indiatimes.com/rssfeedsdefault.cms",
+    "category": "global",
+    "language": "en"
+  },
+  {
+    "name": "AFR Australia",
+    "url": "https://www.afr.com/rss/",
+    "category": "global",
+    "language": "en"
+  },
+  {
+    "name": "Financial News London",
+    "url": "https://www.fnlondon.com/rss",
+    "category": "global",
+    "language": "en"
+  },
+  {
+    "name": "SCMP Hong Kong",
+    "url": "http://www.scmp.com/rss/91/feed",
+    "category": "global",
+    "language": "en"
+  },
+  {
+    "name": "Naked Capitalism",
+    "url": "https://www.nakedcapitalism.com/feed",
+    "category": "finance",
+    "language": "en"
+  },
+  {
+    "name": "Bankrate",
+    "url": "https://www.bankrate.com/news/feed/",
+    "category": "finance",
+    "language": "en"
+  },
+  {
+    "name": "NerdWallet",
+    "url": "https://www.nerdwallet.com/h/news/finance/feed/",
+    "category": "finance",
+    "language": "en"
+  },
+  {
+    "name": "Kiplinger",
+    "url": "https://www.kiplinger.com/feed/all",
+    "category": "finance",
+    "language": "en"
+  },
+  {
+    "name": "Google News Finance",
+    "url": "https://news.google.com/rss/search?q=finance",
+    "category": "global",
+    "language": "en"
+  },
+  {
+    "name": "Reddit r/finance",
+    "url": "https://www.reddit.com/r/finance/.rss",
+    "category": "finance",
+    "language": "en"
+  },
+  {
+    "name": "CNBC U.S. News",
+    "url": "https://www.cnbc.com/id/15837362/device/rss/rss.html",
+    "category": "finance",
+    "language": "en"
+  },
+  {
+    "name": "CNBC Business",
+    "url": "https://www.cnbc.com/id/10001147/device/rss/rss.html",
+    "category": "finance",
+    "language": "en"
+  },
+  {
+    "name": "Bloomberg Markets",
+    "url": "https://feeds.bloomberg.com/markets/news.rss",
+    "category": "finance",
+    "language": "en"
+  },
+  {
+    "name": "CNBC AI",
+    "url": "https://www.cnbc.com/id/10000739/device/rss/rss.html",
+    "category": "tech",
+    "language": "en"
+  },
+  {
+    "name": "CNBC Economy",
+    "url": "https://www.cnbc.com/id/20910258/device/rss/rss.html",
+    "category": "finance",
+    "language": "en"
+  },
+  {
+    "name": "CNBC Finance",
+    "url": "https://www.cnbc.com/id/10000664/device/rss/rss.html",
+    "category": "finance",
+    "language": "en"
+  }
+]

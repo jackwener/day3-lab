@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(cd:*)",
+      "Bash(grep -r \"fund_info_em\\\\|batch\" /d/codes/fund_analysis/src/fetch_data/*.py)",
+      "Bash(python src/fetch_data/fetch_fund_info.py)",
+      "Bash(pip install:*)",
+      "Bash(pip show:*)",
+      "Bash(python:*)",
+      "Bash(echo \"EXIT CODE: $?\")",
+      "Bash(python -c ':*)",
+      "Read(//tmp/**)",
+      "Bash(tee /tmp/fund_update.log)",
+      "Bash(tasklist)",
+      "Bash(mysql:*)",
+      "Bash(curl -s http://127.0.0.1:5000/api/timeline)",
+      "Bash(curl -s http://127.0.0.1:5000/api/situation/score)",
+      "Bash(curl -s http://127.0.0.1:5000/api/funds/thematic)",
+      "Bash(curl -s \"http://127.0.0.1:5000/api/funds/small-scale?limit=3\")",
+      "Bash(curl -s http://127.0.0.1:5000/api/timeline/1)",
+      "Bash(curl -s \"http://127.0.0.1:5000/api/timeline/0\")",
+      "Bash(curl -s \"http://127.0.0.1:5000/api/funds/small-scale?limit=0\")",
+      "Bash(curl -s \"http://127.0.0.1:5000/api/funds/small-scale?limit=100\")",
+      "Bash(pkill -f \"run_api.py\")",
+      "Bash(curl -s http://127.0.0.1:5000/api/v1/funds/?page=1)",
+      "Bash(page_size=1 2>&1)",
+      "Bash(curl:*)",
+      "WebFetch(domain:polymarket.com)",
+      "WebSearch",
+      "WebFetch(domain:docs.polymarket.com)",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:robottraders.io)",
+      "Bash(python3 -m json.tool)",
+      "WebFetch(domain:gamma-api.polymarket.com)",
+      "Bash(python3:*)",
+      "Bash(pkill -f \"python run_api.py\")",
+      "Bash(taskkill //F //IM python.exe)",
+      "Bash(grep -o \"file:.*$\")",
+      "Bash(timeout 30)"
+    ]
+  }
+}

@@ -1,0 +1,1130 @@
+openapi: 3.0.3
+info:
+  title: 基金评级系统 API
+  description: |
+    基于机器学习的基金评级系统 API，提供基金查询、评级、净值趋势及局势时间轴等功能。
+
+    ## 评级说明
+    A(IR>=0.5) / B(0.2~0.5) / C(0~0.2) / D(-0.2~0) / E(<-0.2)
+
+    ## 统一响应格式
+    ### 成功响应
+    ```json
+    {
+      "traceId": "req-abc123",
+      "data": { ... },
+      "timestamp": "2026-04-15T10:00:00Z"
+    }
+    ```
+
+    ### 分页响应
+    ```json
+    {
+      "traceId": "req-abc123",
+      "data": [ ... ],
+      "pagination": {
+        "page": 1,
+        "page_size": 20,
+        "total": 100
+      },
+      "timestamp": "2026-04-15T10:00:00Z"
+    }
+    ```
+
+    ### 错误响应
+    ```json
+    {
+      "traceId": "req-abc123",
+      "error": {
+        "code": "PARAM_INVALID",
+        "message": "错误描述",
+        "details": { }
+      },
+      "timestamp": "2026-04-15T10:00:00Z"
+    }
+    ```
+  version: 1.0.0
+  contact:
+    name: hualeic
+    url: https://gitee.com/hualeic/fund_analysis
+
+servers:
+  - url: http://localhost:5000
+    description: 本地开发服务器
+
+paths:
+  # ========== 基金基本信息 ==========
+  /api/v1/funds/:
+    get:
+      tags:
+        - 基金信息
+      summary: 基金列表（分页）
+      description: 获取基金基本信息列表，支持按基金类型筛选
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/PageSizeParam'
+        - name: fund_type
+          in: query
+          description: 基金类型筛选
+          required: false
+          schema:
+            type: string
+          example: "混合型"
+      responses:
+        '200':
+          description: 基金列表
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/StandardResponse'
+                  - properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/FundBasicInfo'
+                      pagination:
+                        $ref: '#/components/schemas/Pagination'
+              example:
+                traceId: "req-abc123"
+                data:
+                  - fund_code: "000001"
+                    fund_name: "华夏成长混合"
+                    fund_type: "混合型"
+                    fund_company: "华夏基金"
+                    fund_manager: "张三"
+                    scale: 50.5
+                    setup_date: "2020-01-01"
+                pagination:
+                  page: 1
+                  page_size: 20
+                  total: 100
+                timestamp: "2026-04-15T10:00:00Z"
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /api/v1/funds/search:
+    get:
+      tags:
+        - 基金信息
+      summary: 基金搜索
+      description: 按基金代码或名称关键词搜索
+      parameters:
+        - name: q
+          in: query
+          description: 搜索关键词（基金代码或名称）
+          required: true
+          schema:
+            type: string
+          example: "华夏"
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/PageSizeParam'
+      responses:
+        '200':
+          description: 搜索结果
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/StandardResponse'
+                  - properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/FundBasicInfo'
+                      pagination:
+                        $ref: '#/components/schemas/Pagination'
+        '400':
+          description: 搜索关键词为空
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                traceId: "req-abc123"
+                error:
+                  code: "PARAM_INVALID"
+                  message: "搜索关键词 q 不能为空"
+                  details: {}
+                timestamp: "2026-04-15T10:00:00Z"
+
+  /api/v1/funds/{fundCode}:
+    get:
+      tags:
+        - 基金信息
+      summary: 基金详情
+      description: 获取单只基金的详细信息
+      parameters:
+        - name: fundCode
+          in: path
+          description: 基金代码
+          required: true
+          schema:
+            type: string
+          example: "000001"
+      responses:
+        '200':
+          description: 基金详情
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/StandardResponse'
+                  - properties:
+                      data:
+                        $ref: '#/components/schemas/FundBasicInfo'
+              example:
+                traceId: "req-abc123"
+                data:
+                  fund_code: "000001"
+                  fund_name: "华夏成长混合"
+                  fund_type: "混合型"
+                  fund_company: "华夏基金"
+                  fund_manager: "张三"
+                  scale: 50.5
+                  setup_date: "2020-01-01"
+                timestamp: "2026-04-15T10:00:00Z"
+        '404':
+          description: 基金不存在
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                traceId: "req-abc123"
+                error:
+                  code: "DATA_NOT_FOUND"
+                  message: "基金 999999 不存在"
+                  details: {}
+                timestamp: "2026-04-15T10:00:00Z"
+
+  # ========== 基金历史净值 ==========
+  /api/v1/funds/{fundCode}/nav:
+    get:
+      tags:
+        - 基金净值
+      summary: 获取基金历史净值趋势
+      description: 获取指定基金的历史净值走势数据
+      parameters:
+        - name: fundCode
+          in: path
+          description: 基金代码
+          required: true
+          schema:
+            type: string
+          example: "000001"
+        - name: period
+          in: query
+          description: 时间范围
+          required: false
+          schema:
+            type: string
+            enum:
+              - 1m
+              - 3m
+              - 6m
+              - 1y
+            default: 3m
+          example: "3m"
+      responses:
+        '200':
+          description: 净值数据
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/StandardResponse'
+                  - properties:
+                      data:
+                        $ref: '#/components/schemas/FundNav'
+              example:
+                traceId: "req-abc123"
+                data:
+                  fundCode: "000001"
+                  fundName: "华夏成长混合"
+                  period: "3m"
+                  navData:
+                    - date: "2026-01-15"
+                      accumulatedNav: 1.5234
+                      dailyGrowth: 0.52
+                    - date: "2026-01-16"
+                      accumulatedNav: 1.5312
+                      dailyGrowth: 0.51
+                timestamp: "2026-04-15T10:00:00Z"
+        '400':
+          description: period 参数无效
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                traceId: "req-abc123"
+                error:
+                  code: "PARAM_INVALID"
+                  message: "period 参数无效，可选值: 1m, 3m, 6m, 1y"
+                  details:
+                    period: "5m"
+                timestamp: "2026-04-15T10:00:00Z"
+        '404':
+          description: 基金代码不存在或无净值数据
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                traceId: "req-abc123"
+                error:
+                  code: "DATA_NOT_FOUND"
+                  message: "基金代码不存在或无净值数据"
+                  details:
+                    fundCode: "999999"
+                timestamp: "2026-04-15T10:00:00Z"
+
+  # ========== 基金评级 ==========
+  /api/v1/ratings/:
+    get:
+      tags:
+        - 基金评级
+      summary: 评级结果列表
+      description: 获取基金评级结果列表，支持按评级筛选
+      parameters:
+        - $ref: '#/components/parameters/PageParam'
+        - $ref: '#/components/parameters/PageSizeParam'
+        - name: rating
+          in: query
+          description: 评级筛选（A/B/C/D/E）
+          required: false
+          schema:
+            type: string
+            enum:
+              - A
+              - B
+              - C
+              - D
+              - E
+          example: "A"
+      responses:
+        '200':
+          description: 评级列表
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/StandardResponse'
+                  - properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/FundRating'
+                      pagination:
+                        $ref: '#/components/schemas/Pagination'
+              example:
+                traceId: "req-abc123"
+                data:
+                  - fund_code: "000001"
+                    rating_date: "2026-04-15"
+                    rating: "A"
+                    rating_desc: "优秀"
+                    predicted_excess_return: 0.65
+                    fund_name: "华夏成长混合"
+                    fund_type: "混合型"
+                    fund_company: "华夏基金"
+                pagination:
+                  page: 1
+                  page_size: 20
+                  total: 50
+                timestamp: "2026-04-15T10:00:00Z"
+        '400':
+          description: 无效的评级参数
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                traceId: "req-abc123"
+                error:
+                  code: "PARAM_INVALID"
+                  message: "无效的评级参数，可选值: A/B/C/D/E"
+                  details: {}
+                timestamp: "2026-04-15T10:00:00Z"
+
+  /api/v1/ratings/distribution:
+    get:
+      tags:
+        - 基金评级
+      summary: 评级分布统计
+      description: 获取各评级等级的基金数量分布
+      responses:
+        '200':
+          description: 评级分布
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/StandardResponse'
+                  - properties:
+                      data:
+                        type: object
+                        additionalProperties:
+                          type: integer
+              example:
+                traceId: "req-abc123"
+                data:
+                  A: 25
+                  B: 50
+                  C: 100
+                  D: 30
+                  E: 10
+                timestamp: "2026-04-15T10:00:00Z"
+
+  /api/v1/ratings/{fundCode}:
+    get:
+      tags:
+        - 基金评级
+      summary: 单只基金评级
+      description: 获取单只基金的历史评级信息
+      parameters:
+        - name: fundCode
+          in: path
+          description: 基金代码
+          required: true
+          schema:
+            type: string
+          example: "000001"
+      responses:
+        '200':
+          description: 基金评级信息
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/StandardResponse'
+                  - properties:
+                      data:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/FundRating'
+              example:
+                traceId: "req-abc123"
+                data:
+                  - fund_code: "000001"
+                    rating_date: "2026-04-15"
+                    rating: "A"
+                    rating_desc: "优秀"
+                    predicted_excess_return: 0.65
+                    fund_name: "华夏成长混合"
+                    fund_type: "混合型"
+                    fund_company: "华夏基金"
+                  - fund_code: "000001"
+                    rating_date: "2026-03-15"
+                    rating: "B"
+                    rating_desc: "良好"
+                    predicted_excess_return: 0.35
+                    fund_name: "华夏成长混合"
+                    fund_type: "混合型"
+                    fund_company: "华夏基金"
+                timestamp: "2026-04-15T10:00:00Z"
+        '404':
+          description: 基金评级数据不存在
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                traceId: "req-abc123"
+                error:
+                  code: "DATA_NOT_FOUND"
+                  message: "基金 999999 的评级数据不存在"
+                  details: {}
+                timestamp: "2026-04-15T10:00:00Z"
+
+  # ========== 局势时间轴 ==========
+  /api/timeline:
+    get:
+      tags:
+        - 局势时间轴
+      summary: 获取局势时间轴数据
+      description: 获取 3 月初至今的所有周节点数据
+      responses:
+        '200':
+          description: 时间轴数据
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/StandardResponse'
+                  - properties:
+                      data:
+                        $ref: '#/components/schemas/TimelineData'
+              example:
+                traceId: "req-abc123"
+                data:
+                  weeks:
+                    - weekNumber: 1
+                      startDate: "2026-03-01"
+                      endDate: "2026-03-07"
+                      situationScore: 65
+                      summary: "美伊冲突升级，双方互相指责"
+                    - weekNumber: 2
+                      startDate: "2026-03-08"
+                      endDate: "2026-03-14"
+                      situationScore: 58
+                      summary: "国际社会介入调停"
+                timestamp: "2026-04-15T10:00:00Z"
+
+  /api/timeline/{week}:
+    get:
+      tags:
+        - 局势时间轴
+      summary: 获取指定周详细数据
+      description: 获取指定周的主题基金和小规模基金数据
+      parameters:
+        - name: week
+          in: path
+          description: 周编号（从 1 开始）
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          example: 1
+      responses:
+        '200':
+          description: 周详情数据
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/StandardResponse'
+                  - properties:
+                      data:
+                        $ref: '#/components/schemas/WeekDetail'
+              example:
+                traceId: "req-abc123"
+                data:
+                  weekNumber: 1
+                  startDate: "2026-03-01"
+                  endDate: "2026-03-07"
+                  situationScore: 65
+                  summary: "美伊冲突升级，双方互相指责"
+                  thematicFunds:
+                    - theme: "原油"
+                      fundName: "南方原油A"
+                      returnRate: 5.2
+                    - theme: "黄金"
+                      fundName: "易方达黄金ETF"
+                      returnRate: 3.1
+                  smallScaleFunds:
+                    - fundName: "广发精选A"
+                      scale: 4.5
+                      returnRate: 6.8
+                    - fundName: "富国成长A"
+                      scale: 3.2
+                      returnRate: 5.5
+                timestamp: "2026-04-15T10:00:00Z"
+        '400':
+          description: week 参数无效
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                traceId: "req-abc123"
+                error:
+                  code: "PARAM_INVALID"
+                  message: "week 参数必须 >= 1"
+                  details: {}
+                timestamp: "2026-04-15T10:00:00Z"
+        '404':
+          description: 指定周数据不存在
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                traceId: "req-abc123"
+                error:
+                  code: "DATA_NOT_FOUND"
+                  message: "指定周数据不存在: week=100"
+                  details:
+                    week: 100
+                timestamp: "2026-04-15T10:00:00Z"
+
+  # ========== 主题基金 ==========
+  /api/funds/thematic:
+    get:
+      tags:
+        - 主题基金
+      summary: 获取主题基金列表
+      description: 获取当前周各主题表现最优基金
+      parameters:
+        - name: week
+          in: query
+          description: 周编号，不传则返回最新周数据
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+          example: 1
+      responses:
+        '200':
+          description: 主题基金列表
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/StandardResponse'
+                  - properties:
+                      data:
+                        $ref: '#/components/schemas/ThematicFundsData'
+              example:
+                traceId: "req-abc123"
+                data:
+                  weekNumber: 1
+                  funds:
+                    - theme: "原油"
+                      fundName: "南方原油A"
+                      returnRate: 5.2
+                    - theme: "黄金"
+                      fundName: "易方达黄金ETF"
+                      returnRate: 3.1
+                    - theme: "煤炭"
+                      fundName: "富国煤炭A"
+                      returnRate: 2.8
+                timestamp: "2026-04-15T10:00:00Z"
+
+  # ========== 小规模基金 ==========
+  /api/funds/small-scale:
+    get:
+      tags:
+        - 小规模基金
+      summary: 获取精选小规模基金列表
+      description: 获取精选小规模基金推荐
+      parameters:
+        - name: week
+          in: query
+          description: 周编号，不传则返回最新周数据
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+          example: 1
+        - name: limit
+          in: query
+          description: 返回数量限制
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 20
+            default: 5
+          example: 5
+      responses:
+        '200':
+          description: 小规模基金列表
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/StandardResponse'
+                  - properties:
+                      data:
+                        $ref: '#/components/schemas/SmallScaleFundsData'
+              example:
+                traceId: "req-abc123"
+                data:
+                  weekNumber: 1
+                  funds:
+                    - fundName: "广发精选A"
+                      company: "广发"
+                      scale: 4.5
+                      returnRate: 6.8
+                    - fundName: "富国成长A"
+                      company: "富国"
+                      scale: 3.2
+                      returnRate: 5.5
+                timestamp: "2026-04-15T10:00:00Z"
+        '400':
+          description: 参数校验失败
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                traceId: "req-abc123"
+                error:
+                  code: "PARAM_INVALID"
+                  message: "limit 参数必须在 1-20 之间"
+                  details: {}
+                timestamp: "2026-04-15T10:00:00Z"
+
+  # ========== 局势分值 ==========
+  /api/situation/score:
+    get:
+      tags:
+        - 局势分值
+      summary: 获取当前局势分值
+      description: 获取当前最新局势分值（从 Polymarket 获取）
+      responses:
+        '200':
+          description: 局势分值
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - $ref: '#/components/schemas/StandardResponse'
+                  - properties:
+                      data:
+                        $ref: '#/components/schemas/SituationScore'
+              example:
+                traceId: "req-abc123"
+                data:
+                  score: 65
+                  source: "Polymarket"
+                  updatedAt: "2026-04-15T08:00:00Z"
+                timestamp: "2026-04-15T10:00:00Z"
+        '404':
+          description: 暂无局势数据
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                traceId: "req-abc123"
+                error:
+                  code: "DATA_NOT_FOUND"
+                  message: "暂无局势数据"
+                  details: {}
+                timestamp: "2026-04-15T10:00:00Z"
+
+components:
+  parameters:
+    PageParam:
+      name: page
+      in: query
+      description: 页码，从 1 开始
+      required: false
+      schema:
+        type: integer
+        default: 1
+        minimum: 1
+      example: 1
+
+    PageSizeParam:
+      name: page_size
+      in: query
+      description: 每页条数
+      required: false
+      schema:
+        type: integer
+        default: 20
+        minimum: 1
+        maximum: 100
+      example: 20
+
+  schemas:
+    # ---- 通用响应 ----
+    StandardResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+          description: 请求追踪 ID
+          example: "req-abc123def456"
+        timestamp:
+          type: string
+          format: date-time
+          description: 响应时间戳（UTC）
+          example: "2026-04-15T10:00:00Z"
+
+    ErrorResponse:
+      type: object
+      properties:
+        traceId:
+          type: string
+          description: 请求追踪 ID
+          example: "req-abc123def456"
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: 错误码
+              enum:
+                - PARAM_INVALID
+                - DATA_NOT_FOUND
+                - INTERNAL_ERROR
+                - DATA_SOURCE_ERROR
+              example: "PARAM_INVALID"
+            message:
+              type: string
+              description: 错误描述
+              example: "请求参数错误"
+            details:
+              type: object
+              description: 错误详情
+        timestamp:
+          type: string
+          format: date-time
+          description: 响应时间戳（UTC）
+          example: "2026-04-15T10:00:00Z"
+
+    Pagination:
+      type: object
+      properties:
+        page:
+          type: integer
+          description: 当前页码
+          example: 1
+        page_size:
+          type: integer
+          description: 每页条数
+          example: 20
+        total:
+          type: integer
+          description: 总记录数
+          example: 100
+
+    # ---- 基金基本信息 ----
+    FundBasicInfo:
+      type: object
+      properties:
+        fund_code:
+          type: string
+          description: 基金代码
+          example: "000001"
+        fund_name:
+          type: string
+          description: 基金名称
+          example: "华夏成长混合"
+        fund_type:
+          type: string
+          description: 基金类型
+          example: "混合型"
+        fund_company:
+          type: string
+          description: 基金公司
+          example: "华夏基金"
+        fund_manager:
+          type: string
+          description: 基金经理
+          example: "张三"
+        scale:
+          type: number
+          format: float
+          description: 基金规模（亿元）
+          example: 50.5
+        setup_date:
+          type: string
+          format: date
+          description: 成立日期
+          example: "2020-01-01"
+
+    # ---- 基金净值 ----
+    FundNav:
+      type: object
+      properties:
+        fundCode:
+          type: string
+          description: 基金代码
+          example: "000001"
+        fundName:
+          type: string
+          description: 基金名称
+          example: "华夏成长混合"
+        period:
+          type: string
+          description: 时间范围
+          enum:
+            - 1m
+            - 3m
+            - 6m
+            - 1y
+          example: "3m"
+        navData:
+          type: array
+          items:
+            $ref: '#/components/schemas/NavDataPoint'
+          description: 净值数据列表
+
+    NavDataPoint:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+          description: 日期
+          example: "2026-01-15"
+        accumulatedNav:
+          type: number
+          format: float
+          nullable: true
+          description: 累计净值
+          example: 1.5234
+        dailyGrowth:
+          type: number
+          format: float
+          nullable: true
+          description: 日增长率（%）
+          example: 0.52
+
+    # ---- 基金评级 ----
+    FundRating:
+      type: object
+      properties:
+        fund_code:
+          type: string
+          description: 基金代码
+          example: "000001"
+        rating_date:
+          type: string
+          format: date
+          description: 评级日期
+          example: "2026-04-15"
+        rating:
+          type: string
+          description: 评级等级
+          enum:
+            - A
+            - B
+            - C
+            - D
+            - E
+          example: "A"
+        rating_desc:
+          type: string
+          description: 评级描述
+          example: "优秀"
+        predicted_excess_return:
+          type: number
+          format: float
+          description: 预测超额收益（信息比率）
+          example: 0.65
+        fund_name:
+          type: string
+          description: 基金名称
+          example: "华夏成长混合"
+        fund_type:
+          type: string
+          description: 基金类型
+          example: "混合型"
+        fund_company:
+          type: string
+          description: 基金公司
+          example: "华夏基金"
+
+    # ---- 局势时间轴 ----
+    TimelineData:
+      type: object
+      properties:
+        weeks:
+          type: array
+          items:
+            $ref: '#/components/schemas/WeekSummary'
+          description: 周节点列表
+
+    WeekSummary:
+      type: object
+      properties:
+        weekNumber:
+          type: integer
+          description: 周编号
+          example: 1
+        startDate:
+          type: string
+          format: date
+          description: 起始日期
+          example: "2026-03-01"
+        endDate:
+          type: string
+          format: date
+          description: 结束日期
+          example: "2026-03-07"
+        situationScore:
+          type: integer
+          description: 局势分值
+          example: 65
+        summary:
+          type: string
+          description: 局势摘要
+          example: "美伊冲突升级，双方互相指责"
+
+    WeekDetail:
+      type: object
+      properties:
+        weekNumber:
+          type: integer
+          description: 周编号
+          example: 1
+        startDate:
+          type: string
+          format: date
+          description: 起始日期
+          example: "2026-03-01"
+        endDate:
+          type: string
+          format: date
+          description: 结束日期
+          example: "2026-03-07"
+        situationScore:
+          type: integer
+          description: 局势分值
+          example: 65
+        summary:
+          type: string
+          description: 局势摘要
+          example: "美伊冲突升级，双方互相指责"
+        thematicFunds:
+          type: array
+          items:
+            $ref: '#/components/schemas/ThematicFund'
+          description: 主题基金列表
+        smallScaleFunds:
+          type: array
+          items:
+            $ref: '#/components/schemas/SmallScaleFund'
+          description: 小规模基金列表
+
+    # ---- 主题基金 ----
+    ThematicFundsData:
+      type: object
+      properties:
+        weekNumber:
+          type: integer
+          description: 周编号
+          example: 1
+        funds:
+          type: array
+          items:
+            $ref: '#/components/schemas/ThematicFund'
+          description: 主题基金列表
+
+    ThematicFund:
+      type: object
+      properties:
+        theme:
+          type: string
+          description: 主题名称
+          example: "原油"
+        fundName:
+          type: string
+          description: 基金名称
+          example: "南方原油A"
+        returnRate:
+          type: number
+          format: float
+          description: 收益率（%）
+          example: 5.2
+
+    # ---- 小规模基金 ----
+    SmallScaleFundsData:
+      type: object
+      properties:
+        weekNumber:
+          type: integer
+          description: 周编号
+          example: 1
+        funds:
+          type: array
+          items:
+            $ref: '#/components/schemas/SmallScaleFund'
+          description: 小规模基金列表
+
+    SmallScaleFund:
+      type: object
+      properties:
+        fundName:
+          type: string
+          description: 基金名称
+          example: "广发精选A"
+        company:
+          type: string
+          description: 基金公司
+          example: "广发"
+        scale:
+          type: number
+          format: float
+          description: 基金规模（亿元）
+          example: 4.5
+        returnRate:
+          type: number
+          format: float
+          description: 收益率（%）
+          example: 6.8
+
+    # ---- 局势分值 ----
+    SituationScore:
+      type: object
+      properties:
+        score:
+          type: integer
+          description: 局势分值
+          example: 65
+        source:
+          type: string
+          description: 数据来源
+          example: "Polymarket"
+        updatedAt:
+          type: string
+          format: date-time
+          description: 更新时间
+          example: "2026-04-15T08:00:00Z"
+
+    # ---- 错误码 ----
+    ErrorCode:
+      type: string
+      enum:
+        - PARAM_INVALID
+        - DATA_NOT_FOUND
+        - INTERNAL_ERROR
+        - DATA_SOURCE_ERROR
+      description: |
+        错误码说明：
+        - `PARAM_INVALID`: 参数校验失败 (400)
+        - `DATA_NOT_FOUND`: 数据不存在 (404)
+        - `INTERNAL_ERROR`: 服务器内部错误 (500)
+        - `DATA_SOURCE_ERROR`: 数据源获取失败 (503)
+
+  responses:
+    BadRequest:
+      description: 请求参数错误
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            traceId: "req-abc123"
+            error:
+              code: "PARAM_INVALID"
+              message: "请求参数错误"
+              details: {}
+            timestamp: "2026-04-15T10:00:00Z"
+
+    NotFound:
+      description: 资源不存在
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            traceId: "req-abc123"
+            error:
+              code: "DATA_NOT_FOUND"
+              message: "资源不存在"
+              details: {}
+            timestamp: "2026-04-15T10:00:00Z"
+
+    InternalServerError:
+      description: 服务器内部错误
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            traceId: "req-abc123"
+            error:
+              code: "INTERNAL_ERROR"
+              message: "服务器内部错误"
+              details: {}
+            timestamp: "2026-04-15T10:00:00Z"

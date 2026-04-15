@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html class="dark" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vibe Oracle - 系统架构</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Manrope:wght@400;600&family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .nebula-bg {
+        background: radial-gradient(circle at 20% 30%, rgba(223, 142, 255, 0.08) 0%, transparent 40%),
+                    radial-gradient(circle at 80% 70%, rgba(0, 238, 252, 0.08) 0%, transparent 40%),
+                    radial-gradient(circle at 50% 50%, rgba(222, 255, 171, 0.03) 0%, transparent 60%);
+    }
+    .flow-line {
+        stroke-dasharray: 8, 4;
+        animation: dash 1s linear infinite;
+    }
+    @keyframes dash {
+        to { stroke-dashoffset: -12; }
+    }
+    .glow-purple {
+        box-shadow: 0 0 30px rgba(223, 142, 255, 0.3);
+    }
+    .glow-cyan {
+        box-shadow: 0 0 30px rgba(0, 238, 252, 0.3);
+    }
+    .glow-lime {
+        box-shadow: 0 0 30px rgba(175, 252, 0, 0.3);
+    }
+    .architecture-card {
+        transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .architecture-card:hover {
+        transform: translateY(-4px) scale(1.02);
+    }
+</style>
+<script>
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                "primary": "#df8eff",
+                "secondary": "#00eefc",
+                "tertiary": "#abfc00",
+                "background": "#0f0d16",
+                "surface": "#1b1823",
+                "surface-high": "#272431",
+                "on-surface": "#f5eefc",
+                "on-surface-variant": "#aea9b6",
+            },
+            fontFamily: {
+                headline: ["Space Grotesk"],
+                body: ["Manrope"],
+                label: ["Plus Jakarta Sans"]
+            }
+        }
+    }
+}
+</script>
+</head>
+<body class="bg-background text-on-surface font-body nebula-bg min-h-screen">
+<!-- Header -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-background/80 backdrop-blur-md border-b border-white/5">
+    <div class="flex items-center gap-3">
+        <span class="text-2xl font-bold tracking-tighter text-primary drop-shadow-[0_0_8px_rgba(223,142,255,0.6)] font-headline">Vibe Oracle</span>
+        <span class="text-sm text-on-surface-variant font-label">系统架构文档</span>
+    </div>
+    <div class="flex items-center gap-2">
+        <span class="px-3 py-1 bg-primary/20 text-primary text-xs font-bold rounded-full font-label">v0.3.0</span>
+        <span class="px-3 py-1 bg-secondary/20 text-secondary text-xs font-bold rounded-full font-label">FastAPI + React</span>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="pt-24 px-6 pb-12 max-w-7xl mx-auto">
+    <!-- 架构总览 -->
+    <section class="mb-16">
+        <div class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold font-headline mb-4 tracking-tight">
+                <span class="text-primary">命运卡</span>全栈架构
+            </h1>
+            <p class="text-on-surface-variant text-lg max-w-2xl mx-auto">
+                基于实际的代码实现：FastAPI 后端 + React 前端 + SQLite 数据库
+            </p>
+        </div>
+
+        <!-- 三层架构图 -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+            <!-- 前端层 -->
+            <div class="architecture-card bg-surface rounded-2xl border border-primary/20 p-6 glow-purple">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary text-2xl">web</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold font-headline text-primary">前端层</h3>
+                        <p class="text-xs text-on-surface-variant font-label">React 18 + Vite 6</p>
+                    </div>
+                </div>
+                <div class="space-y-3 text-sm">
+                    <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-primary text-base">check_circle</span>
+                        <span><strong class="text-on-surface">React 18</strong> - 组件化开发</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-primary text-base">check_circle</span>
+                        <span><strong class="text-on-surface">Vite 6</strong> - 构建工具</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-primary text-base">check_circle</span>
+                        <span><strong class="text-on-surface">Tailwind CSS 4</strong> - 样式</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-primary text-base">check_circle</span>
+                        <span><strong class="text-on-surface">Framer Motion</strong> - 动画</span>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/10">
+                    <p class="text-xs text-on-surface-variant font-label">运行端口: <span class="text-secondary font-mono">:5173</span></p>
+                </div>
+            </div>
+
+            <!-- 后端层 -->
+            <div class="architecture-card bg-surface rounded-2xl border border-secondary/20 p-6 glow-cyan">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-secondary/20 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-secondary text-2xl">dns</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold font-headline text-secondary">后端层</h3>
+                        <p class="text-xs text-on-surface-variant font-label">FastAPI + Uvicorn</p>
+                    </div>
+                </div>
+                <div class="space-y-3 text-sm">
+                    <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+                        <span><strong class="text-on-surface">FastAPI</strong> - Python 异步框架</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+                        <span><strong class="text-on-surface">Pydantic</strong> - 数据验证</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+                        <span><strong class="text-on-surface">Uvicorn</strong> - ASGI 服务器</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+                        <span><strong class="text-on-surface">CORS</strong> - 跨域支持</span>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/10">
+                    <p class="text-xs text-on-surface-variant font-label">运行端口: <span class="text-primary font-mono">:8000</span></p>
+                </div>
+            </div>
+
+            <!-- 数据层 -->
+            <div class="architecture-card bg-surface rounded-2xl border border-tertiary/20 p-6 glow-lime">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-tertiary/20 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-tertiary text-2xl">storage</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold font-headline text-tertiary">数据层</h3>
+                        <p class="text-xs text-on-surface-variant font-label">SQLite + WAL</p>
+                    </div>
+                </div>
+                <div class="space-y-3 text-sm">
+                    <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-tertiary text-base">check_circle</span>
+                        <span><strong class="text-on-surface">SQLite</strong> - 轻量级数据库</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-tertiary text-base">check_circle</span>
+                        <span><strong class="text-on-surface">WAL 模式</strong> - 并发优化</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-tertiary text-base">check_circle</span>
+                        <span><strong class="text-on-surface">7 张表</strong> - 核心数据结构</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-on-surface-variant">
+                        <span class="material-symbols-outlined text-tertiary text-base">check_circle</span>
+                        <span><strong class="text-on-surface">88KB</strong> - 数据文件大小</span>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/10">
+                    <p class="text-xs text-on-surface-variant font-label">文件: <span class="text-primary font-mono">fate_cards.db</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 数据流箭头 -->
+        <div class="flex justify-center items-center gap-4 mb-12">
+            <div class="flex items-center gap-2">
+                <span class="text-primary font-headline font-bold">前端</span>
+                <svg class="w-8 h-4" viewBox="0 0 32 16">
+                    <path d="M0 8 L24 8 M20 4 L28 8 L20 12" stroke="#df8eff" stroke-width="2" fill="none" class="flow-line"/>
+                </svg>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-secondary font-headline font-bold">后端</span>
+                <svg class="w-8 h-4" viewBox="0 0 32 16">
+                    <path d="M0 8 L24 8 M20 4 L28 8 L20 12" stroke="#00eefc" stroke-width="2" fill="none" class="flow-line"/>
+                </svg>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-tertiary font-headline font-bold">数据库</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 前端架构详情 -->
+    <section class="mb-16">
+        <h2 class="text-2xl font-bold font-headline mb-6 flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">layers</span>
+            前端目录结构
+        </h2>
+        <div class="bg-surface rounded-2xl border border-white/10 p-6 overflow-x-auto">
+            <pre class="text-sm font-mono text-on-surface-variant">
+<span class="text-primary">frontend/fate-cards/src/</span>
+├── <span class="text-secondary">App.jsx</span>              <span class="text-on-surface-variant"># 主应用入口，状态机路由</span>
+├── <span class="text-secondary">main.jsx</span>             <span class="text-on-surface-variant"># React 挂载点</span>
+├── <span class="text-secondary">index.css</span>            <span class="text-on-surface-variant"># Tailwind 入口 + CSS 变量</span>
+├── <span class="text-tertiary">api/</span>                  <span class="text-on-surface-variant"># API 客户端</span>
+│   ├── client.js        <span class="text-on-surface-variant"># fetch 封装，基础 URL 配置</span>
+│   ├── galleryApi.js    <span class="text-on-surface-variant"># 图鉴 API: GET /history</span>
+│   └── ritualApi.js     <span class="text-on-surface-variant"># 抽卡 API: 6 个接口封装</span>
+├── <span class="text-tertiary">components/</span>           <span class="text-on-surface-variant"># 可复用组件</span>
+├── <span class="text-tertiary">data/</span>                  <span class="text-on-surface-variant"># 静态数据 (已废弃)</span>
+├── <span class="text-tertiary">hooks/</span>                 <span class="text-on-surface-variant"># 自定义 Hooks</span>
+│   └── useRitualState.js <span class="text-on-surface-variant"># 核心状态管理 Hook</span>
+└── <span class="text-tertiary">pages/</span>                 <span class="text-on-surface-variant"># 页面组件</span>
+    ├── LoadingPage.jsx   <span class="text-on-surface-variant"># 启动页 / 初始化仪式</span>
+    ├── DiceRitualPage.jsx <span class="text-on-surface-variant"># 骰子仪式页</span>
+    ├── DrawCardsPage.jsx <span class="text-on-surface-variant"># 抽卡祭坛页 (9宫格)</span>
+    ├── RevealPage.jsx    <span class="text-on-surface-variant"># 卡牌揭示页</span>
+    ├── ReportPage.jsx    <span class="text-on-surface-variant"># 命运报告页</span>
+    └── GalleryPage.jsx   <span class="text-on-surface-variant"># 荒诞图鉴页</span></pre>
+        </div>
+    </section>
+
+    <!-- 页面状态流转 -->
+    <section class="mb-16">
+        <h2 class="text-2xl font-bold font-headline mb-6 flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary">account_tree</span>
+            页面状态流转
+        </h2>
+        <div class="bg-surface rounded-2xl border border-white/10 p-6">
+            <div class="flex flex-wrap items-center justify-center gap-2 text-sm font-label">
+                <span class="px-4 py-2 bg-primary/20 text-primary rounded-lg">LOADING</span>
+                <span class="material-symbols-outlined text-on-surface-variant">arrow_forward</span>
+                <span class="px-4 py-2 bg-secondary/20 text-secondary rounded-lg">DICE</span>
+                <span class="material-symbols-outlined text-on-surface-variant">arrow_forward</span>
+                <span class="px-4 py-2 bg-tertiary/20 text-tertiary rounded-lg">DRAW</span>
+                <span class="material-symbols-outlined text-on-surface-variant">arrow_forward</span>
+                <span class="px-4 py-2 bg-primary/20 text-primary rounded-lg">REVEAL</span>
+                <span class="material-symbols-outlined text-on-surface-variant">arrow_forward</span>
+                <span class="px-4 py-2 bg-secondary/20 text-secondary rounded-lg">REPORT</span>
+                <span class="material-symbols-outlined text-on-surface-variant">refresh</span>
+                <span class="px-4 py-2 bg-tertiary/20 text-tertiary rounded-lg">RESTART</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 后端架构详情 -->
+    <section class="mb-16">
+        <h2 class="text-2xl font-bold font-headline mb-6 flex items-center gap-3">
+            <span class="material-symbols-outlined text-secondary">api</span>
+            后端目录结构
+        </h2>
+        <div class="bg-surface rounded-2xl border border-white/10 p-6 overflow-x-auto">
+            <pre class="text-sm font-mono text-on-surface-variant">
+<span class="text-secondary">backend/</span>
+├── <span class="text-primary">main.py</span>              <span class="text-on-surface-variant"># FastAPI 应用入口，CORS 配置</span>
+├── <span class="text-primary">database.py</span>          <span class="text-on-surface-variant"># SQLite 连接，表结构定义</span>
+├── <span class="text-primary">models.py</span>            <span class="text-on-surface-variant"># Pydantic 数据模型 (30+)</span>
+├── <span class="text-primary">seed_data.py</span>         <span class="text-on-surface-variant"># 初始数据填充</span>
+├── <span class="text-tertiary">routers/</span>              <span class="text-on-surface-variant"># API 路由层</span>
+│   ├── rituals.py       <span class="text-on-surface-variant"># 抽卡仪式 6 个接口</span>
+│   └── gallery.py       <span class="text-on-surface-variant"># 图鉴历史接口</span>
+├── <span class="text-tertiary">services/</span>            <span class="text-on-surface-variant"># 业务逻辑层</span>
+│   ├── ritual_service.py <span class="text-on-surface-variant"># 抽卡核心业务 (17KB)</span>
+│   └── gallery_service.py <span class="text-on-surface-variant"># 图鉴查询业务</span>
+└── <span class="text-secondary">fate_cards.db</span>        <span class="text-on-surface-variant"># SQLite 数据库文件</span></pre>
+        </div>
+    </section>
+
+    <!-- API 接口列表 -->
+    <section class="mb-16">
+        <h2 class="text-2xl font-bold font-headline mb-6 flex items-center gap-3">
+            <span class="material-symbols-outlined text-tertiary">http</span>
+            RESTful API 接口
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- 抽卡仪式 API -->
+            <div class="bg-surface rounded-2xl border border-secondary/20 p-6">
+                <h3 class="text-lg font-bold font-headline text-secondary mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined">casino</span>
+                    抽卡仪式 API
+                </h3>
+                <div class="space-y-3 text-sm">
+                    <div class="flex items-start gap-3 p-3 bg-surface-high rounded-lg">
+                        <span class="px-2 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded font-mono">POST</span>
+                        <div>
+                            <code class="text-on-surface font-mono">/api/v1/rituals</code>
+                            <p class="text-on-surface-variant text-xs mt-1">创建仪式会话，返回 ritualId</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-3 bg-surface-high rounded-lg">
+                        <span class="px-2 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded font-mono">POST</span>
+                        <div>
+                            <code class="text-on-surface font-mono">/api/v1/rituals/{id}/dice-roll</code>
+                            <p class="text-on-surface-variant text-xs mt-1">掷骰子，返回 diceRoll 结果</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-3 bg-surface-high rounded-lg">
+                        <span class="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs font-bold rounded font-mono">GET</span>
+                        <div>
+                            <code class="text-on-surface font-mono">/api/v1/rituals/{id}/draw-pool</code>
+                            <p class="text-on-surface-variant text-xs mt-1">获取卡池，返回 9 张可选卡牌</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-3 bg-surface-high rounded-lg">
+                        <span class="px-2 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded font-mono">POST</span>
+                        <div>
+                            <code class="text-on-surface font-mono">/api/v1/rituals/{id}/reveal</code>
+                            <p class="text-on-surface-variant text-xs mt-1">揭示卡牌，返回 3 阶段结果</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-3 bg-surface-high rounded-lg">
+                        <span class="px-2 py-1 bg-green-500/20 text-green-400 text-xs font-bold rounded font-mono">POST</span>
+                        <div>
+                            <code class="text-on-surface font-mono">/api/v1/rituals/{id}/choice</code>
+                            <p class="text-on-surface-variant text-xs mt-1">选择命运：accept/change</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-3 bg-surface-high rounded-lg">
+                        <span class="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs font-bold rounded font-mono">GET</span>
+                        <div>
+                            <code class="text-on-surface font-mono">/api/v1/rituals/{id}/report</code>
+                            <p class="text-on-surface-variant text-xs mt-1">获取命运报告完整数据</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 图鉴历史 API -->
+            <div class="bg-surface rounded-2xl border border-tertiary/20 p-6">
+                <h3 class="text-lg font-bold font-headline text-tertiary mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined">auto_stories</span>
+                    图鉴历史 API
+                </h3>
+                <div class="space-y-3 text-sm">
+                    <div class="flex items-start gap-3 p-3 bg-surface-high rounded-lg">
+                        <span class="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs font-bold rounded font-mono">GET</span>
+                        <div>
+                            <code class="text-on-surface font-mono">/api/v1/history</code>
+                            <p class="text-on-surface-variant text-xs mt-1">获取历史记录列表，支持分页</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-3 bg-surface-high rounded-lg">
+                        <span class="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs font-bold rounded font-mono">GET</span>
+                        <div>
+                            <code class="text-on-surface font-mono">/api/v1/history/{id}</code>
+                            <p class="text-on-surface-variant text-xs mt-1">获取单条历史详情</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-bold font-headline text-primary mt-6 mb-4 flex items-center gap-2">
+                    <span class="material-symbols-outlined">favorite</span>
+                    系统接口
+                </h3>
+                <div class="space-y-3 text-sm">
+                    <div class="flex items-start gap-3 p-3 bg-surface-high rounded-lg">
+                        <span class="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs font-bold rounded font-mono">GET</span>
+                        <div>
+                            <code class="text-on-surface font-mono">/</code>
+                            <p class="text-on-surface-variant text-xs mt-1">API 状态检查</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 p-3 bg-surface-high rounded-lg">
+                        <span class="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs font-bold rounded font-mono">GET</span>
+                        <div>
+                            <code class="text-on-surface font-mono">/health</code>
+                            <p class="text-on-surface-variant text-xs mt-1">健康检查端点</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 数据库表结构 -->
+    <section class="mb-16">
+        <h2 class="text-2xl font-bold font-headline mb-6 flex items-center gap-3">
+            <span class="material-symbols-outlined text-tertiary">table</span>
+            数据库表结构
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- cards 表 -->
+            <div class="bg-surface rounded-xl border border-white/10 p-4">
+                <h4 class="text-primary font-bold font-headline mb-2 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">style</span>
+                    cards
+                </h4>
+                <p class="text-xs text-on-surface-variant">卡牌主数据表</p>
+                <div class="mt-2 text-xs font-mono text-on-surface-variant space-y-1">
+                    <div>id, title, subtitle, description</div>
+                    <div>type, phase, rarity</div>
+                    <div>cover_url, illustration_url, tags</div>
+                    <div>times_drawn, last_drawn_at</div>
+                </div>
+            </div>
+
+            <!-- rituals 表 -->
+            <div class="bg-surface rounded-xl border border-white/10 p-4">
+                <h4 class="text-secondary font-bold font-headline mb-2 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">auto_awesome</span>
+                    rituals
+                </h4>
+                <p class="text-xs text-on-surface-variant">仪式会话表</p>
+                <div class="mt-2 text-xs font-mono text-on-surface-variant space-y-1">
+                    <div>id, state, enable_dice, draw_count</div>
+                    <div>dice_face, dice_label, dice_rotation</div>
+                    <div>card_pool, selected_card_ids, phases</div>
+                    <div>ending_id, personality_id, attributes</div>
+                    <div>quote_id, fate_choice, history_id</div>
+                </div>
+            </div>
+
+            <!-- history 表 -->
+            <div class="bg-surface rounded-xl border border-white/10 p-4">
+                <h4 class="text-tertiary font-bold font-headline mb-2 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">history</span>
+                    history
+                </h4>
+                <p class="text-xs text-on-surface-variant">历史记录表</p>
+                <div class="mt-2 text-xs font-mono text-on-surface-variant space-y-1">
+                    <div>id, ritual_id, created_at</div>
+                    <div>ending_title, personality_label</div>
+                    <div>cover_cards, report_snapshot</div>
+                </div>
+            </div>
+
+            <!-- dice_faces 表 -->
+            <div class="bg-surface rounded-xl border border-white/10 p-4">
+                <h4 class="text-primary font-bold font-headline mb-2 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">casino</span>
+                    dice_faces
+                </h4>
+                <p class="text-xs text-on-surface-variant">骰子面配置表</p>
+                <div class="mt-2 text-xs font-mono text-on-surface-variant space-y-1">
+                    <div>face (1-6)</div>
+                    <div>label (运势标签)</div>
+                    <div>rotation (旋转角度)</div>
+                </div>
+            </div>
+
+            <!-- endings 表 -->
+            <div class="bg-surface rounded-xl border border-white/10 p-4">
+                <h4 class="text-secondary font-bold font-headline mb-2 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">stars</span>
+                    endings
+                </h4>
+                <p class="text-xs text-on-surface-variant">结局配置表</p>
+                <div class="mt-2 text-xs font-mono text-on-surface-variant space-y-1">
+                    <div>id, title, summary</div>
+                    <div>description, mood</div>
+                    <div>theme_color</div>
+                </div>
+            </div>
+
+            <!-- personalities 表 -->
+            <div class="bg-surface rounded-xl border border-white/10 p-4">
+                <h4 class="text-tertiary font-bold font-headline mb-2 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-sm">psychology</span>
+                    personalities
+                </h4>
+                <p class="text-xs text-on-surface-variant">人格标签表</p>
+                <div class="mt-2 text-xs font-mono text-on-surface-variant space-y-1">
+                    <div>id</div>
+                    <div>label (人格标签)</div>
+                    <div>description</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技术栈总结 -->
+    <section>
+        <h2 class="text-2xl font-bold font-headline mb-6 flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary">code_blocks</span>
+            技术栈总结
+        </h2>
+        <div class="bg-surface rounded-2xl border border-white/10 overflow-hidden">
+            <table class="w-full text-sm">
+                <thead class="bg-surface-high">
+                    <tr class="border-b border-white/10">
+                        <th class="px-6 py-4 text-left font-headline text-on-surface">层级</th>
+                        <th class="px-6 py-4 text-left font-headline text-on-surface">技术</th>
+                        <th class="px-6 py-4 text-left font-headline text-on-surface">版本</th>
+                        <th class="px-6 py-4 text-left font-headline text-on-surface">作用</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-white/5">
+                    <tr>
+                        <td class="px-6 py-4 text-primary font-bold">前端框架</td>
+                        <td class="px-6 py-4 font-mono">React</td>
+                        <td class="px-6 py-4 text-on-surface-variant">18.3</td>
+                        <td class="px-6 py-4 text-on-surface-variant">组件化 UI 开发</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 text-primary font-bold">构建工具</td>
+                        <td class="px-6 py-4 font-mono">Vite</td>
+                        <td class="px-6 py-4 text-on-surface-variant">6.0</td>
+                        <td class="px-6 py-4 text-on-surface-variant">快速热更新构建</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 text-primary font-bold">样式方案</td>
+                        <td class="px-6 py-4 font-mono">Tailwind CSS</td>
+                        <td class="px-6 py-4 text-on-surface-variant">4.0</td>
+                        <td class="px-6 py-4 text-on-surface-variant">原子化 CSS</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 text-primary font-bold">动画库</td>
+                        <td class="px-6 py-4 font-mono">Framer Motion</td>
+                        <td class="px-6 py-4 text-on-surface-variant">12.0</td>
+                        <td class="px-6 py-4 text-on-surface-variant">页面过渡动画</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 text-secondary font-bold">后端框架</td>
+                        <td class="px-6 py-4 font-mono">FastAPI</td>
+                        <td class="px-6 py-4 text-on-surface-variant">0.109+</td>
+                        <td class="px-6 py-4 text-on-surface-variant">异步 Python API</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 text-secondary font-bold">数据验证</td>
+                        <td class="px-6 py-4 font-mono">Pydantic</td>
+                        <td class="px-6 py-4 text-on-surface-variant">2.x</td>
+                        <td class="px-6 py-4 text-on-surface-variant">请求/响应模型</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 text-secondary font-bold">ASGI 服务器</td>
+                        <td class="px-6 py-4 font-mono">Uvicorn</td>
+                        <td class="px-6 py-4 text-on-surface-variant">-</td>
+                        <td class="px-6 py-4 text-on-surface-variant">生产级服务</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 text-tertiary font-bold">数据库</td>
+                        <td class="px-6 py-4 font-mono">SQLite</td>
+                        <td class="px-6 py-4 text-on-surface-variant">3.x</td>
+                        <td class="px-6 py-4 text-on-surface-variant">轻量级关系数据库</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 text-tertiary font-bold">数据库模式</td>
+                        <td class="px-6 py-4 font-mono">WAL</td>
+                        <td class="px-6 py-4 text-on-surface-variant">-</td>
+                        <td class="px-6 py-4 text-on-surface-variant">Write-Ahead Logging</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="text-center py-8 border-t border-white/5">
+    <p class="text-xs text-on-surface-variant font-label">
+        Vibe Oracle System Architecture · Generated from actual codebase
+    </p>
+</footer>
+
+<!-- Background Elements -->
+<div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+    <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-secondary/5 blur-[150px] rounded-full"></div>
+    <div class="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-tertiary/5 blur-[100px] rounded-full"></div>
+</div>
+</body>
+</html>

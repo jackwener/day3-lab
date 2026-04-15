@@ -1,0 +1,107 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  background: rgba(15, 15, 26, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(212, 168, 67, 0.2);
+  z-index: 1000;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.bottom-nav-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  padding: 0 8px;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex: 1;
+  height: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  padding: 8px;
+  transition: all 0.2s ease;
+}
+
+.nav-icon {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-label {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.nav-indicator {
+  position: absolute;
+  bottom: 8px;
+  width: 20px;
+  height: 3px;
+  background: linear-gradient(90deg, #D4A843, #F0D78C);
+  border-radius: 2px;
+}
+
+/* 中间添加按钮 */
+.nav-add-button {
+  position: relative;
+  top: -20px;
+}
+
+.add-button-inner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #D4A843 0%, #F0D78C 50%, #B8860B 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #0f0f1a;
+  box-shadow: 
+    0 4px 15px rgba(212, 168, 67, 0.4),
+    0 0 30px rgba(212, 168, 67, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: goldGlow 2s ease-in-out infinite;
+}
+
+@keyframes goldGlow {
+  0%, 100% {
+    box-shadow: 
+      0 4px 15px rgba(212, 168, 67, 0.4),
+      0 0 30px rgba(212, 168, 67, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 6px 25px rgba(212, 168, 67, 0.6),
+      0 0 50px rgba(212, 168, 67, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* 响应式调整 */
+@media (max-width: 430px) {
+  .bottom-nav {
+    left: 0;
+    transform: none;
+    max-width: 100%;
+  }
+}

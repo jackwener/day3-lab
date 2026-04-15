@@ -1,0 +1,332 @@
+/* Home 动态页样式 */
+
+.home-page {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 16px;
+  padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px) + 16px);
+  background: linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 欢迎区域 */
+.home-hero {
+  position: relative;
+  padding: 40px 20px;
+  margin: -16px -16px 24px -16px;
+  overflow: hidden;
+}
+
+.home-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(212, 168, 67, 0.1) 0%, transparent 60%);
+}
+
+.home-hero-glow {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, rgba(212, 168, 67, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.home-hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Logo */
+.home-logo {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 24px;
+}
+
+.home-logo-icon {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #D4A843 0%, #F0D78C 30%, #B8860B 100%);
+  border-radius: 24px;
+  box-shadow: 
+    0 10px 40px rgba(212, 168, 67, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 48px;
+  color: #0f0f1a;
+  position: relative;
+  z-index: 1;
+}
+
+.home-logo-shine {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 30%;
+  height: 30%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, transparent 60%);
+  border-radius: 8px;
+  z-index: 2;
+}
+
+/* 标题 */
+.home-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #D4A843 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.home-subtitle {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+/* 区域标题 */
+.home-section {
+  margin-bottom: 24px;
+}
+
+.home-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.home-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.home-section-count {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* 记录列表 */
+.home-records {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.home-record-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 168, 67, 0.1);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.home-record-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(212, 168, 67, 0.2);
+}
+
+.home-record-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 168, 67, 0.15);
+  border-radius: 10px;
+  color: #D4A843;
+  font-size: 18px;
+}
+
+.home-record-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.home-record-weight {
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #D4A843 0%, #F0D78C 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.home-record-channel {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.home-record-price {
+  font-size: 15px;
+  font-weight: 500;
+  color: #52c41a;
+}
+
+/* 空状态 */
+.home-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(212, 168, 67, 0.2);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.home-empty-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 168, 67, 0.1);
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.home-empty-icon .anticon {
+  font-size: 28px;
+  color: rgba(212, 168, 67, 0.5);
+}
+
+.home-empty-text {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 6px 0;
+}
+
+.home-empty-hint {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+}
+
+/* 快捷入口 */
+.home-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.home-action-btn {
+  flex: 1;
+  height: 52px !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  border-radius: 14px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px !important;
+}
+
+.home-action-primary {
+  background: linear-gradient(135deg, #D4A843 0%, #F0D78C 50%, #B8860B 100%) !important;
+  border: none !important;
+  color: #0f0f1a !important;
+  box-shadow: 0 4px 15px rgba(212, 168, 67, 0.4) !important;
+}
+
+.home-action-primary:hover {
+  box-shadow: 0 6px 20px rgba(212, 168, 67, 0.6) !important;
+  transform: translateY(-2px);
+}
+
+.home-action-secondary {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(212, 168, 67, 0.3) !important;
+  color: #D4A843 !important;
+}
+
+.home-action-secondary:hover {
+  background: rgba(212, 168, 67, 0.1) !important;
+  border-color: rgba(212, 168, 67, 0.5) !important;
+}
+
+.home-action-arrow {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* 装饰元素 */
+.home-decoration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.home-deco-circle {
+  position: absolute;
+  top: 20%;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(212, 168, 67, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.home-deco-circle-2 {
+  position: absolute;
+  bottom: 30%;
+  left: -30px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(240, 215, 140, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+/* 响应式优化 */
+@media (max-height: 700px) {
+  .home-hero {
+    padding: 24px 20px;
+  }
+  
+  .home-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 16px;
+  }
+  
+  .home-logo-icon {
+    font-size: 36px;
+  }
+  
+  .home-title {
+    font-size: 22px;
+  }
+}

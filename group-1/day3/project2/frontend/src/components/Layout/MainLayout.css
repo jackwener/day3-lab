@@ -1,0 +1,13 @@
+.mobile-container {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 100%);
+  overflow-x: hidden;
+}
+
+.main-content {
+  min-height: 100vh;
+  padding-bottom: calc(70px + env(safe-area-inset-bottom, 0px) + 16px);
+}

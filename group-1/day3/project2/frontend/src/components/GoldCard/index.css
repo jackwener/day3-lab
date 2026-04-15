@@ -1,0 +1,165 @@
+.gold-card {
+  position: relative;
+  background: rgba(30, 30, 45, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+/* 左侧金色装饰条 */
+.gold-card-accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #D4A843 0%, #F0D78C 50%, #B8860B 100%);
+  border-radius: 16px 0 0 16px;
+}
+
+/* 删除按钮 */
+.gold-card-delete {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 77, 79, 0.1);
+  color: rgba(255, 77, 79, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.gold-card:hover .gold-card-delete {
+  opacity: 1;
+}
+
+.gold-card-delete:hover {
+  background: rgba(255, 77, 79, 0.2);
+  color: #ff4d4f;
+}
+
+/* 主内容 */
+.gold-card-content {
+  padding: 16px 16px 16px 20px;
+}
+
+/* 重量和价格区域 */
+.gold-card-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.gold-card-weight {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.gold-card-weight-value {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #D4A843 0%, #F0D78C 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gold-card-weight-unit {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.gold-card-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.gold-card-price-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.gold-card-price-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* 底部信息 */
+.gold-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 渠道标签 - 金色小药丸 */
+.gold-card-channel {
+  display: inline-block;
+  padding: 4px 10px;
+  background: linear-gradient(135deg, rgba(212, 168, 67, 0.2) 0%, rgba(212, 168, 67, 0.1) 100%);
+  border: 1px solid rgba(212, 168, 67, 0.3);
+  border-radius: 20px;
+  font-size: 12px;
+  color: #D4A843;
+  font-weight: 500;
+}
+
+/* 元信息 */
+.gold-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gold-card-date {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* 照片角标 */
+.gold-card-photo-badge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: rgba(212, 168, 67, 0.15);
+  border-radius: 6px;
+  color: #D4A843;
+  font-size: 12px;
+}
+
+.gold-card-photo-count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 14px;
+  height: 14px;
+  padding: 0 3px;
+  background: #D4A843;
+  color: #0f0f1a;
+  font-size: 9px;
+  font-weight: 700;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

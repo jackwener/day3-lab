@@ -1,0 +1,188 @@
+.asset-overview {
+  position: relative;
+  background: rgba(212, 168, 67, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 168, 67, 0.3);
+  border-radius: 20px;
+  padding: 20px;
+  overflow: hidden;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 60px rgba(212, 168, 67, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* 背景光晕效果 */
+.asset-overview-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(212, 168, 67, 0.15) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+/* 头部 */
+.asset-overview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.asset-overview-title {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
+.asset-overview-eye-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.asset-overview-eye-btn:hover {
+  background: rgba(212, 168, 67, 0.2);
+  color: #D4A843;
+}
+
+/* 内容区 */
+.asset-overview-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* 重量区域 */
+.asset-overview-weight-section {
+  text-align: center;
+  padding: 16px 0;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.asset-overview-weight-section:hover {
+  background: rgba(212, 168, 67, 0.05);
+}
+
+.asset-overview-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.asset-overview-unit-hint {
+  font-size: 11px;
+  color: rgba(212, 168, 67, 0.6);
+}
+
+.asset-overview-weight {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.asset-overview-weight-number {
+  font-size: 42px;
+}
+
+.asset-overview-weight-number .animated-number-value {
+  background: linear-gradient(135deg, #D4A843 0%, #F0D78C 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 趣味文案 */
+.asset-overview-fun-message {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #D4A843;
+  background: rgba(212, 168, 67, 0.15);
+  padding: 4px 12px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+/* 数据网格 */
+.asset-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.asset-overview-item {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.asset-overview-item-label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 6px;
+}
+
+.asset-overview-item-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.asset-overview-item-value.profit-positive {
+  color: #52c41a;
+}
+
+.asset-overview-item-value.profit-positive .animated-number-value {
+  background: none;
+  -webkit-text-fill-color: #52c41a;
+  color: #52c41a;
+}
+
+.asset-overview-item-value.profit-negative {
+  color: #ff4d4f;
+}
+
+.asset-overview-item-value.profit-negative .animated-number-value {
+  background: none;
+  -webkit-text-fill-color: #ff4d4f;
+  color: #ff4d4f;
+}
+
+.asset-overview-item-value.record-count {
+  background: linear-gradient(135deg, #D4A843 0%, #F0D78C 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.record-count-unit {
+  font-size: 12px;
+  margin-left: 2px;
+  opacity: 0.7;
+}

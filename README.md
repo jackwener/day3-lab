@@ -8,7 +8,7 @@ AI 培训 Day 3 Lab 提交仓库。每个小组通过 **Pull Request** 把自己
 - **不要**通过创建长期分支的方式"占位"，每次改动 → fork 或本地分支 → 开 PR → 合入 `main`
 - PR 标题格式：`[day3] group<N>: <项目简述>`
 - 代码位置：`group<N>/` 目录下
-- 每个大组包含 **2 个项目组**，所以 `group<N>/day3/` 下应有 **2 个 project**，建议命名 `project-1/` 和 `project-2/`（或按项目主题命名）
+- 每个大组包含 **2 个项目组**，所以 `group<N>/` 下应有 **2 个 project**，命名为 `project-1/` 和 `project-2/`
 - 每个 project 必须有 `README.md`，包含：
   - **小组名单**（姓名 + GitHub 账号）
   - **分工**（谁负责前端/后端/spec/测试/文档等）
@@ -19,15 +19,14 @@ AI 培训 Day 3 Lab 提交仓库。每个小组通过 **Pull Request** 把自己
 
 ```
 group-8/
-└── day3/
-    ├── project-1/         # 项目组 A
-    │   ├── README.md      # 小组名单 + 分工
-    │   ├── frontend/
-    │   └── backend/
-    └── project-2/         # 项目组 B
-        ├── README.md      # 小组名单 + 分工
-        ├── frontend/
-        └── backend/
+├── project-1/         # 项目组 A
+│   ├── README.md      # 小组名单 + 分工
+│   ├── frontend/
+│   └── backend/
+└── project-2/         # 项目组 B
+    ├── README.md      # 小组名单 + 分工
+    ├── frontend/
+    └── backend/
 ```
 
 ## 小组目录

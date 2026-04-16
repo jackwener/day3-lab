@@ -1,0 +1,3512 @@
+[
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-03",
+    "accumulatedNav": 1.25,
+    "dailyGrowth": null
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-04",
+    "accumulatedNav": 1.2504,
+    "dailyGrowth": 0.03
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-05",
+    "accumulatedNav": 1.2505,
+    "dailyGrowth": 0.01
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-06",
+    "accumulatedNav": 1.2513,
+    "dailyGrowth": 0.06
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-07",
+    "accumulatedNav": 1.2602,
+    "dailyGrowth": 0.71
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-10",
+    "accumulatedNav": 1.2608,
+    "dailyGrowth": 0.05
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-11",
+    "accumulatedNav": 1.2476,
+    "dailyGrowth": -1.05
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-12",
+    "accumulatedNav": 1.2528,
+    "dailyGrowth": 0.42
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-13",
+    "accumulatedNav": 1.252,
+    "dailyGrowth": -0.06
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-14",
+    "accumulatedNav": 1.2517,
+    "dailyGrowth": -0.02
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-17",
+    "accumulatedNav": 1.2547,
+    "dailyGrowth": 0.24
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-18",
+    "accumulatedNav": 1.2589,
+    "dailyGrowth": 0.34
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-19",
+    "accumulatedNav": 1.2725,
+    "dailyGrowth": 1.08
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-20",
+    "accumulatedNav": 1.2811,
+    "dailyGrowth": 0.68
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-21",
+    "accumulatedNav": 1.2842,
+    "dailyGrowth": 0.24
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-24",
+    "accumulatedNav": 1.2785,
+    "dailyGrowth": -0.44
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-25",
+    "accumulatedNav": 1.27,
+    "dailyGrowth": -0.66
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-26",
+    "accumulatedNav": 1.2744,
+    "dailyGrowth": 0.35
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-27",
+    "accumulatedNav": 1.2897,
+    "dailyGrowth": 1.2
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-11-28",
+    "accumulatedNav": 1.2921,
+    "dailyGrowth": 0.18
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-01",
+    "accumulatedNav": 1.2929,
+    "dailyGrowth": 0.06
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-02",
+    "accumulatedNav": 1.3003,
+    "dailyGrowth": 0.58
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-03",
+    "accumulatedNav": 1.2871,
+    "dailyGrowth": -1.01
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-04",
+    "accumulatedNav": 1.2858,
+    "dailyGrowth": -0.1
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-05",
+    "accumulatedNav": 1.2928,
+    "dailyGrowth": 0.54
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-08",
+    "accumulatedNav": 1.3038,
+    "dailyGrowth": 0.85
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-09",
+    "accumulatedNav": 1.3032,
+    "dailyGrowth": -0.04
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-10",
+    "accumulatedNav": 1.3091,
+    "dailyGrowth": 0.45
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-11",
+    "accumulatedNav": 1.3137,
+    "dailyGrowth": 0.35
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-12",
+    "accumulatedNav": 1.3239,
+    "dailyGrowth": 0.78
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-15",
+    "accumulatedNav": 1.3141,
+    "dailyGrowth": -0.74
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-16",
+    "accumulatedNav": 1.322,
+    "dailyGrowth": 0.6
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-17",
+    "accumulatedNav": 1.308,
+    "dailyGrowth": -1.06
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-18",
+    "accumulatedNav": 1.2825,
+    "dailyGrowth": -1.95
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-19",
+    "accumulatedNav": 1.2782,
+    "dailyGrowth": -0.34
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-22",
+    "accumulatedNav": 1.2708,
+    "dailyGrowth": -0.58
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-23",
+    "accumulatedNav": 1.2816,
+    "dailyGrowth": 0.85
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-24",
+    "accumulatedNav": 1.2903,
+    "dailyGrowth": 0.68
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-25",
+    "accumulatedNav": 1.2797,
+    "dailyGrowth": -0.83
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-26",
+    "accumulatedNav": 1.2903,
+    "dailyGrowth": 0.83
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-29",
+    "accumulatedNav": 1.2819,
+    "dailyGrowth": -0.65
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-30",
+    "accumulatedNav": 1.2829,
+    "dailyGrowth": 0.08
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2025-12-31",
+    "accumulatedNav": 1.2818,
+    "dailyGrowth": -0.09
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-01",
+    "accumulatedNav": 1.2849,
+    "dailyGrowth": 0.24
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-02",
+    "accumulatedNav": 1.2952,
+    "dailyGrowth": 0.8
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-05",
+    "accumulatedNav": 1.3038,
+    "dailyGrowth": 0.66
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-06",
+    "accumulatedNav": 1.3094,
+    "dailyGrowth": 0.43
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-07",
+    "accumulatedNav": 1.3182,
+    "dailyGrowth": 0.67
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-08",
+    "accumulatedNav": 1.3252,
+    "dailyGrowth": 0.53
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-09",
+    "accumulatedNav": 1.3205,
+    "dailyGrowth": -0.35
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-12",
+    "accumulatedNav": 1.3149,
+    "dailyGrowth": -0.42
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-13",
+    "accumulatedNav": 1.3119,
+    "dailyGrowth": -0.23
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-14",
+    "accumulatedNav": 1.3191,
+    "dailyGrowth": 0.55
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-15",
+    "accumulatedNav": 1.3184,
+    "dailyGrowth": -0.05
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-16",
+    "accumulatedNav": 1.345,
+    "dailyGrowth": 2.02
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-19",
+    "accumulatedNav": 1.3382,
+    "dailyGrowth": -0.51
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-20",
+    "accumulatedNav": 1.3284,
+    "dailyGrowth": -0.73
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-21",
+    "accumulatedNav": 1.3386,
+    "dailyGrowth": 0.76
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-22",
+    "accumulatedNav": 1.3558,
+    "dailyGrowth": 1.29
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-23",
+    "accumulatedNav": 1.3633,
+    "dailyGrowth": 0.55
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-26",
+    "accumulatedNav": 1.3745,
+    "dailyGrowth": 0.82
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-27",
+    "accumulatedNav": 1.3922,
+    "dailyGrowth": 1.29
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-28",
+    "accumulatedNav": 1.3932,
+    "dailyGrowth": 0.07
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-29",
+    "accumulatedNav": 1.3794,
+    "dailyGrowth": -0.99
+  },
+  {
+    "fundCode": "501018",
+    "navDate": "2026-01-30",
+    "accumulatedNav": 1.3756,
+    "dailyGrowth": -0.28
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-03",
+    "accumulatedNav": 1.82,
+    "dailyGrowth": null
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-04",
+    "accumulatedNav": 1.8322,
+    "dailyGrowth": 0.67
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-05",
+    "accumulatedNav": 1.8182,
+    "dailyGrowth": -0.77
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-06",
+    "accumulatedNav": 1.8204,
+    "dailyGrowth": 0.12
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-07",
+    "accumulatedNav": 1.825,
+    "dailyGrowth": 0.25
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-10",
+    "accumulatedNav": 1.8234,
+    "dailyGrowth": -0.09
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-11",
+    "accumulatedNav": 1.8331,
+    "dailyGrowth": 0.53
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-12",
+    "accumulatedNav": 1.8413,
+    "dailyGrowth": 0.45
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-13",
+    "accumulatedNav": 1.8688,
+    "dailyGrowth": 1.49
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-14",
+    "accumulatedNav": 1.8776,
+    "dailyGrowth": 0.47
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-17",
+    "accumulatedNav": 1.8726,
+    "dailyGrowth": -0.27
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-18",
+    "accumulatedNav": 1.8682,
+    "dailyGrowth": -0.24
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-19",
+    "accumulatedNav": 1.8607,
+    "dailyGrowth": -0.4
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-20",
+    "accumulatedNav": 1.8732,
+    "dailyGrowth": 0.67
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-21",
+    "accumulatedNav": 1.8687,
+    "dailyGrowth": -0.24
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-24",
+    "accumulatedNav": 1.8698,
+    "dailyGrowth": 0.06
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-25",
+    "accumulatedNav": 1.8801,
+    "dailyGrowth": 0.55
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-26",
+    "accumulatedNav": 1.8738,
+    "dailyGrowth": -0.33
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-27",
+    "accumulatedNav": 1.8724,
+    "dailyGrowth": -0.08
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-11-28",
+    "accumulatedNav": 1.8536,
+    "dailyGrowth": -1.0
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-01",
+    "accumulatedNav": 1.8434,
+    "dailyGrowth": -0.55
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-02",
+    "accumulatedNav": 1.839,
+    "dailyGrowth": -0.24
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-03",
+    "accumulatedNav": 1.8454,
+    "dailyGrowth": 0.35
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-04",
+    "accumulatedNav": 1.8605,
+    "dailyGrowth": 0.82
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-05",
+    "accumulatedNav": 1.8622,
+    "dailyGrowth": 0.09
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-08",
+    "accumulatedNav": 1.867,
+    "dailyGrowth": 0.26
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-09",
+    "accumulatedNav": 1.8707,
+    "dailyGrowth": 0.2
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-10",
+    "accumulatedNav": 1.8847,
+    "dailyGrowth": 0.75
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-11",
+    "accumulatedNav": 1.8967,
+    "dailyGrowth": 0.64
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-12",
+    "accumulatedNav": 1.9017,
+    "dailyGrowth": 0.26
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-15",
+    "accumulatedNav": 1.8921,
+    "dailyGrowth": -0.51
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-16",
+    "accumulatedNav": 1.9042,
+    "dailyGrowth": 0.64
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-17",
+    "accumulatedNav": 1.9105,
+    "dailyGrowth": 0.33
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-18",
+    "accumulatedNav": 1.9265,
+    "dailyGrowth": 0.84
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-19",
+    "accumulatedNav": 1.9281,
+    "dailyGrowth": 0.08
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-22",
+    "accumulatedNav": 1.9526,
+    "dailyGrowth": 1.27
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-23",
+    "accumulatedNav": 1.9503,
+    "dailyGrowth": -0.12
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-24",
+    "accumulatedNav": 1.9709,
+    "dailyGrowth": 1.06
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-25",
+    "accumulatedNav": 1.9742,
+    "dailyGrowth": 0.17
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-26",
+    "accumulatedNav": 1.9701,
+    "dailyGrowth": -0.21
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-29",
+    "accumulatedNav": 1.9587,
+    "dailyGrowth": -0.58
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-30",
+    "accumulatedNav": 1.9589,
+    "dailyGrowth": 0.01
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2025-12-31",
+    "accumulatedNav": 1.9776,
+    "dailyGrowth": 0.95
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-01",
+    "accumulatedNav": 1.9893,
+    "dailyGrowth": 0.59
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-02",
+    "accumulatedNav": 1.9995,
+    "dailyGrowth": 0.51
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-05",
+    "accumulatedNav": 1.973,
+    "dailyGrowth": -1.33
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-06",
+    "accumulatedNav": 1.9834,
+    "dailyGrowth": 0.53
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-07",
+    "accumulatedNav": 1.992,
+    "dailyGrowth": 0.43
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-08",
+    "accumulatedNav": 1.9874,
+    "dailyGrowth": -0.23
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-09",
+    "accumulatedNav": 1.9819,
+    "dailyGrowth": -0.28
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-12",
+    "accumulatedNav": 1.9839,
+    "dailyGrowth": 0.1
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-13",
+    "accumulatedNav": 2.0064,
+    "dailyGrowth": 1.13
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-14",
+    "accumulatedNav": 1.9957,
+    "dailyGrowth": -0.53
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-15",
+    "accumulatedNav": 1.9926,
+    "dailyGrowth": -0.16
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-16",
+    "accumulatedNav": 2.0109,
+    "dailyGrowth": 0.92
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-19",
+    "accumulatedNav": 2.0075,
+    "dailyGrowth": -0.17
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-20",
+    "accumulatedNav": 2.0051,
+    "dailyGrowth": -0.12
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-21",
+    "accumulatedNav": 2.0083,
+    "dailyGrowth": 0.16
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-22",
+    "accumulatedNav": 1.9954,
+    "dailyGrowth": -0.64
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-23",
+    "accumulatedNav": 2.0,
+    "dailyGrowth": 0.23
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-26",
+    "accumulatedNav": 1.9875,
+    "dailyGrowth": -0.63
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-27",
+    "accumulatedNav": 2.0,
+    "dailyGrowth": 0.63
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-28",
+    "accumulatedNav": 2.002,
+    "dailyGrowth": 0.1
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-29",
+    "accumulatedNav": 2.0314,
+    "dailyGrowth": 1.47
+  },
+  {
+    "fundCode": "000216",
+    "navDate": "2026-01-30",
+    "accumulatedNav": 2.0369,
+    "dailyGrowth": 0.27
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-03",
+    "accumulatedNav": 0.98,
+    "dailyGrowth": null
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-04",
+    "accumulatedNav": 0.9872,
+    "dailyGrowth": 0.73
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-05",
+    "accumulatedNav": 0.9813,
+    "dailyGrowth": -0.6
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-06",
+    "accumulatedNav": 0.9812,
+    "dailyGrowth": -0.01
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-07",
+    "accumulatedNav": 0.9833,
+    "dailyGrowth": 0.21
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-10",
+    "accumulatedNav": 0.9924,
+    "dailyGrowth": 0.92
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-11",
+    "accumulatedNav": 0.9846,
+    "dailyGrowth": -0.79
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-12",
+    "accumulatedNav": 0.99,
+    "dailyGrowth": 0.55
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-13",
+    "accumulatedNav": 0.9934,
+    "dailyGrowth": 0.35
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-14",
+    "accumulatedNav": 1.0015,
+    "dailyGrowth": 0.82
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-17",
+    "accumulatedNav": 1.0056,
+    "dailyGrowth": 0.41
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-18",
+    "accumulatedNav": 1.0064,
+    "dailyGrowth": 0.08
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-19",
+    "accumulatedNav": 1.0043,
+    "dailyGrowth": -0.21
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-20",
+    "accumulatedNav": 0.9985,
+    "dailyGrowth": -0.57
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-21",
+    "accumulatedNav": 1.0,
+    "dailyGrowth": 0.15
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-24",
+    "accumulatedNav": 0.9995,
+    "dailyGrowth": -0.05
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-25",
+    "accumulatedNav": 1.0101,
+    "dailyGrowth": 1.06
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-26",
+    "accumulatedNav": 1.0075,
+    "dailyGrowth": -0.26
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-27",
+    "accumulatedNav": 1.0096,
+    "dailyGrowth": 0.21
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-11-28",
+    "accumulatedNav": 1.0022,
+    "dailyGrowth": -0.73
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-01",
+    "accumulatedNav": 1.0007,
+    "dailyGrowth": -0.15
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-02",
+    "accumulatedNav": 1.0025,
+    "dailyGrowth": 0.18
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-03",
+    "accumulatedNav": 1.0071,
+    "dailyGrowth": 0.46
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-04",
+    "accumulatedNav": 1.0149,
+    "dailyGrowth": 0.77
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-05",
+    "accumulatedNav": 1.0152,
+    "dailyGrowth": 0.03
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-08",
+    "accumulatedNav": 1.01,
+    "dailyGrowth": -0.51
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-09",
+    "accumulatedNav": 1.0128,
+    "dailyGrowth": 0.28
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-10",
+    "accumulatedNav": 1.0159,
+    "dailyGrowth": 0.31
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-11",
+    "accumulatedNav": 1.0189,
+    "dailyGrowth": 0.3
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-12",
+    "accumulatedNav": 1.0158,
+    "dailyGrowth": -0.3
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-15",
+    "accumulatedNav": 1.0221,
+    "dailyGrowth": 0.62
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-16",
+    "accumulatedNav": 1.0231,
+    "dailyGrowth": 0.09
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-17",
+    "accumulatedNav": 1.0272,
+    "dailyGrowth": 0.4
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-18",
+    "accumulatedNav": 1.0343,
+    "dailyGrowth": 0.69
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-19",
+    "accumulatedNav": 1.038,
+    "dailyGrowth": 0.35
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-22",
+    "accumulatedNav": 1.04,
+    "dailyGrowth": 0.19
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-23",
+    "accumulatedNav": 1.0517,
+    "dailyGrowth": 1.13
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-24",
+    "accumulatedNav": 1.0535,
+    "dailyGrowth": 0.17
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-25",
+    "accumulatedNav": 1.0525,
+    "dailyGrowth": -0.1
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-26",
+    "accumulatedNav": 1.0536,
+    "dailyGrowth": 0.11
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-29",
+    "accumulatedNav": 1.0619,
+    "dailyGrowth": 0.79
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-30",
+    "accumulatedNav": 1.0631,
+    "dailyGrowth": 0.11
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2025-12-31",
+    "accumulatedNav": 1.0664,
+    "dailyGrowth": 0.31
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-01",
+    "accumulatedNav": 1.0733,
+    "dailyGrowth": 0.65
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-02",
+    "accumulatedNav": 1.0711,
+    "dailyGrowth": -0.21
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-05",
+    "accumulatedNav": 1.0624,
+    "dailyGrowth": -0.81
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-06",
+    "accumulatedNav": 1.0645,
+    "dailyGrowth": 0.2
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-07",
+    "accumulatedNav": 1.0663,
+    "dailyGrowth": 0.16
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-08",
+    "accumulatedNav": 1.0636,
+    "dailyGrowth": -0.25
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-09",
+    "accumulatedNav": 1.0688,
+    "dailyGrowth": 0.49
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-12",
+    "accumulatedNav": 1.0726,
+    "dailyGrowth": 0.35
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-13",
+    "accumulatedNav": 1.0678,
+    "dailyGrowth": -0.45
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-14",
+    "accumulatedNav": 1.0711,
+    "dailyGrowth": 0.31
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-15",
+    "accumulatedNav": 1.0706,
+    "dailyGrowth": -0.05
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-16",
+    "accumulatedNav": 1.0632,
+    "dailyGrowth": -0.69
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-19",
+    "accumulatedNav": 1.0661,
+    "dailyGrowth": 0.28
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-20",
+    "accumulatedNav": 1.0664,
+    "dailyGrowth": 0.03
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-21",
+    "accumulatedNav": 1.063,
+    "dailyGrowth": -0.32
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-22",
+    "accumulatedNav": 1.0663,
+    "dailyGrowth": 0.31
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-23",
+    "accumulatedNav": 1.0694,
+    "dailyGrowth": 0.29
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-26",
+    "accumulatedNav": 1.0668,
+    "dailyGrowth": -0.24
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-27",
+    "accumulatedNav": 1.0695,
+    "dailyGrowth": 0.25
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-28",
+    "accumulatedNav": 1.0755,
+    "dailyGrowth": 0.56
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-29",
+    "accumulatedNav": 1.0722,
+    "dailyGrowth": -0.31
+  },
+  {
+    "fundCode": "008279",
+    "navDate": "2026-01-30",
+    "accumulatedNav": 1.0748,
+    "dailyGrowth": 0.24
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-03",
+    "accumulatedNav": 1.15,
+    "dailyGrowth": null
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-04",
+    "accumulatedNav": 1.1506,
+    "dailyGrowth": 0.05
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-05",
+    "accumulatedNav": 1.1642,
+    "dailyGrowth": 1.18
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-06",
+    "accumulatedNav": 1.1539,
+    "dailyGrowth": -0.88
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-07",
+    "accumulatedNav": 1.1585,
+    "dailyGrowth": 0.4
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-10",
+    "accumulatedNav": 1.1573,
+    "dailyGrowth": -0.1
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-11",
+    "accumulatedNav": 1.1573,
+    "dailyGrowth": -0.0
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-12",
+    "accumulatedNav": 1.1689,
+    "dailyGrowth": 1.0
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-13",
+    "accumulatedNav": 1.1694,
+    "dailyGrowth": 0.05
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-14",
+    "accumulatedNav": 1.1831,
+    "dailyGrowth": 1.17
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-17",
+    "accumulatedNav": 1.1811,
+    "dailyGrowth": -0.17
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-18",
+    "accumulatedNav": 1.1838,
+    "dailyGrowth": 0.23
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-19",
+    "accumulatedNav": 1.1815,
+    "dailyGrowth": -0.2
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-20",
+    "accumulatedNav": 1.178,
+    "dailyGrowth": -0.3
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-21",
+    "accumulatedNav": 1.179,
+    "dailyGrowth": 0.08
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-24",
+    "accumulatedNav": 1.1779,
+    "dailyGrowth": -0.09
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-25",
+    "accumulatedNav": 1.1797,
+    "dailyGrowth": 0.15
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-26",
+    "accumulatedNav": 1.1679,
+    "dailyGrowth": -1.0
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-27",
+    "accumulatedNav": 1.1802,
+    "dailyGrowth": 1.05
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-11-28",
+    "accumulatedNav": 1.1798,
+    "dailyGrowth": -0.03
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-01",
+    "accumulatedNav": 1.1907,
+    "dailyGrowth": 0.92
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-02",
+    "accumulatedNav": 1.1853,
+    "dailyGrowth": -0.45
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-03",
+    "accumulatedNav": 1.1876,
+    "dailyGrowth": 0.2
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-04",
+    "accumulatedNav": 1.207,
+    "dailyGrowth": 1.63
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-05",
+    "accumulatedNav": 1.2024,
+    "dailyGrowth": -0.38
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-08",
+    "accumulatedNav": 1.194,
+    "dailyGrowth": -0.7
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-09",
+    "accumulatedNav": 1.1913,
+    "dailyGrowth": -0.22
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-10",
+    "accumulatedNav": 1.1947,
+    "dailyGrowth": 0.29
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-11",
+    "accumulatedNav": 1.1994,
+    "dailyGrowth": 0.4
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-12",
+    "accumulatedNav": 1.2077,
+    "dailyGrowth": 0.7
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-15",
+    "accumulatedNav": 1.2068,
+    "dailyGrowth": -0.08
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-16",
+    "accumulatedNav": 1.1977,
+    "dailyGrowth": -0.75
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-17",
+    "accumulatedNav": 1.1957,
+    "dailyGrowth": -0.17
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-18",
+    "accumulatedNav": 1.2037,
+    "dailyGrowth": 0.67
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-19",
+    "accumulatedNav": 1.2071,
+    "dailyGrowth": 0.28
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-22",
+    "accumulatedNav": 1.1959,
+    "dailyGrowth": -0.93
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-23",
+    "accumulatedNav": 1.1963,
+    "dailyGrowth": 0.03
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-24",
+    "accumulatedNav": 1.2053,
+    "dailyGrowth": 0.75
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-25",
+    "accumulatedNav": 1.2187,
+    "dailyGrowth": 1.11
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-26",
+    "accumulatedNav": 1.2227,
+    "dailyGrowth": 0.33
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-29",
+    "accumulatedNav": 1.2252,
+    "dailyGrowth": 0.2
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-30",
+    "accumulatedNav": 1.2182,
+    "dailyGrowth": -0.57
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2025-12-31",
+    "accumulatedNav": 1.2137,
+    "dailyGrowth": -0.37
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-01",
+    "accumulatedNav": 1.2146,
+    "dailyGrowth": 0.07
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-02",
+    "accumulatedNav": 1.2183,
+    "dailyGrowth": 0.3
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-05",
+    "accumulatedNav": 1.2224,
+    "dailyGrowth": 0.34
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-06",
+    "accumulatedNav": 1.2201,
+    "dailyGrowth": -0.19
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-07",
+    "accumulatedNav": 1.2137,
+    "dailyGrowth": -0.53
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-08",
+    "accumulatedNav": 1.2096,
+    "dailyGrowth": -0.34
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-09",
+    "accumulatedNav": 1.2032,
+    "dailyGrowth": -0.53
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-12",
+    "accumulatedNav": 1.2077,
+    "dailyGrowth": 0.37
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-13",
+    "accumulatedNav": 1.1943,
+    "dailyGrowth": -1.11
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-14",
+    "accumulatedNav": 1.1929,
+    "dailyGrowth": -0.12
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-15",
+    "accumulatedNav": 1.1962,
+    "dailyGrowth": 0.27
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-16",
+    "accumulatedNav": 1.2059,
+    "dailyGrowth": 0.81
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-19",
+    "accumulatedNav": 1.2069,
+    "dailyGrowth": 0.09
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-20",
+    "accumulatedNav": 1.2135,
+    "dailyGrowth": 0.55
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-21",
+    "accumulatedNav": 1.2117,
+    "dailyGrowth": -0.15
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-22",
+    "accumulatedNav": 1.2078,
+    "dailyGrowth": -0.32
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-23",
+    "accumulatedNav": 1.2043,
+    "dailyGrowth": -0.29
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-26",
+    "accumulatedNav": 1.2141,
+    "dailyGrowth": 0.81
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-27",
+    "accumulatedNav": 1.2207,
+    "dailyGrowth": 0.55
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-28",
+    "accumulatedNav": 1.2243,
+    "dailyGrowth": 0.29
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-29",
+    "accumulatedNav": 1.2453,
+    "dailyGrowth": 1.72
+  },
+  {
+    "fundCode": "016185",
+    "navDate": "2026-01-30",
+    "accumulatedNav": 1.2457,
+    "dailyGrowth": 0.03
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-03",
+    "accumulatedNav": 1.42,
+    "dailyGrowth": null
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-04",
+    "accumulatedNav": 1.4292,
+    "dailyGrowth": 0.65
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-05",
+    "accumulatedNav": 1.4349,
+    "dailyGrowth": 0.4
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-06",
+    "accumulatedNav": 1.4345,
+    "dailyGrowth": -0.03
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-07",
+    "accumulatedNav": 1.4632,
+    "dailyGrowth": 2.0
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-10",
+    "accumulatedNav": 1.483,
+    "dailyGrowth": 1.36
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-11",
+    "accumulatedNav": 1.4686,
+    "dailyGrowth": -0.97
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-12",
+    "accumulatedNav": 1.4661,
+    "dailyGrowth": -0.17
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-13",
+    "accumulatedNav": 1.4733,
+    "dailyGrowth": 0.49
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-14",
+    "accumulatedNav": 1.4847,
+    "dailyGrowth": 0.78
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-17",
+    "accumulatedNav": 1.4709,
+    "dailyGrowth": -0.93
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-18",
+    "accumulatedNav": 1.4466,
+    "dailyGrowth": -1.65
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-19",
+    "accumulatedNav": 1.4267,
+    "dailyGrowth": -1.38
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-20",
+    "accumulatedNav": 1.428,
+    "dailyGrowth": 0.09
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-21",
+    "accumulatedNav": 1.429,
+    "dailyGrowth": 0.07
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-24",
+    "accumulatedNav": 1.4351,
+    "dailyGrowth": 0.43
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-25",
+    "accumulatedNav": 1.4284,
+    "dailyGrowth": -0.47
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-26",
+    "accumulatedNav": 1.4166,
+    "dailyGrowth": -0.83
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-27",
+    "accumulatedNav": 1.3958,
+    "dailyGrowth": -1.47
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-11-28",
+    "accumulatedNav": 1.4016,
+    "dailyGrowth": 0.41
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-01",
+    "accumulatedNav": 1.4079,
+    "dailyGrowth": 0.45
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-02",
+    "accumulatedNav": 1.4212,
+    "dailyGrowth": 0.94
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-03",
+    "accumulatedNav": 1.4323,
+    "dailyGrowth": 0.78
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-04",
+    "accumulatedNav": 1.4323,
+    "dailyGrowth": -0.0
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-05",
+    "accumulatedNav": 1.4499,
+    "dailyGrowth": 1.23
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-08",
+    "accumulatedNav": 1.4505,
+    "dailyGrowth": 0.04
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-09",
+    "accumulatedNav": 1.445,
+    "dailyGrowth": -0.38
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-10",
+    "accumulatedNav": 1.4411,
+    "dailyGrowth": -0.27
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-11",
+    "accumulatedNav": 1.4365,
+    "dailyGrowth": -0.32
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-12",
+    "accumulatedNav": 1.4138,
+    "dailyGrowth": -1.58
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-15",
+    "accumulatedNav": 1.4177,
+    "dailyGrowth": 0.28
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-16",
+    "accumulatedNav": 1.4227,
+    "dailyGrowth": 0.35
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-17",
+    "accumulatedNav": 1.4207,
+    "dailyGrowth": -0.14
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-18",
+    "accumulatedNav": 1.4147,
+    "dailyGrowth": -0.42
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-19",
+    "accumulatedNav": 1.421,
+    "dailyGrowth": 0.45
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-22",
+    "accumulatedNav": 1.4426,
+    "dailyGrowth": 1.52
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-23",
+    "accumulatedNav": 1.4452,
+    "dailyGrowth": 0.18
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-24",
+    "accumulatedNav": 1.4415,
+    "dailyGrowth": -0.26
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-25",
+    "accumulatedNav": 1.4368,
+    "dailyGrowth": -0.32
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-26",
+    "accumulatedNav": 1.4382,
+    "dailyGrowth": 0.09
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-29",
+    "accumulatedNav": 1.4258,
+    "dailyGrowth": -0.86
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-30",
+    "accumulatedNav": 1.4265,
+    "dailyGrowth": 0.05
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2025-12-31",
+    "accumulatedNav": 1.4293,
+    "dailyGrowth": 0.2
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-01",
+    "accumulatedNav": 1.4525,
+    "dailyGrowth": 1.63
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-02",
+    "accumulatedNav": 1.4656,
+    "dailyGrowth": 0.9
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-05",
+    "accumulatedNav": 1.4799,
+    "dailyGrowth": 0.98
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-06",
+    "accumulatedNav": 1.4737,
+    "dailyGrowth": -0.42
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-07",
+    "accumulatedNav": 1.4838,
+    "dailyGrowth": 0.69
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-08",
+    "accumulatedNav": 1.4725,
+    "dailyGrowth": -0.76
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-09",
+    "accumulatedNav": 1.4784,
+    "dailyGrowth": 0.4
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-12",
+    "accumulatedNav": 1.4856,
+    "dailyGrowth": 0.48
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-13",
+    "accumulatedNav": 1.4787,
+    "dailyGrowth": -0.46
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-14",
+    "accumulatedNav": 1.5046,
+    "dailyGrowth": 1.75
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-15",
+    "accumulatedNav": 1.5137,
+    "dailyGrowth": 0.6
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-16",
+    "accumulatedNav": 1.4929,
+    "dailyGrowth": -1.37
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-19",
+    "accumulatedNav": 1.5017,
+    "dailyGrowth": 0.59
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-20",
+    "accumulatedNav": 1.4991,
+    "dailyGrowth": -0.18
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-21",
+    "accumulatedNav": 1.5014,
+    "dailyGrowth": 0.15
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-22",
+    "accumulatedNav": 1.5092,
+    "dailyGrowth": 0.52
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-23",
+    "accumulatedNav": 1.5162,
+    "dailyGrowth": 0.46
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-26",
+    "accumulatedNav": 1.4937,
+    "dailyGrowth": -1.48
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-27",
+    "accumulatedNav": 1.4821,
+    "dailyGrowth": -0.78
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-28",
+    "accumulatedNav": 1.4935,
+    "dailyGrowth": 0.77
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-29",
+    "accumulatedNav": 1.5113,
+    "dailyGrowth": 1.19
+  },
+  {
+    "fundCode": "162411",
+    "navDate": "2026-01-30",
+    "accumulatedNav": 1.5366,
+    "dailyGrowth": 1.67
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-03",
+    "accumulatedNav": 2.58,
+    "dailyGrowth": null
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-04",
+    "accumulatedNav": 2.6046,
+    "dailyGrowth": 0.95
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-05",
+    "accumulatedNav": 2.5791,
+    "dailyGrowth": -0.98
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-06",
+    "accumulatedNav": 2.5903,
+    "dailyGrowth": 0.43
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-07",
+    "accumulatedNav": 2.5668,
+    "dailyGrowth": -0.91
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-10",
+    "accumulatedNav": 2.5888,
+    "dailyGrowth": 0.86
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-11",
+    "accumulatedNav": 2.5934,
+    "dailyGrowth": 0.18
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-12",
+    "accumulatedNav": 2.5799,
+    "dailyGrowth": -0.52
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-13",
+    "accumulatedNav": 2.6071,
+    "dailyGrowth": 1.05
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-14",
+    "accumulatedNav": 2.6168,
+    "dailyGrowth": 0.37
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-17",
+    "accumulatedNav": 2.5934,
+    "dailyGrowth": -0.9
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-18",
+    "accumulatedNav": 2.5985,
+    "dailyGrowth": 0.2
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-19",
+    "accumulatedNav": 2.5903,
+    "dailyGrowth": -0.32
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-20",
+    "accumulatedNav": 2.593,
+    "dailyGrowth": 0.11
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-21",
+    "accumulatedNav": 2.5883,
+    "dailyGrowth": -0.18
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-24",
+    "accumulatedNav": 2.6074,
+    "dailyGrowth": 0.74
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-25",
+    "accumulatedNav": 2.5901,
+    "dailyGrowth": -0.66
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-26",
+    "accumulatedNav": 2.5955,
+    "dailyGrowth": 0.21
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-27",
+    "accumulatedNav": 2.6203,
+    "dailyGrowth": 0.96
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-11-28",
+    "accumulatedNav": 2.6108,
+    "dailyGrowth": -0.36
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-01",
+    "accumulatedNav": 2.6149,
+    "dailyGrowth": 0.16
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-02",
+    "accumulatedNav": 2.6188,
+    "dailyGrowth": 0.15
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-03",
+    "accumulatedNav": 2.6111,
+    "dailyGrowth": -0.29
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-04",
+    "accumulatedNav": 2.6209,
+    "dailyGrowth": 0.37
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-05",
+    "accumulatedNav": 2.6235,
+    "dailyGrowth": 0.1
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-08",
+    "accumulatedNav": 2.6124,
+    "dailyGrowth": -0.42
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-09",
+    "accumulatedNav": 2.6367,
+    "dailyGrowth": 0.93
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-10",
+    "accumulatedNav": 2.6485,
+    "dailyGrowth": 0.45
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-11",
+    "accumulatedNav": 2.6476,
+    "dailyGrowth": -0.03
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-12",
+    "accumulatedNav": 2.6405,
+    "dailyGrowth": -0.27
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-15",
+    "accumulatedNav": 2.6315,
+    "dailyGrowth": -0.34
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-16",
+    "accumulatedNav": 2.649,
+    "dailyGrowth": 0.67
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-17",
+    "accumulatedNav": 2.6484,
+    "dailyGrowth": -0.02
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-18",
+    "accumulatedNav": 2.6558,
+    "dailyGrowth": 0.28
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-19",
+    "accumulatedNav": 2.6547,
+    "dailyGrowth": -0.04
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-22",
+    "accumulatedNav": 2.6642,
+    "dailyGrowth": 0.36
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-23",
+    "accumulatedNav": 2.664,
+    "dailyGrowth": -0.01
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-24",
+    "accumulatedNav": 2.6755,
+    "dailyGrowth": 0.43
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-25",
+    "accumulatedNav": 2.6744,
+    "dailyGrowth": -0.04
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-26",
+    "accumulatedNav": 2.6868,
+    "dailyGrowth": 0.46
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-29",
+    "accumulatedNav": 2.6972,
+    "dailyGrowth": 0.39
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-30",
+    "accumulatedNav": 2.697,
+    "dailyGrowth": -0.01
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2025-12-31",
+    "accumulatedNav": 2.6868,
+    "dailyGrowth": -0.38
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-01",
+    "accumulatedNav": 2.6755,
+    "dailyGrowth": -0.42
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-02",
+    "accumulatedNav": 2.6669,
+    "dailyGrowth": -0.32
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-05",
+    "accumulatedNav": 2.6551,
+    "dailyGrowth": -0.44
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-06",
+    "accumulatedNav": 2.6679,
+    "dailyGrowth": 0.48
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-07",
+    "accumulatedNav": 2.6686,
+    "dailyGrowth": 0.03
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-08",
+    "accumulatedNav": 2.6909,
+    "dailyGrowth": 0.84
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-09",
+    "accumulatedNav": 2.7229,
+    "dailyGrowth": 1.19
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-12",
+    "accumulatedNav": 2.7246,
+    "dailyGrowth": 0.06
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-13",
+    "accumulatedNav": 2.7049,
+    "dailyGrowth": -0.72
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-14",
+    "accumulatedNav": 2.7011,
+    "dailyGrowth": -0.14
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-15",
+    "accumulatedNav": 2.7014,
+    "dailyGrowth": 0.01
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-16",
+    "accumulatedNav": 2.6826,
+    "dailyGrowth": -0.69
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-19",
+    "accumulatedNav": 2.6806,
+    "dailyGrowth": -0.08
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-20",
+    "accumulatedNav": 2.6858,
+    "dailyGrowth": 0.19
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-21",
+    "accumulatedNav": 2.681,
+    "dailyGrowth": -0.18
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-22",
+    "accumulatedNav": 2.672,
+    "dailyGrowth": -0.33
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-23",
+    "accumulatedNav": 2.6632,
+    "dailyGrowth": -0.33
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-26",
+    "accumulatedNav": 2.6883,
+    "dailyGrowth": 0.94
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-27",
+    "accumulatedNav": 2.6875,
+    "dailyGrowth": -0.03
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-28",
+    "accumulatedNav": 2.6777,
+    "dailyGrowth": -0.36
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-29",
+    "accumulatedNav": 2.674,
+    "dailyGrowth": -0.14
+  },
+  {
+    "fundCode": "000001",
+    "navDate": "2026-01-30",
+    "accumulatedNav": 2.6881,
+    "dailyGrowth": 0.53
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-03",
+    "accumulatedNav": 1.95,
+    "dailyGrowth": null
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-04",
+    "accumulatedNav": 1.9443,
+    "dailyGrowth": -0.29
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-05",
+    "accumulatedNav": 1.95,
+    "dailyGrowth": 0.29
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-06",
+    "accumulatedNav": 1.9581,
+    "dailyGrowth": 0.41
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-07",
+    "accumulatedNav": 1.9664,
+    "dailyGrowth": 0.42
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-10",
+    "accumulatedNav": 1.9811,
+    "dailyGrowth": 0.75
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-11",
+    "accumulatedNav": 1.9766,
+    "dailyGrowth": -0.23
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-12",
+    "accumulatedNav": 1.9888,
+    "dailyGrowth": 0.62
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-13",
+    "accumulatedNav": 1.9819,
+    "dailyGrowth": -0.35
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-14",
+    "accumulatedNav": 1.979,
+    "dailyGrowth": -0.15
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-17",
+    "accumulatedNav": 1.9918,
+    "dailyGrowth": 0.65
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-18",
+    "accumulatedNav": 2.001,
+    "dailyGrowth": 0.46
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-19",
+    "accumulatedNav": 2.002,
+    "dailyGrowth": 0.05
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-20",
+    "accumulatedNav": 1.9911,
+    "dailyGrowth": -0.55
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-21",
+    "accumulatedNav": 1.9977,
+    "dailyGrowth": 0.33
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-24",
+    "accumulatedNav": 1.9924,
+    "dailyGrowth": -0.27
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-25",
+    "accumulatedNav": 1.9842,
+    "dailyGrowth": -0.41
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-26",
+    "accumulatedNav": 1.9788,
+    "dailyGrowth": -0.27
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-27",
+    "accumulatedNav": 1.9822,
+    "dailyGrowth": 0.17
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-11-28",
+    "accumulatedNav": 1.9622,
+    "dailyGrowth": -1.01
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-01",
+    "accumulatedNav": 1.9667,
+    "dailyGrowth": 0.23
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-02",
+    "accumulatedNav": 1.9694,
+    "dailyGrowth": 0.14
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-03",
+    "accumulatedNav": 1.9646,
+    "dailyGrowth": -0.24
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-04",
+    "accumulatedNav": 1.9758,
+    "dailyGrowth": 0.57
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-05",
+    "accumulatedNav": 1.9828,
+    "dailyGrowth": 0.36
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-08",
+    "accumulatedNav": 1.9778,
+    "dailyGrowth": -0.25
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-09",
+    "accumulatedNav": 1.9722,
+    "dailyGrowth": -0.29
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-10",
+    "accumulatedNav": 1.98,
+    "dailyGrowth": 0.4
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-11",
+    "accumulatedNav": 1.966,
+    "dailyGrowth": -0.71
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-12",
+    "accumulatedNav": 1.9637,
+    "dailyGrowth": -0.12
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-15",
+    "accumulatedNav": 1.9585,
+    "dailyGrowth": -0.27
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-16",
+    "accumulatedNav": 1.9602,
+    "dailyGrowth": 0.08
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-17",
+    "accumulatedNav": 1.9632,
+    "dailyGrowth": 0.16
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-18",
+    "accumulatedNav": 1.9645,
+    "dailyGrowth": 0.07
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-19",
+    "accumulatedNav": 1.9766,
+    "dailyGrowth": 0.62
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-22",
+    "accumulatedNav": 1.9798,
+    "dailyGrowth": 0.16
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-23",
+    "accumulatedNav": 1.9777,
+    "dailyGrowth": -0.11
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-24",
+    "accumulatedNav": 1.9667,
+    "dailyGrowth": -0.56
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-25",
+    "accumulatedNav": 1.9748,
+    "dailyGrowth": 0.41
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-26",
+    "accumulatedNav": 1.981,
+    "dailyGrowth": 0.31
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-29",
+    "accumulatedNav": 1.9964,
+    "dailyGrowth": 0.78
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-30",
+    "accumulatedNav": 1.9899,
+    "dailyGrowth": -0.32
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2025-12-31",
+    "accumulatedNav": 1.9912,
+    "dailyGrowth": 0.06
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-01",
+    "accumulatedNav": 1.9916,
+    "dailyGrowth": 0.02
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-02",
+    "accumulatedNav": 1.9917,
+    "dailyGrowth": 0.01
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-05",
+    "accumulatedNav": 1.9928,
+    "dailyGrowth": 0.06
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-06",
+    "accumulatedNav": 1.9767,
+    "dailyGrowth": -0.81
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-07",
+    "accumulatedNav": 1.9858,
+    "dailyGrowth": 0.46
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-08",
+    "accumulatedNav": 1.9933,
+    "dailyGrowth": 0.38
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-09",
+    "accumulatedNav": 2.0056,
+    "dailyGrowth": 0.62
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-12",
+    "accumulatedNav": 2.0292,
+    "dailyGrowth": 1.17
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-13",
+    "accumulatedNav": 2.027,
+    "dailyGrowth": -0.11
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-14",
+    "accumulatedNav": 2.0276,
+    "dailyGrowth": 0.03
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-15",
+    "accumulatedNav": 2.0287,
+    "dailyGrowth": 0.05
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-16",
+    "accumulatedNav": 2.0494,
+    "dailyGrowth": 1.02
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-19",
+    "accumulatedNav": 2.0327,
+    "dailyGrowth": -0.82
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-20",
+    "accumulatedNav": 2.0387,
+    "dailyGrowth": 0.29
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-21",
+    "accumulatedNav": 2.0247,
+    "dailyGrowth": -0.69
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-22",
+    "accumulatedNav": 1.9996,
+    "dailyGrowth": -1.24
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-23",
+    "accumulatedNav": 1.9804,
+    "dailyGrowth": -0.96
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-26",
+    "accumulatedNav": 1.9677,
+    "dailyGrowth": -0.64
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-27",
+    "accumulatedNav": 1.9792,
+    "dailyGrowth": 0.58
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-28",
+    "accumulatedNav": 1.9716,
+    "dailyGrowth": -0.38
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-29",
+    "accumulatedNav": 1.9703,
+    "dailyGrowth": -0.06
+  },
+  {
+    "fundCode": "110007",
+    "navDate": "2026-01-30",
+    "accumulatedNav": 1.9598,
+    "dailyGrowth": -0.53
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-03",
+    "accumulatedNav": 3.21,
+    "dailyGrowth": null
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-04",
+    "accumulatedNav": 3.2214,
+    "dailyGrowth": 0.36
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-05",
+    "accumulatedNav": 3.2053,
+    "dailyGrowth": -0.5
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-06",
+    "accumulatedNav": 3.228,
+    "dailyGrowth": 0.71
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-07",
+    "accumulatedNav": 3.2136,
+    "dailyGrowth": -0.45
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-10",
+    "accumulatedNav": 3.2029,
+    "dailyGrowth": -0.33
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-11",
+    "accumulatedNav": 3.2065,
+    "dailyGrowth": 0.11
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-12",
+    "accumulatedNav": 3.2085,
+    "dailyGrowth": 0.06
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-13",
+    "accumulatedNav": 3.233,
+    "dailyGrowth": 0.76
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-14",
+    "accumulatedNav": 3.2366,
+    "dailyGrowth": 0.11
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-17",
+    "accumulatedNav": 3.2187,
+    "dailyGrowth": -0.55
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-18",
+    "accumulatedNav": 3.2113,
+    "dailyGrowth": -0.23
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-19",
+    "accumulatedNav": 3.2037,
+    "dailyGrowth": -0.24
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-20",
+    "accumulatedNav": 3.2169,
+    "dailyGrowth": 0.41
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-21",
+    "accumulatedNav": 3.2247,
+    "dailyGrowth": 0.24
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-24",
+    "accumulatedNav": 3.2244,
+    "dailyGrowth": -0.01
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-25",
+    "accumulatedNav": 3.24,
+    "dailyGrowth": 0.48
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-26",
+    "accumulatedNav": 3.2331,
+    "dailyGrowth": -0.21
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-27",
+    "accumulatedNav": 3.2325,
+    "dailyGrowth": -0.02
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-11-28",
+    "accumulatedNav": 3.237,
+    "dailyGrowth": 0.14
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-01",
+    "accumulatedNav": 3.2634,
+    "dailyGrowth": 0.81
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-02",
+    "accumulatedNav": 3.2634,
+    "dailyGrowth": 0.0
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-03",
+    "accumulatedNav": 3.2593,
+    "dailyGrowth": -0.13
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-04",
+    "accumulatedNav": 3.2439,
+    "dailyGrowth": -0.47
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-05",
+    "accumulatedNav": 3.2566,
+    "dailyGrowth": 0.39
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-08",
+    "accumulatedNav": 3.2487,
+    "dailyGrowth": -0.24
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-09",
+    "accumulatedNav": 3.2559,
+    "dailyGrowth": 0.22
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-10",
+    "accumulatedNav": 3.2266,
+    "dailyGrowth": -0.9
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-11",
+    "accumulatedNav": 3.245,
+    "dailyGrowth": 0.57
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-12",
+    "accumulatedNav": 3.225,
+    "dailyGrowth": -0.62
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-15",
+    "accumulatedNav": 3.2141,
+    "dailyGrowth": -0.34
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-16",
+    "accumulatedNav": 3.2327,
+    "dailyGrowth": 0.58
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-17",
+    "accumulatedNav": 3.2127,
+    "dailyGrowth": -0.62
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-18",
+    "accumulatedNav": 3.213,
+    "dailyGrowth": 0.01
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-19",
+    "accumulatedNav": 3.2158,
+    "dailyGrowth": 0.09
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-22",
+    "accumulatedNav": 3.2014,
+    "dailyGrowth": -0.45
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-23",
+    "accumulatedNav": 3.2245,
+    "dailyGrowth": 0.72
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-24",
+    "accumulatedNav": 3.2503,
+    "dailyGrowth": 0.8
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-25",
+    "accumulatedNav": 3.2199,
+    "dailyGrowth": -0.94
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-26",
+    "accumulatedNav": 3.1982,
+    "dailyGrowth": -0.67
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-29",
+    "accumulatedNav": 3.2127,
+    "dailyGrowth": 0.45
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-30",
+    "accumulatedNav": 3.1934,
+    "dailyGrowth": -0.6
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2025-12-31",
+    "accumulatedNav": 3.1888,
+    "dailyGrowth": -0.14
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-01",
+    "accumulatedNav": 3.1925,
+    "dailyGrowth": 0.11
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-02",
+    "accumulatedNav": 3.2051,
+    "dailyGrowth": 0.4
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-05",
+    "accumulatedNav": 3.2031,
+    "dailyGrowth": -0.06
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-06",
+    "accumulatedNav": 3.2062,
+    "dailyGrowth": 0.1
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-07",
+    "accumulatedNav": 3.1954,
+    "dailyGrowth": -0.34
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-08",
+    "accumulatedNav": 3.2176,
+    "dailyGrowth": 0.7
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-09",
+    "accumulatedNav": 3.2112,
+    "dailyGrowth": -0.2
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-12",
+    "accumulatedNav": 3.2183,
+    "dailyGrowth": 0.22
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-13",
+    "accumulatedNav": 3.2117,
+    "dailyGrowth": -0.21
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-14",
+    "accumulatedNav": 3.215,
+    "dailyGrowth": 0.1
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-15",
+    "accumulatedNav": 3.2139,
+    "dailyGrowth": -0.03
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-16",
+    "accumulatedNav": 3.2129,
+    "dailyGrowth": -0.03
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-19",
+    "accumulatedNav": 3.1982,
+    "dailyGrowth": -0.46
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-20",
+    "accumulatedNav": 3.2125,
+    "dailyGrowth": 0.45
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-21",
+    "accumulatedNav": 3.2368,
+    "dailyGrowth": 0.76
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-22",
+    "accumulatedNav": 3.2424,
+    "dailyGrowth": 0.17
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-23",
+    "accumulatedNav": 3.2559,
+    "dailyGrowth": 0.42
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-26",
+    "accumulatedNav": 3.2712,
+    "dailyGrowth": 0.47
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-27",
+    "accumulatedNav": 3.288,
+    "dailyGrowth": 0.51
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-28",
+    "accumulatedNav": 3.2946,
+    "dailyGrowth": 0.2
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-29",
+    "accumulatedNav": 3.2997,
+    "dailyGrowth": 0.16
+  },
+  {
+    "fundCode": "070002",
+    "navDate": "2026-01-30",
+    "accumulatedNav": 3.3156,
+    "dailyGrowth": 0.48
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-03",
+    "accumulatedNav": 1.68,
+    "dailyGrowth": null
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-04",
+    "accumulatedNav": 1.6814,
+    "dailyGrowth": 0.08
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-05",
+    "accumulatedNav": 1.6741,
+    "dailyGrowth": -0.44
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-06",
+    "accumulatedNav": 1.6751,
+    "dailyGrowth": 0.06
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-07",
+    "accumulatedNav": 1.6601,
+    "dailyGrowth": -0.89
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-10",
+    "accumulatedNav": 1.6609,
+    "dailyGrowth": 0.05
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-11",
+    "accumulatedNav": 1.6652,
+    "dailyGrowth": 0.26
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-12",
+    "accumulatedNav": 1.6763,
+    "dailyGrowth": 0.67
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-13",
+    "accumulatedNav": 1.6784,
+    "dailyGrowth": 0.13
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-14",
+    "accumulatedNav": 1.687,
+    "dailyGrowth": 0.51
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-17",
+    "accumulatedNav": 1.6878,
+    "dailyGrowth": 0.05
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-18",
+    "accumulatedNav": 1.68,
+    "dailyGrowth": -0.46
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-19",
+    "accumulatedNav": 1.669,
+    "dailyGrowth": -0.66
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-20",
+    "accumulatedNav": 1.6617,
+    "dailyGrowth": -0.43
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-21",
+    "accumulatedNav": 1.6512,
+    "dailyGrowth": -0.63
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-24",
+    "accumulatedNav": 1.6573,
+    "dailyGrowth": 0.37
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-25",
+    "accumulatedNav": 1.6564,
+    "dailyGrowth": -0.05
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-26",
+    "accumulatedNav": 1.662,
+    "dailyGrowth": 0.34
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-27",
+    "accumulatedNav": 1.6634,
+    "dailyGrowth": 0.09
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-11-28",
+    "accumulatedNav": 1.6729,
+    "dailyGrowth": 0.57
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-01",
+    "accumulatedNav": 1.6826,
+    "dailyGrowth": 0.58
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-02",
+    "accumulatedNav": 1.678,
+    "dailyGrowth": -0.27
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-03",
+    "accumulatedNav": 1.6765,
+    "dailyGrowth": -0.09
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-04",
+    "accumulatedNav": 1.6729,
+    "dailyGrowth": -0.22
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-05",
+    "accumulatedNav": 1.6602,
+    "dailyGrowth": -0.76
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-08",
+    "accumulatedNav": 1.6666,
+    "dailyGrowth": 0.39
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-09",
+    "accumulatedNav": 1.6773,
+    "dailyGrowth": 0.64
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-10",
+    "accumulatedNav": 1.6781,
+    "dailyGrowth": 0.05
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-11",
+    "accumulatedNav": 1.6748,
+    "dailyGrowth": -0.2
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-12",
+    "accumulatedNav": 1.6848,
+    "dailyGrowth": 0.6
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-15",
+    "accumulatedNav": 1.6659,
+    "dailyGrowth": -1.12
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-16",
+    "accumulatedNav": 1.6682,
+    "dailyGrowth": 0.14
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-17",
+    "accumulatedNav": 1.6702,
+    "dailyGrowth": 0.12
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-18",
+    "accumulatedNav": 1.6663,
+    "dailyGrowth": -0.24
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-19",
+    "accumulatedNav": 1.6787,
+    "dailyGrowth": 0.75
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-22",
+    "accumulatedNav": 1.6877,
+    "dailyGrowth": 0.54
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-23",
+    "accumulatedNav": 1.6863,
+    "dailyGrowth": -0.08
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-24",
+    "accumulatedNav": 1.6864,
+    "dailyGrowth": 0.01
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-25",
+    "accumulatedNav": 1.684,
+    "dailyGrowth": -0.14
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-26",
+    "accumulatedNav": 1.6805,
+    "dailyGrowth": -0.21
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-29",
+    "accumulatedNav": 1.6703,
+    "dailyGrowth": -0.6
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-30",
+    "accumulatedNav": 1.6827,
+    "dailyGrowth": 0.74
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2025-12-31",
+    "accumulatedNav": 1.6922,
+    "dailyGrowth": 0.56
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-01",
+    "accumulatedNav": 1.6998,
+    "dailyGrowth": 0.45
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-02",
+    "accumulatedNav": 1.6913,
+    "dailyGrowth": -0.5
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-05",
+    "accumulatedNav": 1.7097,
+    "dailyGrowth": 1.09
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-06",
+    "accumulatedNav": 1.7275,
+    "dailyGrowth": 1.04
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-07",
+    "accumulatedNav": 1.73,
+    "dailyGrowth": 0.14
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-08",
+    "accumulatedNav": 1.723,
+    "dailyGrowth": -0.4
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-09",
+    "accumulatedNav": 1.7164,
+    "dailyGrowth": -0.38
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-12",
+    "accumulatedNav": 1.7209,
+    "dailyGrowth": 0.26
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-13",
+    "accumulatedNav": 1.7139,
+    "dailyGrowth": -0.41
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-14",
+    "accumulatedNav": 1.7145,
+    "dailyGrowth": 0.03
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-15",
+    "accumulatedNav": 1.7247,
+    "dailyGrowth": 0.59
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-16",
+    "accumulatedNav": 1.7126,
+    "dailyGrowth": -0.7
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-19",
+    "accumulatedNav": 1.7306,
+    "dailyGrowth": 1.05
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-20",
+    "accumulatedNav": 1.745,
+    "dailyGrowth": 0.83
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-21",
+    "accumulatedNav": 1.7351,
+    "dailyGrowth": -0.57
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-22",
+    "accumulatedNav": 1.7237,
+    "dailyGrowth": -0.66
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-23",
+    "accumulatedNav": 1.7221,
+    "dailyGrowth": -0.09
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-26",
+    "accumulatedNav": 1.7141,
+    "dailyGrowth": -0.47
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-27",
+    "accumulatedNav": 1.7127,
+    "dailyGrowth": -0.08
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-28",
+    "accumulatedNav": 1.6915,
+    "dailyGrowth": -1.24
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-29",
+    "accumulatedNav": 1.6904,
+    "dailyGrowth": -0.06
+  },
+  {
+    "fundCode": "050001",
+    "navDate": "2026-01-30",
+    "accumulatedNav": 1.7065,
+    "dailyGrowth": 0.95
+  }
+]

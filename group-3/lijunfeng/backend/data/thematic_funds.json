@@ -1,0 +1,43 @@
+[
+  {"theme": "原油", "fundName": "南方原油A", "fundCode": "501018", "returnRate": 5.2, "weekNumber": 1},
+  {"theme": "黄金", "fundName": "华安黄金ETF联接A", "fundCode": "000216", "returnRate": 3.8, "weekNumber": 1},
+  {"theme": "煤炭", "fundName": "国泰中证煤炭ETF联接A", "fundCode": "008279", "returnRate": 4.5, "weekNumber": 1},
+  {"theme": "电力", "fundName": "广发中证全指电力ETF联接A", "fundCode": "016185", "returnRate": 2.1, "weekNumber": 1},
+  {"theme": "天然气", "fundName": "华宝油气A", "fundCode": "162411", "returnRate": 6.3, "weekNumber": 1},
+  
+  {"theme": "原油", "fundName": "南方原油A", "fundCode": "501018", "returnRate": 4.8, "weekNumber": 2},
+  {"theme": "黄金", "fundName": "华安黄金ETF联接A", "fundCode": "000216", "returnRate": 2.5, "weekNumber": 2},
+  {"theme": "煤炭", "fundName": "国泰中证煤炭ETF联接A", "fundCode": "008279", "returnRate": 3.2, "weekNumber": 2},
+  {"theme": "电力", "fundName": "广发中证全指电力ETF联接A", "fundCode": "016185", "returnRate": 1.8, "weekNumber": 2},
+  {"theme": "天然气", "fundName": "华宝油气A", "fundCode": "162411", "returnRate": 5.5, "weekNumber": 2},
+  
+  {"theme": "原油", "fundName": "南方原油A", "fundCode": "501018", "returnRate": 7.2, "weekNumber": 3},
+  {"theme": "黄金", "fundName": "华安黄金ETF联接A", "fundCode": "000216", "returnRate": 5.1, "weekNumber": 3},
+  {"theme": "煤炭", "fundName": "国泰中证煤炭ETF联接A", "fundCode": "008279", "returnRate": 6.8, "weekNumber": 3},
+  {"theme": "电力", "fundName": "广发中证全指电力ETF联接A", "fundCode": "016185", "returnRate": 3.5, "weekNumber": 3},
+  {"theme": "天然气", "fundName": "华宝油气A", "fundCode": "162411", "returnRate": 8.2, "weekNumber": 3},
+  
+  {"theme": "原油", "fundName": "南方原油A", "fundCode": "501018", "returnRate": 2.1, "weekNumber": 4},
+  {"theme": "黄金", "fundName": "华安黄金ETF联接A", "fundCode": "000216", "returnRate": 1.2, "weekNumber": 4},
+  {"theme": "煤炭", "fundName": "国泰中证煤炭ETF联接A", "fundCode": "008279", "returnRate": 1.8, "weekNumber": 4},
+  {"theme": "电力", "fundName": "广发中证全指电力ETF联接A", "fundCode": "016185", "returnRate": 0.8, "weekNumber": 4},
+  {"theme": "天然气", "fundName": "华宝油气A", "fundCode": "162411", "returnRate": 2.5, "weekNumber": 4},
+  
+  {"theme": "原油", "fundName": "南方原油A", "fundCode": "501018", "returnRate": 8.5, "weekNumber": 5},
+  {"theme": "黄金", "fundName": "华安黄金ETF联接A", "fundCode": "000216", "returnRate": 6.2, "weekNumber": 5},
+  {"theme": "煤炭", "fundName": "国泰中证煤炭ETF联接A", "fundCode": "008279", "returnRate": 7.5, "weekNumber": 5},
+  {"theme": "电力", "fundName": "广发中证全指电力ETF联接A", "fundCode": "016185", "returnRate": 4.2, "weekNumber": 5},
+  {"theme": "天然气", "fundName": "华宝油气A", "fundCode": "162411", "returnRate": 9.1, "weekNumber": 5},
+  
+  {"theme": "原油", "fundName": "南方原油A", "fundCode": "501018", "returnRate": 3.5, "weekNumber": 6},
+  {"theme": "黄金", "fundName": "华安黄金ETF联接A", "fundCode": "000216", "returnRate": 2.8, "weekNumber": 6},
+  {"theme": "煤炭", "fundName": "国泰中证煤炭ETF联接A", "fundCode": "008279", "returnRate": 3.9, "weekNumber": 6},
+  {"theme": "电力", "fundName": "广发中证全指电力ETF联接A", "fundCode": "016185", "returnRate": 1.5, "weekNumber": 6},
+  {"theme": "天然气", "fundName": "华宝油气A", "fundCode": "162411", "returnRate": 4.2, "weekNumber": 6},
+  
+  {"theme": "原油", "fundName": "南方原油A", "fundCode": "501018", "returnRate": 4.2, "weekNumber": 7},
+  {"theme": "黄金", "fundName": "华安黄金ETF联接A", "fundCode": "000216", "returnRate": 3.1, "weekNumber": 7},
+  {"theme": "煤炭", "fundName": "国泰中证煤炭ETF联接A", "fundCode": "008279", "returnRate": 4.5, "weekNumber": 7},
+  {"theme": "电力", "fundName": "广发中证全指电力ETF联接A", "fundCode": "016185", "returnRate": 2.2, "weekNumber": 7},
+  {"theme": "天然气", "fundName": "华宝油气A", "fundCode": "162411", "returnRate": 5.1, "weekNumber": 7}
+]

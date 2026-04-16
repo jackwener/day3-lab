@@ -1,0 +1,43 @@
+[
+  {"fundName": "广发精选A", "fundCode": "000001", "company": "广发", "scale": 4.5, "returnRate": 6.8, "weekNumber": 1},
+  {"fundName": "易方达稳健A", "fundCode": "110007", "company": "易方达", "scale": 3.2, "returnRate": 5.5, "weekNumber": 1},
+  {"fundName": "华夏成长A", "fundCode": "000001华夏", "company": "华夏", "scale": 4.8, "returnRate": 7.2, "weekNumber": 1},
+  {"fundName": "嘉实增长A", "fundCode": "070002", "company": "嘉实", "scale": 2.9, "returnRate": 4.8, "weekNumber": 1},
+  {"fundName": "博时价值A", "fundCode": "050001", "company": "博时", "scale": 3.8, "returnRate": 6.1, "weekNumber": 1},
+  
+  {"fundName": "广发精选A", "fundCode": "000001", "company": "广发", "scale": 4.5, "returnRate": 5.2, "weekNumber": 2},
+  {"fundName": "易方达稳健A", "fundCode": "110007", "company": "易方达", "scale": 3.2, "returnRate": 4.1, "weekNumber": 2},
+  {"fundName": "华夏成长A", "fundCode": "000001华夏", "company": "华夏", "scale": 4.8, "returnRate": 5.8, "weekNumber": 2},
+  {"fundName": "嘉实增长A", "fundCode": "070002", "company": "嘉实", "scale": 2.9, "returnRate": 3.5, "weekNumber": 2},
+  {"fundName": "博时价值A", "fundCode": "050001", "company": "博时", "scale": 3.8, "returnRate": 4.9, "weekNumber": 2},
+  
+  {"fundName": "广发精选A", "fundCode": "000001", "company": "广发", "scale": 4.5, "returnRate": 8.5, "weekNumber": 3},
+  {"fundName": "易方达稳健A", "fundCode": "110007", "company": "易方达", "scale": 3.2, "returnRate": 7.2, "weekNumber": 3},
+  {"fundName": "华夏成长A", "fundCode": "000001华夏", "company": "华夏", "scale": 4.8, "returnRate": 9.1, "weekNumber": 3},
+  {"fundName": "嘉实增长A", "fundCode": "070002", "company": "嘉实", "scale": 2.9, "returnRate": 6.8, "weekNumber": 3},
+  {"fundName": "博时价值A", "fundCode": "050001", "company": "博时", "scale": 3.8, "returnRate": 8.2, "weekNumber": 3},
+  
+  {"fundName": "广发精选A", "fundCode": "000001", "company": "广发", "scale": 4.5, "returnRate": 2.8, "weekNumber": 4},
+  {"fundName": "易方达稳健A", "fundCode": "110007", "company": "易方达", "scale": 3.2, "returnRate": 1.9, "weekNumber": 4},
+  {"fundName": "华夏成长A", "fundCode": "000001华夏", "company": "华夏", "scale": 4.8, "returnRate": 3.2, "weekNumber": 4},
+  {"fundName": "嘉实增长A", "fundCode": "070002", "company": "嘉实", "scale": 2.9, "returnRate": 1.5, "weekNumber": 4},
+  {"fundName": "博时价值A", "fundCode": "050001", "company": "博时", "scale": 3.8, "returnRate": 2.6, "weekNumber": 4},
+  
+  {"fundName": "广发精选A", "fundCode": "000001", "company": "广发", "scale": 4.5, "returnRate": 9.2, "weekNumber": 5},
+  {"fundName": "易方达稳健A", "fundCode": "110007", "company": "易方达", "scale": 3.2, "returnRate": 8.1, "weekNumber": 5},
+  {"fundName": "华夏成长A", "fundCode": "000001华夏", "company": "华夏", "scale": 4.8, "returnRate": 10.5, "weekNumber": 5},
+  {"fundName": "嘉实增长A", "fundCode": "070002", "company": "嘉实", "scale": 2.9, "returnRate": 7.8, "weekNumber": 5},
+  {"fundName": "博时价值A", "fundCode": "050001", "company": "博时", "scale": 3.8, "returnRate": 8.9, "weekNumber": 5},
+  
+  {"fundName": "广发精选A", "fundCode": "000001", "company": "广发", "scale": 4.5, "returnRate": 4.5, "weekNumber": 6},
+  {"fundName": "易方达稳健A", "fundCode": "110007", "company": "易方达", "scale": 3.2, "returnRate": 3.8, "weekNumber": 6},
+  {"fundName": "华夏成长A", "fundCode": "000001华夏", "company": "华夏", "scale": 4.8, "returnRate": 5.2, "weekNumber": 6},
+  {"fundName": "嘉实增长A", "fundCode": "070002", "company": "嘉实", "scale": 2.9, "returnRate": 3.1, "weekNumber": 6},
+  {"fundName": "博时价值A", "fundCode": "050001", "company": "博时", "scale": 3.8, "returnRate": 4.2, "weekNumber": 6},
+  
+  {"fundName": "广发精选A", "fundCode": "000001", "company": "广发", "scale": 4.5, "returnRate": 5.1, "weekNumber": 7},
+  {"fundName": "易方达稳健A", "fundCode": "110007", "company": "易方达", "scale": 3.2, "returnRate": 4.2, "weekNumber": 7},
+  {"fundName": "华夏成长A", "fundCode": "000001华夏", "company": "华夏", "scale": 4.8, "returnRate": 5.8, "weekNumber": 7},
+  {"fundName": "嘉实增长A", "fundCode": "070002", "company": "嘉实", "scale": 2.9, "returnRate": 3.9, "weekNumber": 7},
+  {"fundName": "博时价值A", "fundCode": "050001", "company": "博时", "scale": 3.8, "returnRate": 4.8, "weekNumber": 7}
+]

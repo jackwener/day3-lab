@@ -1,0 +1,9 @@
+/* App 组件专用样式 */
+
+/* 多行文本截断 */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
